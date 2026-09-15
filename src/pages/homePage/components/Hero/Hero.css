@@ -1,0 +1,526 @@
+/* =========================================
+   HERO
+========================================= */
+
+.sarvottam-hero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: #f3f3ec;
+
+  color: #1b2435;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.hero-header {
+  position: absolute;
+
+  z-index: 50;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  padding: 8px clamp(24px, 4vw, 65px);
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+  background-color: transparent;
+
+  border-bottom: 1px solid transparent;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    backdrop-filter 0.4s ease,
+    -webkit-backdrop-filter 0.4s ease;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.hero-logo {
+  color: inherit;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  letter-spacing: 0.3em;
+
+  text-decoration: none;
+}
+
+.hero-logo span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 6px;
+
+  letter-spacing: 0.55em;
+
+  opacity: 0.6;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.hero-header nav {
+  display: flex;
+
+  gap: clamp(22px, 3vw, 50px);
+}
+
+.hero-header nav a,
+.hero-contact {
+  color: inherit;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.hero-header nav a:hover,
+.hero-contact:hover {
+  opacity: 0.5;
+}
+
+.hero-contact {
+  justify-self: end;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hero-content {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(900px, calc(100% - 40px));
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  color: #f3f3ec;
+
+  will-change: transform, opacity;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   INTRO CONTENT
+========================================= */
+
+.hero-intro-content {
+  z-index: 21;
+  
+}
+
+
+/* =========================================
+   SLIDE CONTENT
+========================================= */
+
+.hero-slide-content {
+  z-index: 20;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.hero-eyebrow {
+  margin-bottom: 25px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  color: rgba(243, 243, 236, 0.75);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hero-title {
+  margin: 0;
+
+  font-family:
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size: clamp(54px, 7.5vw, 120px);
+
+  font-weight: 400;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.065em;
+
+  color: inherit;
+}
+
+.hero-title-mask {
+  display: block;
+
+  overflow: hidden;
+
+  padding-bottom: 0.08em;
+}
+
+.hero-copy-line {
+  display: block;
+
+  will-change: transform;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.hero-divider {
+  width: 55px;
+
+  height: 1px;
+
+  margin: 30px auto 24px;
+
+  background: currentColor;
+
+  opacity: 0.45;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 440px;
+
+  margin: 0 auto;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: rgba(243, 243, 236, 0.78);
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.hero-actions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  margin-top: 30px;
+}
+
+.hero-actions a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: inherit;
+
+  font-size: 9px;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+}
+
+.hero-actions a span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 30px;
+
+  height: 30px;
+
+  border: 1px solid currentColor;
+
+  border-radius: 50%;
+
+  font-size: 12px;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.hero-actions a:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   INTRO IMAGE
+========================================= */
+
+.hero-intro-image {
+  position: absolute;
+
+  z-index: 5;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  opacity: 1;
+
+  will-change: opacity;
+}
+
+.hero-intro-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.hero-intro-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 12, 20, 0.18) 0%,
+      rgba(8, 12, 20, 0.04) 40%,
+      rgba(8, 12, 20, 0.45) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE REVEALS
+========================================= */
+
+.hero-image-reveal {
+  position: absolute;
+
+  z-index: 10;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  clip-path:
+    circle(
+      0% at 50% 105%
+    );
+
+  will-change: clip-path;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.hero-image {
+  position: absolute;
+
+  inset: -5%;
+
+  width: 110%;
+  height: 110%;
+
+  will-change: transform;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /* object-fit: cover; */
+}
+
+
+/* =========================================
+   IMAGE DARKENING
+========================================= */
+
+.hero-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 12, 20, 0.15) 0%,
+      rgba(8, 12, 20, 0.04) 40%,
+      rgba(8, 12, 20, 0.45) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE STACKING
+========================================= */
+
+.hero-image-one {
+  z-index: 10;
+}
+
+.hero-image-two {
+  z-index: 11;
+}
+
+.hero-image-three {
+  z-index: 12;
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  z-index: 60;
+
+  left: 28px;
+  bottom: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #1b2435;
+
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+
+  writing-mode: vertical-rl;
+
+  transition:
+    color 0.4s ease;
+}
+
+.hero-scroll i {
+  display: block;
+
+  width: 1px;
+
+  height: 50px;
+
+  background: currentColor;
+
+  opacity: 0.35;
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.hero-counter {
+  position: absolute;
+
+  z-index: 60;
+
+  right: 30px;
+  bottom: 35px;
+
+  display: flex;
+
+  gap: 7px;
+
+  color: #1b2435;
+
+  font-size: 8px;
+
+  letter-spacing: 0.15em;
+
+  transition:
+    color 0.4s ease;
+}

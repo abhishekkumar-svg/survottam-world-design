@@ -1,0 +1,201 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.stats-section {
+  position: relative;
+
+  width: 100%;
+
+  background: #f5f3ed;
+
+  padding: 120px 7vw;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.stats-container {
+  width: 100%;
+
+  max-width: 1565px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  border: 1px solid
+    rgba(197, 139, 50, 0.22);
+}
+
+
+/* =========================================
+   STAT ITEM
+========================================= */
+
+.stat-item {
+  min-height: 118px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  border-right: 1px solid
+    rgba(197, 139, 50, 0.22);
+}
+
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.stat-number-wrapper {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  color: #c58b32;
+
+  font-family:
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size: 34px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.025em;
+}
+
+
+.stats-number {
+  display: inline-block;
+
+  min-width: 1ch;
+}
+
+
+.stats-suffix {
+  margin-left: 1px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.stat-label {
+  margin-top: 12px;
+
+  color: #918c84;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.27em;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .stats-section {
+    padding: 80px 5vw;
+  }
+
+  .stats-container {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .stat-item {
+    border-bottom: 1px solid
+      rgba(197, 139, 50, 0.22);
+  }
+
+  .stat-item:nth-child(3) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(n + 4) {
+    border-bottom: none;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .stats-section {
+    padding: 60px 5vw;
+  }
+
+  .stats-container {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .stat-item {
+    min-height: 100px;
+
+    border-right: 1px solid
+      rgba(197, 139, 50, 0.22);
+
+    border-bottom: 1px solid
+      rgba(197, 139, 50, 0.22);
+  }
+
+  .stat-item:nth-child(2n) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(n + 5) {
+    border-bottom: none;
+  }
+
+  .stat-number-wrapper {
+    font-size: 27px;
+  }
+
+  .stat-label {
+    font-size: 6px;
+
+    letter-spacing: 0.18em;
+  }
+
+}

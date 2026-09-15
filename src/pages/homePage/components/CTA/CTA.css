@@ -1,0 +1,699 @@
+/* =========================================
+   SECTION
+========================================= */
+
+.cta-section {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  min-height: 650px;
+
+  background: #f5f3ed;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN SPLIT
+
+   LEFT   47%
+   IMAGE  37%
+   RIGHT  16%
+========================================= */
+
+.cta-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    47% 37% 16%;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    70px
+    7vw;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.cta-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 48px;
+
+  color: #a97227;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.42em;
+
+  white-space: nowrap;
+}
+
+.cta-eyebrow i {
+  width: 65px;
+
+  height: 1px;
+
+  display: block;
+
+  background: #b77e2e;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.cta-title {
+  margin: 0;
+
+  color: #211f1d;
+
+  font-family:
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size: clamp(
+    44px,
+    3.55vw,
+    68px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.045em;
+}
+
+.cta-title em {
+  color: #b47b29;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.cta-description {
+  max-width: 650px;
+
+  margin:
+    42px
+    0
+    0;
+
+  color: #77736d;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.cta-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 48px;
+}
+
+
+.cta-button {
+  height: 70px;
+
+  padding:
+    0
+    36px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* PRIMARY */
+
+.cta-button-primary {
+  color: #fff;
+
+  background: #b47b29;
+
+  border: 1px solid #b47b29;
+}
+
+.cta-button-primary:hover {
+  background: #996820;
+
+  border-color: #996820;
+
+  transform: translateY(-3px);
+}
+
+
+/* SECONDARY */
+
+.cta-button-secondary {
+  color: #a97227;
+
+  background: transparent;
+
+  border:
+    1px solid
+    rgba(180, 123, 41, 0.55);
+}
+
+.cta-button-secondary:hover {
+  color: #fff;
+
+  background: #b47b29;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.cta-image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  will-change:
+    clip-path,
+    transform;
+}
+
+
+.cta-image img {
+  position: absolute;
+
+  inset: -5% 0;
+
+  width: 100%;
+
+  height: 110%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center center;
+
+  will-change: transform;
+}
+
+
+/* =========================================
+   RIGHT PANEL
+========================================= */
+
+.cta-side-message {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #f5f3ed;
+}
+
+
+/* =========================================
+   RIGHT TEXT
+========================================= */
+
+.cta-side-text {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0;
+
+  color: #ae7830;
+
+  font-family: Arial, sans-serif;
+
+  font-size: clamp(
+    10px,
+    0.85vw,
+    15px
+  );
+
+  font-weight: 400;
+
+  letter-spacing: 0.38em;
+
+  line-height: 3.7;
+}
+
+
+/* =========================================
+   RIGHT WORD
+========================================= */
+
+.cta-side-word {
+  display: block;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================
+   SIDE LINE
+========================================= */
+
+.cta-side-line {
+  width: 88px;
+
+  height: 1px;
+
+  margin-top: 42px;
+
+  background: #b77e2e;
+}
+
+
+/* =========================================
+   GSAP
+========================================= */
+
+.cta-reveal {
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1600px) {
+
+  .cta-content {
+    padding-left: 6vw;
+    padding-right: 5vw;
+  }
+
+  .cta-title {
+    font-size: 68px;
+  }
+
+  .cta-description {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .cta-inner {
+    grid-template-columns:
+      48% 37% 15%;
+  }
+
+  .cta-content {
+    padding:
+      50px
+      5vw;
+  }
+
+  .cta-eyebrow {
+    margin-bottom: 35px;
+
+    font-size: 8px;
+  }
+
+  .cta-title {
+    font-size: clamp(
+      38px,
+      4vw,
+      54px
+    );
+  }
+
+  .cta-description {
+    margin-top: 30px;
+
+    font-size: 11px;
+  }
+
+  .cta-actions {
+    margin-top: 32px;
+
+    gap: 10px;
+  }
+
+  .cta-button {
+    height: 56px;
+
+    padding:
+      0
+      20px;
+
+    font-size: 8px;
+  }
+
+  .cta-side-text {
+    font-size: 9px;
+
+    letter-spacing: 0.3em;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .cta-section {
+    height: auto;
+
+    min-height: 0;
+  }
+
+
+  .cta-inner {
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      50% 50%;
+  }
+
+
+  .cta-content {
+    min-height: 620px;
+
+    padding:
+      70px
+      6vw;
+  }
+
+
+  .cta-image {
+    min-height: 620px;
+  }
+
+
+  .cta-side-message {
+    grid-column: 1 / -1;
+
+    min-height: 160px;
+
+    height: 160px;
+
+    flex-direction: row;
+
+    gap: 40px;
+  }
+
+
+  .cta-side-text {
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 22px;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+  }
+
+
+  .cta-side-line {
+    width: 45px;
+
+    margin-top: 0;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .cta-inner {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
+
+  .cta-content {
+    min-height: auto;
+
+    padding:
+      75px
+      7vw
+      60px;
+  }
+
+
+  .cta-eyebrow {
+    margin-bottom: 34px;
+
+    gap: 12px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.3em;
+  }
+
+
+  .cta-eyebrow i {
+    width: 35px;
+  }
+
+
+  .cta-title {
+    font-size: clamp(
+      39px,
+      11vw,
+      54px
+    );
+
+    line-height: 0.98;
+  }
+
+
+  .cta-description {
+    margin-top: 30px;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+  }
+
+
+  /* -----------------------------------------
+     BUTTONS
+  ----------------------------------------- */
+
+  .cta-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    margin-top: 32px;
+  }
+
+
+  .cta-button {
+    width: 100%;
+
+    height: 58px;
+
+    padding: 0;
+
+    font-size: 8px;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+
+  .cta-image {
+    width: 100%;
+
+    height: 105vw;
+
+    min-height: 0;
+
+    max-height: 550px;
+  }
+
+
+  .cta-image img {
+    inset: -3% 0;
+
+    width: 100%;
+
+    height: 106%;
+
+    object-position: center;
+  }
+
+
+  /* -----------------------------------------
+     SIDE MESSAGE
+  ----------------------------------------- */
+
+  .cta-side-message {
+    width: 100%;
+
+    min-height: 170px;
+
+    height: 170px;
+
+    padding: 35px 20px;
+
+    gap: 18px;
+  }
+
+
+  .cta-side-text {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 4px 15px;
+
+    font-size: 8px;
+
+    line-height: 2;
+
+    letter-spacing: 0.25em;
+
+    text-align: center;
+  }
+
+
+  .cta-side-word {
+    white-space: nowrap;
+  }
+
+
+  .cta-side-line {
+    width: 40px;
+
+    margin: 0;
+  }
+
+}
