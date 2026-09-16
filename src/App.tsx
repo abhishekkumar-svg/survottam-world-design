@@ -1,5 +1,5 @@
 import { useLenis } from "./hooks/useLenis"
-import Header from "./pages/homePage/header/header"
+import Header from "./pages/homePage/Header/Header"
 import Homepage from "./pages/homePage/homepage"
 
 function App() {
