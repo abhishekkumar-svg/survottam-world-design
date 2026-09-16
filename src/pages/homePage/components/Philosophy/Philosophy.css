@@ -103,8 +103,8 @@
   right: 3%;
   bottom: 5%;
 
-  width: 105px;
-  height: 105px;
+  width: 125px;
+  height: 120px;
 
   display: flex;
   align-items: center;
@@ -271,10 +271,7 @@ display: flex;
   flex-direction: column;
     align-items: center;
     justify-content: center;
-  /* padding: 22px 25px 15px 0; */
-
-  border-right: 1px solid
-    rgba(33, 31, 29, 0.15);
+ 
 }
 
 
@@ -286,7 +283,9 @@ display: flex;
 .philosophy-stat:last-child {
   border-right: none;
 }
-
+.philosophy-image-stat strong {
+  max-width: min-content;
+}
 
 .philosophy-stat strong, .philosophy-image-stat strong {
   display: block;

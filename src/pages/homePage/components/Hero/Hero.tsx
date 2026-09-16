@@ -679,39 +679,7 @@ export default function RealEstateHero() {
             HEADER
         ==================================== */}
 
-        <header className="hero-header">
-          <a
-            href="/"
-            className="hero-logo"
-          >
-            <img
-              className="w-[72px]"
-              src="https://sarvottamworld.in/_next/image?url=%2Flogosarvottam.png&w=256&q=75"
-              alt="Sarvottam World Logo"
-            />
-          </a>
-
-          <nav>
-            <a href="/projects">
-              Projects
-            </a>
-
-            <a href="/about">
-              About
-            </a>
-
-            <a href="/contact">
-              Contact
-            </a>
-          </nav>
-
-          <a
-            href="/contact"
-            className="hero-contact"
-          >
-            Schedule a Visit
-          </a>
-        </header>
+ 
 
         {/* ====================================
             INTRO IMAGE
