@@ -11,7 +11,7 @@ const menuItems = [
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
-// 
+// //updated folder name
 const MOBILE_BREAKPOINT = 768;
 
 export default function Header() {
