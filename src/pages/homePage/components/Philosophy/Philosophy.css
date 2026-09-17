@@ -1,70 +1,195 @@
-.philosophy-section {
+/* =========================================================
+   SECTION
+========================================================= */
+
+.sarvottam-philosophy {
   position: relative;
+
   width: 100%;
 
-  background: #f5f3ed;
+  background: #f3f3ec;
+
+  color: #1b2435;
+}
+
+
+/* =========================================================
+   PINNED STAGE
+========================================================= */
+
+.philosophy-stage {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
 
   overflow: hidden;
 
-  padding: 0 4vw;
+  background: #f3f3ec;
+
+  isolation: isolate;
 }
 
 
-/* =========================================
-   CONTAINER
-========================================= */
+/* =========================================================
+   GIANT BACKGROUND TYPOGRAPHY
+========================================================= */
 
-.philosophy-container {
+.philosophy-marquee {
+  position: absolute;
+
+  z-index: 1;
+
+  left: 0;
+  top: 50%;
+
   width: 100%;
-  max-width: 1700px;
 
-  margin: 0 auto;
+  transform: translateY(-50%);
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.philosophy-marquee-track {
+  display: flex;
 
   align-items: center;
 
-  min-height: 760px;
+  width: max-content;
+
+  gap: 5vw;
+
+  white-space: nowrap;
+
+  will-change: transform;
 }
 
 
-/* =========================================
-   IMAGE
-========================================= */
+.philosophy-marquee-track span {
+  display: block;
 
-.philosophy-visual {
-  position: relative;
+  flex-shrink: 0;
+
+  font-family:
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size: clamp(
+    150px,
+    19vw,
+    360px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.075em;
+
+  color: var(--primary-2);
+
+  opacity: 0.09;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.philosophy-intro {
+  position: absolute;
+
+  z-index: 10;
+
+  top: 7%;
+  left: 5%;
+
+  pointer-events: none;
+}
+
+
+.philosophy-eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  color: var(--primary-color);
+
+  opacity: 0.55;
+}
+
+
+.philosophy-intro-title {
+  margin: 0;
+
+  font-family:
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size: clamp(
+    38px,
+    4.2vw,
+    72px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+
+  color: var(--primary-2);
+}
+
+
+.philosophy-intro-description {
+  margin: 18px 0 0;
+
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: var(--primary-2);
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   CARD STACK
+========================================================= */
+
+.philosophy-cards {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
 
   width: 100%;
   height: 100%;
 
-  min-height: 650px;
-
-  display: flex;
-  align-items: center;
+  pointer-events: none;
 }
 
 
-.philosophy-image {
-  position: relative;
-
-  width: 94%;
-  height: 86%;
-
-  overflow: hidden;
-
-  /*
-   * Initial state.
-   * GSAP expands this to 0%.
-   */
-  clip-path: inset(12% 12% 12% 12%);
-
-  will-change: clip-path;
-}
-
-
-.philosophy-image-inner {
+.philosophy-card {
   position: absolute;
 
   inset: 0;
@@ -72,298 +197,348 @@
   width: 100%;
   height: 100%;
 
+  overflow: hidden;
+
   will-change: transform;
+
+  pointer-events: none;
 }
 
 
-.philosophy-image-inner img {
+/* =========================================================
+   EXPLICIT STACKING
+========================================================= */
+
+.philosophy-card-1 {
+  z-index: 10;
+}
+
+
+.philosophy-card-2 {
+  z-index: 11;
+}
+
+
+.philosophy-card-3 {
+  z-index: 12;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.philosophy-image-wrap {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  overflow: hidden;
+
+  background: #ddd;
+
+  will-change:
+    transform,
+    width,
+    height,
+    border-radius;
+
+  transform-origin: center center;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.philosophy-image {
+  display: block;
+
   width: 100%;
   height: 100%;
 
-  display: block;
-
   object-fit: cover;
-  object-position: center;
 
-  /*
-   * Tiny additional scale prevents
-   * edge gaps during the animation.
-   */
-  transform: scale(1.01);
+  transform-origin: center center;
+
+  will-change: transform;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
 }
 
 
-/* =========================================
-   IMAGE CORNER DETAIL
-========================================= */
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
 
-.philosophy-image-corner {
+.philosophy-image-overlay {
   position: absolute;
 
-  right: 3%;
-  bottom: 5%;
+  inset: 0;
 
-  width: 125px;
-  height: 120px;
+  pointer-events: none;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 12, 20, 0.08) 0%,
+      rgba(8, 12, 20, 0.02) 40%,
+      rgba(8, 12, 20, 0.45) 100%
+    );
+}
 
-  background: #f5f3ed;
 
-  border: 1px solid rgba(197, 139, 50, 0.35);
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.philosophy-card-content {
+  position: absolute;
+
+  inset: 0;
 
   z-index: 5;
-}
 
-
-.philosophy-image-corner span {
-  color: #c58b32;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 11px;
-
-  letter-spacing: 0.3em;
-}
-
-
-/* =========================================
-   CONTENT
-========================================= */
-
-.philosophy-content {
-  width: 100%;
-
-  max-width: 720px;
-
-  padding: 70px 4vw 70px 2vw;
-}
-
-
-/* =========================================
-   EYEBROW
-========================================= */
-
-.philosophy-eyebrow {
   display: flex;
-  align-items: center;
 
-  gap: 16px;
+  align-items: flex-end;
 
-  margin-bottom: 48px;
+  justify-content: space-between;
 
-  color: #c58b32;
+  padding:
+    0
+    5%
+    6%;
 
-  font-family: Arial, sans-serif;
+  pointer-events: none;
+}
 
-  font-size: 10px;
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.philosophy-card-number {
+  font-size: 9px;
+
   font-weight: 500;
 
-  letter-spacing: 0.42em;
+  letter-spacing: 0.25em;
 
-  white-space: nowrap;
+  color: #ffffff;
+
+  text-shadow:
+    0 1px 12px rgba(0, 0, 0, 0.35);
+
+  will-change: opacity;
 }
 
 
-.eyebrow-line {
-  width: 50px;
-  height: 1px;
+/* =========================================================
+   CARD COPY
+========================================================= */
 
-  background: #c58b32;
-
-  flex-shrink: 0;
+.philosophy-card-copy {
+  width: min(
+    700px,
+    58vw
+  );
+position: absolute;
+left: 50%;
+top:50%;
+transform: translate(-50%, -50%);
+  margin-left: auto;
 }
 
 
-/* =========================================
-   TITLE
-========================================= */
+/* =========================================================
+   CARD TITLE
+========================================================= */
 
-.philosophy-title {
-  margin: 0;
+.philosophy-card-title {
+  display: flex;
 
-  color: #211f1d;
+  flex-wrap: nowrap;
 
-  font-family: "Times New Roman", Georgia, serif;
+  margin: 0 0 20px;
+
+  overflow: visible;
+
+  font-family:
+    "Times New Roman",
+    Georgia,
+    serif;
 
   font-size: clamp(
-    24px,
-    2vw,
-    44px
+    48px,
+    12vw,
+    104px
   );
 
   font-weight: 400;
 
-  line-height: 0.98;
+  line-height: 0.82;
 
-  letter-spacing: -0.035em;
+  letter-spacing: -0.065em;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.28);
+
+  will-change: transform;
 }
 
 
-.philosophy-title em {
-  color: #c58b32;
+.philosophy-char {
+  display: inline-block;
 
-  font-style: italic;
-
-  font-weight: 400;
+  will-change:
+    transform,
+    opacity;
 }
 
 
-/* =========================================
-   COPY
-========================================= */
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
-.philosophy-copy {
-  margin-top: 65px;
+.philosophy-card-description {
+  /* max-width: 440px; */
+
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.86
+    );
+
+  text-shadow:
+    0 1px 10px rgba(0, 0, 0, 0.4);
+
+  will-change:
+    transform,
+    opacity;
 }
 
 
-.philosophy-description {
-  max-width: 700px;
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
 
-  margin: 0 0 27px;
+.philosophy-scroll {
+  position: absolute;
 
-  color: #88847d;
+  z-index: 50;
 
-  font-family: Arial, sans-serif;
+  left: 28px;
+  bottom: 35px;
 
-  font-size: 13px;
+  display: flex;
 
-  font-weight: 400;
+  align-items: center;
 
-  line-height: 1.75;
+  gap: 12px;
 
-  letter-spacing: 0.01em;
-}
-
-
-/* =========================================
-   STATS
-========================================= */
-
-.philosophy-stats {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  margin-top: 48px;
-
-  border-top: 1px solid
-    rgba(33, 31, 29, 0.15);
-}
-
-
-.philosophy-stat {
-  min-height: 105px;
-
-  padding: 22px 25px 15px 0;
-
-  border-right: 1px solid
-    rgba(33, 31, 29, 0.15);
-}
-
-.philosophy-image-stat {
-  min-height: 105px;
-display: flex;
-  flex-direction: column;
-    align-items: center;
-    justify-content: center;
- 
-}
-
-
-.philosophy-stat:not(:first-child) {
-  padding-left: 25px;
-}
-
-
-.philosophy-stat:last-child {
-  border-right: none;
-}
-.philosophy-image-stat strong {
-  max-width: min-content;
-}
-
-.philosophy-stat strong, .philosophy-image-stat strong {
-  display: block;
-
-  margin-bottom: 13px;
-
-  color: #c58b32;
-
-  font-family: "Times New Roman", Georgia, serif;
-
-  font-size: 27px;
-
-  font-weight: 400;
-
-  line-height: 1;
-}
-
-
-.philosophy-stat span , .philosophy-image-stat span {
-  display: block;
-
-  color: #918c84;
-
-  font-family: Arial, sans-serif;
+  color: #1b2435;
 
   font-size: 8px;
 
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+
+  writing-mode: vertical-rl;
+}
+
+
+.philosophy-scroll i {
+  display: block;
+
+  width: 1px;
+  height: 50px;
+
+  background: currentColor;
+
+  opacity: 0.35;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.philosophy-footer {
+  position: absolute;
+
+
+  left: 5%;
+  right: 5%;
+  bottom: 4%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: var(--primary-2);
+
+  font-size: 10px;
+  font-weight: 500;
+
   letter-spacing: 0.2em;
 
-  line-height: 1.4;
+  text-transform: uppercase;
+
+  pointer-events: none;
+
 }
 
 
-/* =========================================
-   REVEAL
-========================================= */
-
-.philosophy-reveal {
-  will-change: transform, opacity;
-}
-
-
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
-  .philosophy-section {
-    padding: 8vw 5vw;
+  .philosophy-intro {
+    top: 6%;
+    left: 6%;
   }
 
-  .philosophy-container {
-    grid-template-columns: 1fr;
-
-    gap: 70px;
-
-    min-height: auto;
-  }
-
-  .philosophy-visual {
-    min-height: 600px;
-  }
-
-  .philosophy-image {
-    width: 95%;
-    height: 90%;
-  }
-
-  .philosophy-content {
-    max-width: 850px;
-
-    padding: 0;
-  }
-
-  .philosophy-title {
+  .philosophy-intro-title {
     font-size: clamp(
-      46px,
+      34px,
+      6vw,
+      60px
+    );
+  }
+
+  .philosophy-card-content {
+    padding:
+      0
+      6%
+      8%;
+  }
+
+  .philosophy-card-copy {
+    width: 56vw;
+  }
+
+  .philosophy-card-title {
+    font-size: clamp(
+      42px,
       7vw,
       72px
     );
@@ -371,91 +546,169 @@ display: flex;
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
-  .philosophy-section {
-    padding: 18vw 5vw;
+  .philosophy-stage {
+    height: 100svh;
   }
 
-  .philosophy-container {
-    gap: 50px;
+
+  /* -----------------------------------------
+     INTRO
+  ----------------------------------------- */
+
+  .philosophy-intro {
+    top: 6%;
+    left: 6%;
   }
 
-  .philosophy-visual {
-    min-height: auto;
-  }
-
-  .philosophy-image {
-    width: 100%;
-
-    height: auto;
-
-    aspect-ratio: 1 / 1.05;
-  }
-
-  .philosophy-image-corner {
-    width: 65px;
-    height: 65px;
-
-    right: -1px;
-    bottom: -1px;
-  }
-
-  .philosophy-content {
-    padding: 0;
-  }
 
   .philosophy-eyebrow {
-    margin-bottom: 32px;
+    margin-bottom: 10px;
 
     font-size: 8px;
-
-    letter-spacing: 0.32em;
   }
 
-  .eyebrow-line {
-    width: 35px;
+
+  .philosophy-intro-title {
+    font-size: 30px;
+
+    line-height: 0.92;
   }
 
-  .philosophy-title {
-    font-size: 44px;
 
-    line-height: 0.98;
+  .philosophy-intro-description {
+    margin-top: 12px;
+
+    font-size: 10px;
   }
 
-  .philosophy-copy {
-    margin-top: 45px;
+
+  /* -----------------------------------------
+     MARQUEE
+  ----------------------------------------- */
+
+  .philosophy-marquee {
+    top: 48%;
   }
 
-  .philosophy-description {
-    font-size: 12px;
 
-    line-height: 1.75;
+  .philosophy-marquee-track {
+    gap: 10vw;
   }
 
-  .philosophy-stats {
-    margin-top: 35px;
+
+  .philosophy-marquee-track span {
+    font-size: 32vw;
   }
 
-  .philosophy-stat {
-    padding-right: 12px;
+
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+
+  .philosophy-image-wrap {
+    /*
+     * Mobile images still become the COMPLETE
+     * viewport.
+     */
+    width: 100vw;
+    height: 100svh;
   }
 
-  .philosophy-stat:not(:first-child) {
-    padding-left: 12px;
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
+
+  .philosophy-card-content {
+    display: block;
+
+    padding:
+      0
+      6%
+      9%;
   }
 
-  .philosophy-stat strong {
-    font-size: 20px;
+
+  .philosophy-card-number {
+    position: absolute;
+
+    left: 6%;
+    bottom: 7%;
+
+    font-size: 8px;
   }
 
-  .philosophy-stat span {
+
+  .philosophy-card-copy {
+    position: absolute;
+
+    left: 45%;
+    bottom: 14%;
+
+    width: 75%;
+  }
+
+
+  .philosophy-card-title {
+    /* max-width: 94%; */
+
+    margin-bottom: 14px;
+
+    font-size: clamp(
+      42px,
+      11vw,
+      64px
+    );
+
+    line-height: 0.84;
+  }
+
+
+  .philosophy-card-description {
+    /* max-width: 88%; */
+
+    font-size: 14px;
+
+    line-height: 1.55;
+  }
+
+
+  /* -----------------------------------------
+     SCROLL
+  ----------------------------------------- */
+
+  .philosophy-scroll {
+    left: auto;
+
+    right: 20px;
+
+    bottom: 24px;
+
     font-size: 7px;
+  }
 
-    letter-spacing: 0.12em;
+
+  .philosophy-scroll i {
+    height: 36px;
+  }
+
+
+  /* -----------------------------------------
+     FOOTER
+  ----------------------------------------- */
+
+  .philosophy-footer {
+    left: 6%;
+    right: 6%;
+
+    bottom: 3%;
+
+    font-size: 7px;
   }
 }

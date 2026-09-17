@@ -72,7 +72,7 @@
 
   justify-content: center;
 
-  color: #c58b32;
+  color: var(--primary-2);
 
   font-family:
     "Times New Roman",

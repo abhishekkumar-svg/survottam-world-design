@@ -10,7 +10,7 @@
 
   display: grid;
 
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto ;
 
   align-items: center;
 
@@ -87,11 +87,11 @@
 
   padding: 10px 0;
 
-  color: inherit;
+  color: var(--primary-2);
 
   font-family: Arial, sans-serif;
 
-  font-size: 10px;
+  font-size: 11px;
 
   font-weight: 500;
 
@@ -138,13 +138,13 @@
 .global-header-nav a:hover {
   opacity: 1;
 
-  color: #c58b32;
+  color: var(--primary-color);
 
   transform: translateY(-1px);
 }
 
 .global-header-nav a:hover::after {
-  background: #c58b32;
+  background: var(--primary-color);
 
   transform: scaleX(1);
 
@@ -594,7 +594,7 @@ text-wrap: nowrap;
   }
 
   .global-header-nav a {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .global-header-contact {

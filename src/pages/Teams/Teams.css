@@ -1,0 +1,432 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Nanum+Myeongjo:wght@400;700&display=swap");
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.teams-section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 0px 10vw 100px;
+
+  background: #f4efe4;
+  color: #171717;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.teams-header {
+  min-height: calc(100vh - 100px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.teams-header > span {
+  margin-bottom: 25px;
+
+  font-family: "Krona One", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  opacity: 0.45;
+}
+
+.teams-header h2 {
+  margin: 0;
+
+  font-family: "Nanum Myeongjo", serif;
+
+  font-size: clamp(48px, 6.5vw, 92px);
+  line-height: 0.94;
+
+  letter-spacing: -0.045em;
+}
+
+.teams-header p {
+  max-width: 500px;
+
+  margin: 35px auto 0;
+
+  font-family: "Nanum Myeongjo", serif;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.teams-grid {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 200px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 40px;
+
+  /*
+   * Large vertical spacing is important
+   * for the original gallery feeling.
+   */
+  row-gap: 0px;
+}
+
+
+/* =========================================
+   ITEM
+========================================= */
+
+.team-item {
+  width: 100%;
+}
+
+
+/*
+ * ONE IMAGE PER ROW
+ */
+
+.team-item:nth-child(odd) {
+  grid-column: 1;
+}
+
+.team-item:nth-child(even) {
+  grid-column: 2;
+}
+
+
+/*
+ * Explicit rows make sure there can
+ * never be two images on one row.
+ */
+
+.team-item:nth-child(1) {
+  grid-row: 1;
+}
+
+.team-item:nth-child(2) {
+  grid-row: 2;
+}
+
+.team-item:nth-child(3) {
+  grid-row: 3;
+}
+
+.team-item:nth-child(4) {
+  grid-row: 4;
+}
+
+.team-item:nth-child(5) {
+  grid-row: 5;
+}
+
+.team-item:nth-child(6) {
+  grid-row: 6;
+}
+
+.team-item:nth-child(7) {
+  grid-row: 7;
+}
+
+.team-item:nth-child(8) {
+  grid-row: 8;
+}
+
+.team-item:nth-child(9) {
+  grid-row: 9;
+}
+
+.team-item:nth-child(10) {
+  grid-row: 10;
+}
+
+.team-item:nth-child(11) {
+  grid-row: 11;
+}
+
+.team-item:nth-child(12) {
+  grid-row: 12;
+}
+
+.team-item:nth-child(13) {
+  grid-row: 13;
+}
+
+.team-item:nth-child(14) {
+  grid-row: 14;
+}
+
+.team-item:nth-child(15) {
+  grid-row: 15;
+}
+
+.team-item:nth-child(16) {
+  grid-row: 16;
+}
+
+.team-item:nth-child(17) {
+  grid-row: 17;
+}
+
+.team-item:nth-child(18) {
+  grid-row: 18;
+}
+
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
+
+.team-image-wrapper {
+  /*
+   * REDUCED IMAGE SIZE
+   *
+   * The grid column itself remains wide,
+   * but the image occupies less space.
+   */
+
+  width: 78%;
+
+  aspect-ratio: 0.88;
+
+  overflow: hidden;
+
+  /* background: #dedede; */
+}
+
+
+/*
+ * Move right-side images slightly inward.
+ */
+
+.team-item:nth-child(even) .team-image-wrapper {
+  margin-left: auto;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.team-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /*
+   * Initial state is controlled by GSAP.
+   */
+
+  opacity: 0;
+
+  transform: translateY(-100%) scale(1.08);
+
+  filter: grayscale(100%);
+
+  will-change: transform, opacity, filter;
+}
+
+
+/* =========================================
+   TEAM INFORMATION
+========================================= */
+
+.team-info {
+  width: 78%;
+
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 18px 2px 0;
+}
+
+.team-item:nth-child(even) .team-info {
+  margin-left: auto;
+}
+
+.team-info h3 {
+  margin: 0;
+
+  font-family: "Nanum Myeongjo", serif;
+
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.1;
+
+  font-weight: 700;
+}
+
+.team-info p {
+  margin: 8px 0 0;
+
+  font-family: "Krona One", sans-serif;
+
+  font-size: 8px;
+  line-height: 1.5;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  opacity: 0.5;
+}
+
+.team-info > span {
+  padding-top: 4px;
+
+  font-family: "Krona One", sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+
+  opacity: 0.3;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .teams-section {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .teams-grid {
+    column-gap: 25px;
+    row-gap: 120px;
+  }
+
+  .team-image-wrapper,
+  .team-info {
+    width: 85%;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .teams-section {
+    padding: 70px 20px 15vh;
+  }
+
+  .teams-header {
+    min-height: calc(100vh - 70px);
+
+    align-items: flex-start;
+
+    text-align: left;
+  }
+
+  .teams-header h2 {
+    font-size: clamp(46px, 13vw, 68px);
+  }
+
+  .teams-header p {
+    margin-top: 25px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+
+  /* =====================================
+     MOBILE GALLERY
+  ===================================== */
+
+  .teams-grid {
+    display: flex;
+    flex-direction: column;
+
+    gap: 110px;
+
+    margin-top: 100px;
+  }
+
+
+  /*
+   * Still ONE IMAGE PER ROW.
+   */
+
+  .team-item {
+    width: 100%;
+  }
+
+
+  /*
+   * Alternating left / right.
+   */
+
+  .team-item:nth-child(odd) {
+    align-self: flex-start;
+  }
+
+  .team-item:nth-child(even) {
+    align-self: flex-end;
+  }
+
+
+  /*
+   * Smaller mobile images.
+   */
+
+  .team-image-wrapper {
+    width: 82%;
+
+    aspect-ratio: 0.85;
+  }
+
+  .team-item:nth-child(even) .team-image-wrapper {
+    margin-left: auto;
+  }
+
+
+  /* Information follows image */
+
+  .team-info {
+    width: 82%;
+
+    padding-top: 15px;
+  }
+
+  .team-item:nth-child(even) .team-info {
+    margin-left: auto;
+  }
+
+  .team-info h3 {
+    font-size: 22px;
+  }
+
+  .team-info p {
+    font-size: 7px;
+  }
+}

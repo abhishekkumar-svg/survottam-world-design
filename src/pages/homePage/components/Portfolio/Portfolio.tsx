@@ -33,7 +33,7 @@ const projects: Project[] = [
     id: 2,
     status: "ONGOING",
     brand: "SARVOTTAM WORLD",
-    title: "Sarvottam Crown Residency",
+    title: "Galactic City",
     location: "Plot No. 19, Knowledge Park V",
     price: "On Request",
     type: "Luxury Residences",
@@ -44,7 +44,7 @@ const projects: Project[] = [
     id: 3,
     status: "ONGOING",
     brand: "SARVOTTAM WORLD",
-    title: "Atmosphere",
+    title: "JainX City",
     location: "Shivpuri Range, Rishikesh",
     price: "On Request",
     type: "Luxury Villas & Hospitality",
@@ -60,7 +60,7 @@ export default function Portfolio() {
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
-
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
     if (!section) return;
 
     const ctx = gsap.context(() => {
@@ -203,11 +203,11 @@ export default function Portfolio() {
          * ==========================================
          */
 
-        const titleText = title.textContent || "";
+    { const titleText = title.textContent || "";
 
-        title.innerHTML = "";
+         title.innerHTML = "";
 
-        [...titleText].forEach((character) => {
+     isMobile &&   [...titleText].forEach((character) => {
           const mask = document.createElement("span");
 
           mask.className =
@@ -227,17 +227,17 @@ export default function Portfolio() {
 
           title.appendChild(mask);
         });
-
+}
         const chars =
           title.querySelectorAll<HTMLElement>(
             ".portfolio-char"
           );
-
+{!isMobile &&
         gsap.set(chars, {
           y: "125%",
-        });
+        }); }
 
-        chars.forEach((char, index) => {
+       {! isMobile && chars.forEach((char, index) => {
           gsap.fromTo(
             char,
             {
@@ -251,7 +251,7 @@ export default function Portfolio() {
               scrollTrigger: {
                 trigger: item,
 
-                start: `top+=${index * 12 - 120} top`,
+                start: `top+=${index - 100} top`,
 
                 end: `top+=${index * 12 - 40} top`,
 
@@ -261,7 +261,7 @@ export default function Portfolio() {
               },
             }
           );
-        });
+        });}
 
         /*
          * ==========================================

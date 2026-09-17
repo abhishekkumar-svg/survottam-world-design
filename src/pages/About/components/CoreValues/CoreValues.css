@@ -1,4 +1,4 @@
-.why-section {
+.coreValues-section {
   position: relative;
 
   width: 100%;
@@ -16,12 +16,12 @@
    HEADING
 ========================================= */
 
-.why-heading {
+.coreValues-heading {
   position: absolute;
 
   z-index: 20;
 
-  top: 5%;
+  top: 15%;
   left: 50%;
 
   width: min(620px, 90vw);
@@ -34,7 +34,7 @@
 }
 
 
-.why-eyebrow {
+.coreValues-eyebrow {
   display: flex;
 
   align-items: center;
@@ -56,7 +56,7 @@
 }
 
 
-.why-eyebrow span {
+.coreValues-eyebrow span {
   width: 45px;
   height: 1px;
 
@@ -64,7 +64,7 @@
 }
 
 
-.why-heading h2 {
+.coreValues-heading h2 {
   margin: 0;
 color: var(--primary-color);
   font-family:
@@ -86,14 +86,14 @@ color: var(--primary-color);
 }
 
 
-.why-heading h2 em {
+.coreValues-heading h2 em {
   color: var(--primary-2);
 
   font-style: italic;
 }
 
 
-.why-heading p {
+.coreValues-heading p {
   width: min(650px, 100%);
 
   margin: 30px auto 0;
@@ -112,7 +112,7 @@ color: var(--primary-color);
    HORIZONTAL TRACK
 ========================================= */
 
-.why-track {
+.coreValues-track {
   position: absolute;
 
   left: 0;
@@ -131,7 +131,7 @@ color: var(--primary-color);
    PANEL
 ========================================= */
 
-.why-panel {
+.coreValues-panel {
   position: relative;
 
   flex: 0 0 100vw;
@@ -149,7 +149,7 @@ color: var(--primary-color);
    PANEL INNER
 ========================================= */
 
-.why-panel-inner {
+.coreValues-panel-inner {
   position: relative;
 
   width: 100%;
@@ -165,7 +165,7 @@ color: var(--primary-color);
    LARGE BACKGROUND NUMBER
 ========================================= */
 
-.why-panel-bg-number {
+.coreValues-panel-bg-number {
   position: absolute;
 
   right: 4vw;
@@ -194,7 +194,7 @@ color: var(--primary-color);
    PANEL TOP
 ========================================= */
 
-.why-panel-top {
+.coreValues-panel-top {
   position: absolute;
 
   top: 46px;
@@ -213,7 +213,7 @@ color: var(--primary-color);
 }
 
 
-.why-panel-index {
+.coreValues-panel-index {
   color: #c58b32;
 
   font-family: Arial, sans-serif;
@@ -224,7 +224,7 @@ color: var(--primary-color);
 }
 
 
-.why-panel-label {
+.coreValues-panel-label {
   color: #a19b92;
 
   font-family: Arial, sans-serif;
@@ -239,7 +239,7 @@ color: var(--primary-color);
    CONTENT
 ========================================= */
 
-.why-panel-content {
+.coreValues-panel-content {
   position: absolute;
 
   left: 8vw;
@@ -252,7 +252,7 @@ color: var(--primary-color);
 }
 
 
-.why-panel-number {
+.coreValues-panel-number {
   margin-bottom: 25px;
 
   color: var(--primary-2);
@@ -268,7 +268,7 @@ color: var(--primary-color);
 }
 
 
-.why-panel-title {
+.coreValues-panel-title {
   margin: 0;
 
   max-width: 700px;
@@ -294,7 +294,7 @@ color: var(--primary-color);
 }
 
 
-.why-panel-line {
+.coreValues-panel-line {
   width: 70px;
   height: 1px;
 
@@ -304,7 +304,7 @@ color: var(--primary-color);
 }
 
 
-.why-panel-description {
+.coreValues-panel-description {
   width: min(500px, 80%);
 
   margin: 0;
@@ -323,7 +323,7 @@ color: var(--primary-color);
    FOOTER
 ========================================= */
 
-.why-panel-footer {
+.coreValues-panel-footer {
   position: absolute;
 
   bottom: 42px;
@@ -350,7 +350,7 @@ color: var(--primary-color);
    SCROLL INDICATOR
 ========================================= */
 
-.why-scroll-indicator {
+.coreValues-scroll-indicator {
   position: absolute;
 
   z-index: 30;
@@ -376,7 +376,7 @@ color: var(--primary-color);
 }
 
 
-.why-scroll-indicator i {
+.coreValues-scroll-indicator i {
   display: block;
 
   width: 1px;
@@ -392,7 +392,7 @@ color: var(--primary-color);
    COUNTER
 ========================================= */
 
-.why-counter {
+.coreValues-counter {
   position: absolute;
 
   z-index: 30;
@@ -418,7 +418,7 @@ color: var(--primary-color);
    PROGRESS
 ========================================= */
 
-.why-progress {
+.coreValues-progress {
   position: absolute;
 
   z-index: 30;
@@ -437,7 +437,7 @@ color: var(--primary-color);
 }
 
 
-.why-progress-bar {
+.coreValues-progress-bar {
   width: 100%;
   height: 100%;
 
@@ -453,7 +453,7 @@ color: var(--primary-color);
    DESKTOP SEPARATOR
 ========================================= */
 
-.why-panel:not(:first-child)::before {
+.coreValues-panel:not(:first-child)::before {
   content: "";
 
   position: absolute;
@@ -473,31 +473,31 @@ color: var(--primary-color);
 ========================================= */
 
 @media (max-width: 900px) {
-  .why-heading {
+  .coreValues-heading {
     top: 10%;
   }
 
-  .why-panel-inner {
+  .coreValues-panel-inner {
     padding: 0 6vw;
   }
 
-  .why-panel-top,
-  .why-panel-footer {
+  .coreValues-panel-top,
+  .coreValues-panel-footer {
     left: 6vw;
     right: 6vw;
   }
 
-  .why-panel-content {
+  .coreValues-panel-content {
     left: 6vw;
 
     width: 80vw;
   }
 
-  .why-panel-description {
+  .coreValues-panel-description {
     width: 90%;
   }
 
-  .why-panel-bg-number {
+  .coreValues-panel-bg-number {
     font-size: 55vw;
   }
 }
@@ -508,78 +508,78 @@ color: var(--primary-color);
 ========================================= */
 
 @media (max-width: 600px) {
-  .why-heading {
-    top: 9%;
+  .coreValues-heading {
+    top: 20%;
 
     width: 88vw;
   }
 
-  .why-eyebrow {
+  .coreValues-eyebrow {
     font-size: 8px;
 
     letter-spacing: 0.3em;
   }
 
-  .why-heading h2 {
+  .coreValues-heading h2 {
     font-size: 48px;
   }
 
-  .why-heading p {
+  .coreValues-heading p {
     margin-top: 22px;
 
     font-size: 11px;
   }
 
-  .why-panel-inner {
+  .coreValues-panel-inner {
     padding: 0 7vw;
   }
 
-  .why-panel-top {
+  .coreValues-panel-top {
     top: 35px;
 
     left: 7vw;
     right: 7vw;
   }
 
-  .why-panel-content {
+  .coreValues-panel-content {
     left: 7vw;
 
     width: 86vw;
   }
 
-  .why-panel-title {
+  .coreValues-panel-title {
     font-size: 52px;
   }
 
-  .why-panel-description {
+  .coreValues-panel-description {
     width: 90%;
 
     font-size: 12px;
   }
 
-  .why-panel-footer {
+  .coreValues-panel-footer {
     left: 7vw;
     right: 7vw;
 
     bottom: 30px;
   }
 
-  .why-scroll-indicator {
+  .coreValues-scroll-indicator {
     display: none;
   }
 
-  .why-counter {
+  .coreValues-counter {
     right: 20px;
     bottom: 30px;
   }
 
-  .why-progress {
+  .coreValues-progress {
     bottom: 18px;
 
     width: 100px;
   }
 
-  .why-panel-bg-number {
+  .coreValues-panel-bg-number {
     right: -5vw;
     bottom: 10vh;
 

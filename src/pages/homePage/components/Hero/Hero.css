@@ -30,7 +30,7 @@
 
   z-index: 20;
 
-  top: 50%;
+  top: 40%;
   left: 50%;
 
   width: min(900px, calc(100% - 40px));
@@ -95,13 +95,11 @@
     Georgia,
     serif;
 
-  font-size: clamp(54px, 7.5vw, 120px);
-
-  font-weight: 400;
-
-  line-height: 0.88;
-
-  letter-spacing: -0.065em;
+ font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-size: clamp(64px, 8.2vw, 132px);
+    font-weight: 400;
+    line-height: 0.87;
+    letter-spacing: -0.045em;
 
   color: inherit;
 }
@@ -237,7 +235,6 @@
   height: 100%;
 
   display: block;
-
   object-fit: cover;
 }
 
@@ -412,4 +409,13 @@
 
   transition:
     color 0.4s ease;
+}
+
+
+
+@media (max-width: 768px) {
+ .hero-title-mask{
+  text-align: start;
+  margin-bottom: 10px;
+ }
 }
