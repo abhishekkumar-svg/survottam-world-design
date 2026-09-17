@@ -136,7 +136,7 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
         xPercent: -50,
         yPercent: -50,
 
-        borderRadius: "100px",
+        borderRadius:   isMobile ?  "100px" : "400px",
 
         scale: 1,
 
