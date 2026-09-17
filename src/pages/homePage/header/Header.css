@@ -32,10 +32,10 @@
 }
 
 .global-header-scrolled {
-  background: rgba(255, 255, 255, 0.55);
+  background: white;
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
 
   color: var(--primary-2);
 
@@ -503,7 +503,7 @@ text-wrap: nowrap;
 
   border:
     1px solid
-    rgba(197, 139, 50, 0.4);
+     var(--primary-color);
 
   border-radius: 50%;
 
