@@ -37,7 +37,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  color: #1a1a1a;
+  color: var(--primary-2);
 
   border-bottom: 1px solid rgba(197, 139, 50, 0.25);
 }
@@ -159,7 +159,7 @@
 .global-header-contact {
   justify-self: end;
 
-  color: #c58b32;
+  color: var(--primary-color);
 
   font-family: Arial, sans-serif;
 
@@ -272,7 +272,7 @@
 
   background: #faf8f4;
 
-  color: #1a1a1a;
+  color: var(--primary-2);
 
   /*
      --menu-origin-x / --menu-origin-y are set from JS to the hamburger
@@ -386,7 +386,7 @@
 
   padding: 14px 0;
 
-  color: #1a1a1a;
+  color: var(--primary-2);
 
   text-decoration: none;
 
@@ -413,7 +413,7 @@
 
   height: 1px;
 
-  background: #c58b32;
+  background: var(--primary-color);
 
   transition:
     left 0.5s
@@ -480,7 +480,7 @@ text-wrap: nowrap;
 
 .global-mobile-nav a:hover
 .global-mobile-nav-number {
-  color: #c58b32;
+  color: var(--primary-color);
 }
 
 
@@ -519,7 +519,7 @@ text-wrap: nowrap;
 .global-mobile-nav-arrow {
   transform: rotate(45deg);
 
-  background: #c58b32;
+  background: var(--primary-color);
 
   color: #faf8f4;
 }
@@ -564,7 +564,7 @@ text-wrap: nowrap;
 .global-mobile-menu-bottom p {
   margin: 0;
 
-  color: #1a1a1a;
+  color: var(--primary-2);
 
   font-family: Arial, sans-serif;
 
@@ -576,7 +576,7 @@ text-wrap: nowrap;
 }
 
 .global-mobile-menu-bottom a {
-  color: #c58b32;
+  color: var(--primary-color);
 }
 
 .global-mobile-menu-bottom a:hover {

@@ -6,7 +6,7 @@
   position: relative;
 
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 
   overflow: hidden;
 
@@ -27,13 +27,12 @@
 
 .hero-content {
   position: absolute;
-
   z-index: 20;
 
   top: 40%;
   left: 50%;
 
-  width: min(900px, calc(100% - 40px));
+  width: min(900px, calc(100% - 80px));
 
   transform: translate(-50%, -50%);
 
@@ -45,7 +44,6 @@
 
   pointer-events: none;
 }
-
 
 /* =========================================
    INTRO CONTENT
@@ -86,20 +84,26 @@
 /* =========================================
    TITLE
 ========================================= */
+/* =========================================
+   TITLE
+========================================= */
 
 .hero-title {
   margin: 0;
 
   font-family:
+    "Cormorant Garamond",
     "Times New Roman",
     Georgia,
     serif;
 
- font-family: "Cormorant Garamond", "Times New Roman", serif;
-    font-size: clamp(64px, 8.2vw, 132px);
-    font-weight: 400;
-    line-height: 0.87;
-    letter-spacing: -0.045em;
+  font-size: clamp(64px, 8.2vw, 132px);
+
+  font-weight: 400;
+
+  line-height: 0.87;
+
+  letter-spacing: -0.045em;
 
   color: inherit;
 }
@@ -110,6 +114,12 @@
   overflow: hidden;
 
   padding-bottom: 0.08em;
+}
+
+.hero-copy-line {
+  display: block;
+
+  will-change: transform;
 }
 
 .hero-copy-line {
@@ -235,7 +245,10 @@
   height: 100%;
 
   display: block;
+
   object-fit: cover;
+
+  object-position: center center;
 }
 
 .hero-intro-overlay {
@@ -277,9 +290,6 @@
 }
 
 
-/* =========================================
-   IMAGE
-========================================= */
 
 .hero-image {
   position: absolute;
@@ -290,17 +300,23 @@
   height: 110%;
 
   will-change: transform;
+
+  overflow: hidden;
+}
+
+.hero-image picture,
+.hero-image picture img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
 }
 
 .hero-image img {
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
 
-  display: block;
-
-  /* object-fit: cover; */
+  object-position: center center;
 }
-
 
 /* =========================================
    IMAGE DARKENING
@@ -418,4 +434,285 @@
   text-align: start;
   margin-bottom: 10px;
  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
+
+  .sarvottam-hero {
+    height: 100dvh;
+    min-height: 110dvh;
+
+    /* min-height: 600px; */
+
+    overflow: hidden;
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
+
+  .hero-content {
+    top: 43%;
+
+    width: calc(100% - 40px);
+
+    max-width: 100%;
+
+    padding: 0;
+  }
+
+
+  /* -----------------------------------------
+     EYEBROW
+  ----------------------------------------- */
+
+  .hero-eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.22em;
+
+    padding: 0 10px;
+  }
+
+
+  /* -----------------------------------------
+     TITLE
+  ----------------------------------------- */
+
+  .hero-title {
+    width: 100%;
+
+    font-size: clamp(
+      44px,
+      13vw,
+      72px
+    );
+
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+  }
+
+
+  .hero-title-mask {
+    width: 100%;
+
+    margin-bottom: 2px;
+
+    padding-bottom: 0.08em;
+
+    overflow: hidden;
+
+    text-align: center;
+  }
+
+
+  .hero-copy-line {
+    white-space: normal;
+
+    word-break: normal;
+
+    overflow-wrap: normal;
+  }
+
+
+  /* -----------------------------------------
+     DIVIDER
+  ----------------------------------------- */
+
+  .hero-divider {
+    width: 40px;
+
+    height: 1px;
+
+    margin: 22px auto 18px;
+  }
+
+
+  /* -----------------------------------------
+     DESCRIPTION
+  ----------------------------------------- */
+
+  .hero-description {
+    width: min(
+      100%,
+      330px
+    );
+
+    margin: 0 auto;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+
+    padding: 0 8px;
+
+    color: rgba(
+      243,
+      243,
+      236,
+      0.78
+    );
+  }
+
+
+  /* -----------------------------------------
+     ACTIONS
+  ----------------------------------------- */
+
+  .hero-actions {
+    gap: 18px;
+
+    margin-top: 24px;
+  }
+
+
+  .hero-actions a {
+    gap: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.14em;
+  }
+
+
+  .hero-actions a span {
+    width: 27px;
+
+    height: 27px;
+
+    font-size: 10px;
+  }
+
+
+  /* -----------------------------------------
+     INTRO IMAGE
+  ----------------------------------------- */
+
+  .hero-intro-image img {
+    object-position: center center;
+  }
+
+
+  /* -----------------------------------------
+     HERO IMAGES
+  ----------------------------------------- */
+
+  .hero-image {
+    inset: -2%;
+
+    width: 104%;
+    height: 104%;
+  }
+
+
+  .hero-image img {
+    object-position: center center;
+  }
+
+
+  /* -----------------------------------------
+     SCROLL INDICATOR
+  ----------------------------------------- */
+
+  .hero-scroll {
+    left: 16px;
+
+    bottom: 22px;
+
+    gap: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.2em;
+  }
+
+
+  .hero-scroll i {
+    height: 38px;
+  }
+
+
+  /* -----------------------------------------
+     COUNTER
+  ----------------------------------------- */
+
+  .hero-counter {
+    right: 16px;
+
+    bottom: 22px;
+
+    gap: 5px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-content {
+    top: 42%;
+    width: calc(100% - 32px);
+  }
+
+  .hero-title {
+    font-size: clamp(
+      40px,
+      12.5vw,
+      58px
+    );
+
+    line-height: 0.91;
+
+    letter-spacing: -0.035em;
+  }
+
+  .hero-eyebrow {
+    font-size: 7px;
+
+    letter-spacing: 0.18em;
+
+    margin-bottom: 16px;
+  }
+
+  .hero-divider {
+    width: 35px;
+
+    margin-top: 19px;
+    margin-bottom: 16px;
+  }
+
+  .hero-description {
+    max-width: 290px;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+  }
+
+  .hero-scroll {
+    left: 12px;
+    bottom: 18px;
+  }
+
+  .hero-counter {
+    right: 12px;
+    bottom: 18px;
+  }
 }

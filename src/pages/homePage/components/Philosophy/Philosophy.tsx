@@ -52,7 +52,7 @@ export default function Philosophy() {
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
-
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
     if (!section) return;
 
     const ctx = gsap.context(() => {
@@ -127,8 +127,8 @@ export default function Philosophy() {
        */
 
       gsap.set(imageWrappers[0], {
-        width: "52vw",
-        height: "56vh",
+        width:  isMobile ?"30vw"  : "52vw",
+        height:  isMobile ? " 30vh" : "56vh",
 
         left: "50%",
         top: "50%",
@@ -136,7 +136,7 @@ export default function Philosophy() {
         xPercent: -50,
         yPercent: -50,
 
-        borderRadius: "400px",
+        borderRadius: "100px",
 
         scale: 1,
 

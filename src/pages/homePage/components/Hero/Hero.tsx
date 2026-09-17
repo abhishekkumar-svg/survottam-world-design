@@ -10,17 +10,21 @@ gsap.registerPlugin(ScrollTrigger);
    INTRO IMAGE
 ========================================= */
 
-const introImage =
-  "https://sarvottamworld.in/_next/image?url=%2FProjects%2FDurga-Industrial.jpg&w=1920&q=75";
+const introImage = {
+  desktop:
+    "https://sarvottamworld.in/_next/image?url=%2FProjects%2FDurga-Industrial.jpg&w=1920&q=75",
 
-/* =========================================
-   EXISTING SLIDES
-========================================= */
+  mobile:
+    "/hero-mobile-1.png",
+};
 
 const slides = [
   {
-    image:
+    desktopImage:
       "https://sarvottamworld.in/_next/image?url=%2FProjects%2FGolden-I.jpg&w=1920&q=75",
+
+    mobileImage:
+      "/hero-mobile-2.png",
 
     eyebrow: "Sarvottam World — Since 1989",
 
@@ -31,7 +35,11 @@ const slides = [
   },
 
   {
-    image: "https://sarvottamworld.in/Project%20Pictures/hero1.png",
+    desktopImage:
+      "https://sarvottamworld.in/Project%20Pictures/hero1.png",
+
+    mobileImage:
+      "https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJ1aWxkaW5nc3xlbnwwfHwwfHx8MA%3D%3D",
 
     eyebrow: "Premium Developments",
 
@@ -41,7 +49,6 @@ const slides = [
       "Thoughtfully designed destinations built around modern lifestyles.",
   },
 ];
-
 /* =========================================
    COMPONENT
 ========================================= */
@@ -573,6 +580,7 @@ export default function RealEstateHero() {
             "inset(0% 0% 0% 0%)",
         },
         {
+           borderRadius: "100px",
           clipPath:
             "inset(20% 20% 20% 20%)",
 
@@ -686,14 +694,20 @@ export default function RealEstateHero() {
         ==================================== */}
 
         <div className="hero-intro-image">
-          <img
-            src={introImage}
-            alt="Sarvottam World"
-          />
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcSet={introImage.mobile}
+    />
 
-          <div className="hero-intro-overlay" />
-        </div>
+    <img
+      src={introImage.desktop}
+      alt="Sarvottam World"
+    />
+  </picture>
 
+  <div className="hero-intro-overlay" />
+</div>
         {/* ====================================
             INTRO CONTENT
         ==================================== */}
@@ -791,31 +805,45 @@ export default function RealEstateHero() {
             IMAGE 1
         ==================================== */}
 
-        <div className="hero-image-reveal hero-image-one">
-          <div className="hero-image">
-            <img
-              src={slides[0].image}
-              alt="Sarvottam World luxury development"
-            />
-          </div>
+     <div className="hero-image-reveal hero-image-one">
+  <div className="hero-image">
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcSet={slides[0].mobileImage}
+      />
 
-          <div className="hero-image-overlay" />
-        </div>
+      <img
+        src={slides[0].desktopImage}
+        alt="Sarvottam World luxury development"
+      />
+    </picture>
+  </div>
+
+  <div className="hero-image-overlay" />
+</div>
 
         {/* ====================================
             IMAGE 2
         ==================================== */}
 
-        <div className="hero-image-reveal hero-image-two">
-          <div className="hero-image">
-            <img
-              src={slides[1].image}
-              alt="Sarvottam World premium development"
-            />
+      <div className="hero-image-reveal hero-image-two">
+  <div className="hero-image">
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcSet={slides[1].mobileImage}
+      />
 
-            <div className="hero-image-overlay" />
-          </div>
-        </div>
+      <img
+        src={slides[1].desktopImage}
+        alt="Sarvottam World premium development"
+      />
+    </picture>
+
+    <div className="hero-image-overlay" />
+  </div>
+</div>
       </section>
     </>
   );

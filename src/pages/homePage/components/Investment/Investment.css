@@ -63,7 +63,7 @@
 
   margin-bottom: 38px;
 
-  color: #c58b32;
+  color: var(--primary-color)
 
   font-family: Arial, sans-serif;
 
@@ -82,7 +82,7 @@
 
   height: 1px;
 
-  background: #c58b32;
+  background: var(--primary-color)
 
   flex-shrink: 0;
 }
@@ -117,7 +117,7 @@
 
 
 .investment-title em {
-  color: #c58b32;
+  color: var(--primary-color)
 
   font-style: italic;
 
@@ -192,7 +192,7 @@
   border: 1px solid
     rgba(197, 139, 50, 0.35);
 
-  color: #c58b32;
+  color: var(--primary-color)
 
   font-family:
     "Times New Roman",
@@ -339,7 +339,7 @@
 .investment-roi-label {
   margin-bottom: 12px;
 
-  color: #c58b32;
+  color: var(--primary-color)
 
   font-family: Arial, sans-serif;
 
