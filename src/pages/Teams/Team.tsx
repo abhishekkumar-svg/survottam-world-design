@@ -432,16 +432,25 @@ export default function Teams() {
                   />
                 </div>
 
-                <div className="team-info">
-                  <div>
-                    <h3>{member.name}</h3>
-                    <p>{member.designation}</p>
-                  </div>
+               
+<div className="team-info">
+  <div>
+    <h3 className="team-name">
+      {member.name}
 
-                  <span>
-                    {String(member.id).padStart(2, "0")}
-                  </span>
-                </div>
+      <span className="team-name-arrow" aria-hidden="true">
+        ↗
+      </span>
+    </h3>
+
+    <p>{member.designation}</p>
+  </div>
+
+  <span>
+    {String(member.id).padStart(2, "0")}
+  </span>
+</div>
+
               </button>
             </article>
           ))}
@@ -496,9 +505,16 @@ export default function Teams() {
                   {selectedMember.designation}
                 </p>
 
-                <h2 id="team-popup-name">
-                  {selectedMember.name}
-                </h2>
+               
+<h2 id="team-popup-name">
+  {selectedMember.name}
+
+
+
+
+</h2>
+
+
 
                 <div className="team-popup-line" />
 
