@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import { useLenis } from "./hooks/useLenis"
 
-import Header from "./pages/homePage/Header/header"
+import Header from "./pages/homePage/header/Header"
 import Homepage from "./pages/homePage/homepage"
 import About from "./pages/About/About"
 import Footer from "./pages/homePage/components/Footer/Footer"
