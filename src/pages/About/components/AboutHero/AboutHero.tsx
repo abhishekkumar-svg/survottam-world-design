@@ -339,7 +339,7 @@ const AboutUsHero = () => {
           <span className="arch-tree tree-1" />
           <span className="arch-tree tree-2" />
         </div> */}
-        <img src="/public/architecture.svg" alt="Decorative architectural drawing" className="story-architecture-lines" aria-hidden="true" />
+        <img src="/architecture.svg" alt="Decorative architectural drawing" className="story-architecture-lines" aria-hidden="true" />
 
         <div className="story-content-wrap">
           <div className="story-copy-column">
