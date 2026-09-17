@@ -67,7 +67,7 @@ const VisionMission = () => {
         ".vision-word"
       );
 
-      words.forEach((word, index) => {
+      words.forEach((word) => {
         const mask = word.querySelector(
           ".vision-word-mask"
         );

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import AboutUsHero from './components/AboutHero/AboutHero'
 import HistoryTimeline from './components/HistoryTimeline/HistoryTimeline'
 import VisionMission from './components/VisionMission/VisionMisson'

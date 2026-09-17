@@ -42,20 +42,6 @@ const philosophyCards: PhilosophyCard[] = [
   },
 ];
 
-/* =========================================================
-   SPLIT TEXT
-========================================================= */
-
-function splitCharacters(text: string) {
-  return text.split("").map((character, index) => (
-    <span
-      className="philosophy-char"
-      key={`${character}-${index}`}
-    >
-      {character === " " ? "\u00A0" : character}
-    </span>
-  ));
-}
 
 /* =========================================================
    COMPONENT

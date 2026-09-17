@@ -6,7 +6,6 @@ import Header from "./pages/homePage/Header/Header"
 import Homepage from "./pages/homePage/homepage"
 import About from "./pages/About/About"
 import Footer from "./pages/homePage/components/Footer/Footer"
-import Teams from "./pages/Teams/Team"
 import LeaderShip from "./pages/Teams"
 
 function App() {

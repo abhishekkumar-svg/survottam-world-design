@@ -1,4 +1,4 @@
-import React from 'react'
+
 import TeamsHero from './TeamsHero/TeamsHero'
 import Teams from './Team'
 
