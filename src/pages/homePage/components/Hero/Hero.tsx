@@ -109,6 +109,7 @@ export default function RealEstateHero() {
       gsap.set(imageReveals[0], {
         clipPath: "circle(20% at 50% 105%)",
         opacity: 1,
+        y:160
       });
 
       // Hero 2 hidden
@@ -285,6 +286,7 @@ export default function RealEstateHero() {
           clipPath: `circle(${revealRadius} at 50% 105%)`,
           duration: 1.5,
           ease: "power3.inOut",
+          y:0
         },
         0
       );
@@ -453,6 +455,7 @@ export default function RealEstateHero() {
           clipPath: `circle(${revealRadius} at 50% 105%)`,
 
           duration: 1.5,
+          y:0,
 
           ease: "power3.inOut",
         },
@@ -714,7 +717,7 @@ export default function RealEstateHero() {
 
         <div className="hero-content hero-intro-content">
           <div className="hero-eyebrow">
-            Sarvottam World — Since 1989
+            {/* Sarvottam World — Since 1989 */}
           </div>
 
           <h1 className="hero-title">
@@ -747,7 +750,7 @@ export default function RealEstateHero() {
 
         <div className="hero-content hero-slide-content hero-slide-content-1">
           <div className="hero-eyebrow">
-            {slides[0].eyebrow}
+            {/* {slides[0].eyebrow} */}
           </div>
 
           <h2 className="hero-title">
@@ -777,7 +780,7 @@ export default function RealEstateHero() {
 
         <div className="hero-content hero-slide-content hero-slide-content-2">
           <div className="hero-eyebrow">
-            {slides[1].eyebrow}
+            {/* {slides[1].eyebrow} */}
           </div>
 
           <h2 className="hero-title">

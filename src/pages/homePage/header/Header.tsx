@@ -7,12 +7,13 @@ const menuItems = [
   { label: "Projects", href: "/projects" },
   { label: "About Us", href: "/about" },
   { label: "Leadership", href: "/leadership" },
-  { label: "Insights", href: "/insights" },
+  { label: "Blogs", href: "/blogs" },
+    { label: "Media", href: "/media" },
+     { label: "Careers", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
 // //updated folder name
 const MOBILE_BREAKPOINT = 768;
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);

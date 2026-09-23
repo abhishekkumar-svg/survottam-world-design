@@ -1,11 +1,11 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./AboutHero.css";
+import "./ProjectsListHero.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutUsHero = () => {
+const ProjectsListHero = () => {
   const pageRef = useRef<HTMLDivElement>(null);
 
   const heroRef = useRef<HTMLElement>(null);
@@ -22,7 +22,6 @@ const AboutUsHero = () => {
          HERO INTRO
       ========================================= */
 
-
 gsap.set(".about-hero-content",{
   y:-80
 })
@@ -32,8 +31,6 @@ gsap.set(".about-hero-content",{
           ease: "power3.out",
         },
       });
-
-
 
       heroTl
         .from(".about-hero-eyebrow span", {
@@ -128,7 +125,7 @@ gsap.set(".about-hero-content",{
       const storyTl = gsap.timeline({
         scrollTrigger: {
           trigger: storyRef.current,
-          start: "top 90%",
+          start: "top 72%",
           once: true,
         },
       });
@@ -145,7 +142,7 @@ gsap.set(".about-hero-content",{
           {
             yPercent: 100,
             opacity: 0,
-            duration: 0.65,
+            duration: 0.95,
             stagger: 0.1,
           },
           "-=0.25"
@@ -155,7 +152,7 @@ gsap.set(".about-hero-content",{
           {
             y: 24,
             opacity: 0,
-            duration: 0.65,
+            duration: 0.75,
             stagger: 0.12,
           },
           "-=0.35"
@@ -165,7 +162,7 @@ gsap.set(".about-hero-content",{
           {
             y: 28,
             opacity: 0,
-            duration: 0.6,
+            duration: 0.8,
           },
           "-=0.35"
         )
@@ -295,30 +292,28 @@ gsap.set(".about-hero-content",{
 
         <div className="about-hero-content" ref={heroContentRef}>
           <div className="about-hero-eyebrow">
-            <span>PEOPLE</span>
-            <span>PLACES</span>
-            <span>A</span>
-            <span>BRIGHTER</span>
-            <span>TOMORROW</span>
+             <span>ONE TEAM</span>
+  <span>SHARED VISION</span>
+  <span>BUILT TOGETHER</span>
           </div>
 
           <h1 className="about-hero-title">
             <span className="title-line-wrap">
-              <span className="line">Built on Legacy.</span>
+              <span className="line"> Behind Every Vision,</span>
             </span>
 
             <span className="title-line-wrap">
-              <span className="line gold">Designed for Tomorrow.</span>
+              <span className="line gold"> There Are People.</span>
             </span>
           </h1>
 
           <div className="about-hero-bottom">
             <div className="about-hero-meta">
-              <span>REAL ESTATE</span>
-              <i />
-              <span>HOSPITALITY</span>
-              <i />
-              <span>INFRASTRUCTURE</span>
+           <span>LEADERSHIP</span>
+    <i />
+    <span>CREATIVITY</span>
+    <i />
+    <span>COMMITMENT</span>
             </div>
 
            
@@ -328,123 +323,8 @@ gsap.set(".about-hero-content",{
        
       </section>
 
-      {/* =========================================
-          OUR STORY
-      ========================================= */}
-
-      <section className="about-story" ref={storyRef}>
-        {/* Decorative architectural drawing */}
-        {/* <div className="story-architecture-lines" aria-hidden="true">
-          <span className="arch-line arch-line-1" />
-          <span className="arch-line arch-line-2" />
-          <span className="arch-line arch-line-3" />
-          <span className="arch-line arch-line-4" />
-          <span className="arch-line arch-line-5" />
-          <span className="arch-tree tree-1" />
-          <span className="arch-tree tree-2" />
-        </div> */}
-        <img src="/architecture.svg" alt="Decorative architectural drawing" className="story-architecture-lines" aria-hidden="true" />
-
-        <div className="story-content-wrap">
-          <div className="story-copy-column">
-            <div className="story-eyebrow">
-              <span>OUR STORY</span>
-              <span className="story-accent-line" />
-            </div>
-
-            <h2 className="story-heading">
-              <span className="story-line-wrap">
-                <span className="story-line">A legacy</span>
-              </span>
-
-              <span className="story-line-wrap">
-                <span className="story-line">
-                  with <em>momentum.</em>
-                </span>
-              </span>
-            </h2>
-
-            <div className="story-copy">
-              <p>
-                Founded in 1980 by the visionary entrepreneur C. P. Jain,
-                Sarvottam World has evolved into a diversified group with a
-                strong presence in real estate, hospitality and infrastructure.
-              </p>
-
-              <p>
-                What began as a bold vision has today grown into a trusted
-                name, shaping skylines and strengthening communities.
-              </p>
-
-              <p>
-                Driven by timeless values and a forward-looking mindset, we
-                continue to create spaces and experiences that inspire a
-                better tomorrow.
-              </p>
-            </div>
-
-            <div className="story-quote">
-              <span className="quote-mark">“</span>
-
-              <div className="quote-inner">
-                <p>
-                  Transforming land
-                  <br />
-                  into lasting value.
-                </p>
-
-                <div className="quote-author">
-                  <strong>C. P. JAIN</strong>
-                  <span>FOUNDER</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="story-signature">
-              <div className="signature-line" />
-
-              <div className="signature">
-                <span>C. P. Jain</span>
-              </div>
-
-              <div className="signature-info">
-                <strong>C. P. JAIN</strong>
-                <span>FOUNDER, SARVOTTAM WORLD</span>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-
-        {/* =========================================
-            40+ BUSINESS / ARCHITECTURE IMAGE
-        ========================================= */}
-
-        {/* <div className="story-building-section">
-          <div className="story-building-frame">
-            <div
-              className="story-building-image"
-              ref={storyBuildingRef}
-              aria-hidden="true"
-            />
-
-            <div className="story-building-overlay" />
-
-            <div className="story-years" ref={storyYearsRef}>
-              <strong>40+</strong>
-              <span>YEARS OF<br />BUILDING</span>
-            </div>
-
-            <div className="story-building-caption">
-              <span>EST. 1980</span>
-              <span>SARVOTTAM WORLD</span>
-            </div>
-          </div>
-        </div> */}
-      </section>
     </div>
   );
 };
 
-export default AboutUsHero;
+export default ProjectsListHero;

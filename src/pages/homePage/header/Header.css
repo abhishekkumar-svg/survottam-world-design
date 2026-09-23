@@ -87,7 +87,7 @@
 
   padding: 10px 0;
 
-  color: var(--primary-2);
+  color: white;
 
   font-family: Arial, sans-serif;
 
@@ -107,8 +107,9 @@
     opacity 0.3s ease,
     transform 0.3s ease;
 }
-
-
+.global-header-scrolled .global-header-nav a { 
+  color : var(--primary-2)
+}
 /* Underline */
 
 .global-header-nav a::after {

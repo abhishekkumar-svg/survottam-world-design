@@ -1,0 +1,363 @@
+/* =========================================
+   BLOG CARD
+========================================= */
+
+.blog-card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  opacity: 0;
+  transform: translateY(80px);
+
+  transition:
+    box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.blog-card-image-wrap {
+  position: relative;
+
+  width: 100%;
+  height: 330px;
+
+  overflow: hidden;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 88%,
+    88% 100%,
+    0 100%
+  );
+
+  transition:
+    clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.blog-card-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transform: scale(1);
+  transform-origin: center center;
+
+  transition:
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s ease;
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.blog-card-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.7s ease;
+}
+
+
+/* =========================================
+   FEATURED BADGE
+========================================= */
+
+.blog-card-featured {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  padding: 7px 13px;
+
+  background: var(--primary-color);
+  color: var(--primary-2);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   IMAGE HOVER
+========================================= */
+.blog-card:hover {
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.blog-card:hover .blog-card-image {
+  transform: scale(1.08) translate3d(1.5%, -1%, 0);
+
+  filter: saturate(0.9);
+}
+
+
+.blog-card:hover .blog-card-image-overlay {
+  opacity: 1;
+}
+
+
+.blog-card:hover .blog-card-image-wrap {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 92%,
+    92% 100%,
+    0 100%
+  );
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.blog-card-content {
+  position: relative;
+
+  padding: 20px 6px 25px;
+}
+
+
+/* =========================================
+   META
+========================================= */
+
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 14px;
+
+  color: var(--primary-2);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+
+.blog-card-dot {
+  width: 4px;
+  height: 4px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background: var(--primary-color);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.blog-card h2 {
+  max-width: 420px;
+
+  margin: 0;
+
+  color: var(--primary-2);
+
+  font-family: var(--heading-font, serif);
+
+  font-size: clamp(22px, 1.8vw, 30px);
+  font-weight: 400;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.blog-card p {
+  max-width: 420px;
+
+  margin: 12px 0 0;
+
+  color: var(--primary-2);
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  opacity: 0.62;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.blog-card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-top: 18px;
+
+  padding: 0;
+
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--primary-2);
+
+  cursor: pointer;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.blog-card-arrow span {
+  display: inline-block;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.blog-card:hover .blog-card-arrow {
+  background: var(--primary-color);
+
+  color: var(--primary-2);
+
+  transform: translateY(-3px);
+}
+
+
+.blog-card:hover .blog-card-arrow .arrowIcon {
+  transform: rotate(-45deg);
+  transition: all ease-in-out 300ms;
+  color:white
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .blog-card-image-wrap {
+    height: 300px;
+  }
+
+  .blog-card h2 {
+    font-size: 25px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .blog-card {
+    max-width: none;
+  }
+
+  .blog-card-image-wrap {
+    height: 280px;
+
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 92%,
+      92% 100%,
+      0 100%
+    );
+  }
+
+  .blog-card-content {
+    padding: 18px 3px 22px;
+  }
+
+  .blog-card h2 {
+    max-width: 100%;
+
+    font-size: 27px;
+    line-height: 1.08;
+  }
+
+  .blog-card p {
+    max-width: 100%;
+
+    font-size: 13px;
+  }
+
+  /*
+    Disable hover transforms on touch
+    devices.
+  */
+  .blog-card:hover .blog-card-image {
+    transform: none;
+
+    filter: none;
+  }
+
+  .blog-card:hover .blog-card-image-overlay {
+    opacity: 0;
+  }
+
+  .blog-card:hover .blog-card-image-wrap {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 92%,
+      92% 100%,
+      0 100%
+    );
+  }
+}
