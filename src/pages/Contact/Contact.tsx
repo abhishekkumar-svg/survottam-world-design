@@ -187,7 +187,7 @@ const Contact = () => {
                   <img
                     width={18}
                     height={18}
-                    src="/src/assets/instagram.svg"
+                    src="src/assets/instagram.svg"
                     alt="Instagram"
                   />
                 </a>
@@ -199,7 +199,7 @@ const Contact = () => {
                   <img
                     width={18}
                     height={18}
-                    src="/src/assets/facebook.svg"
+                    src="src/assets/facebook.svg"
                     alt="Facebook"
                   />
                 </a>
@@ -210,7 +210,7 @@ const Contact = () => {
                   <img
                     width={18}
                     height={18}
-                    src="/src/assets/youtube.svg"
+                    src="src/assets/youtube.svg"
                     alt="Youtube"
                   />
                 </a>
@@ -222,7 +222,7 @@ const Contact = () => {
                  <img
                     width={18}
                     height={18}
-                    src="/src/assets/whatsapp.svg"
+                    src="src/assets/whatsapp.svg"
                     alt="Whatsapp"
                   />
                 </a>
