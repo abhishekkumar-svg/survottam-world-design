@@ -253,7 +253,6 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
          MASTER SCROLL TIMELINE
       ===================================================== */
 
-const mobileHeight = window.innerHeight;
      const tl = gsap.timeline({
   scrollTrigger: {
     trigger: section,
