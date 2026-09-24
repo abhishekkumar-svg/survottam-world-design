@@ -8,6 +8,10 @@ import {
 import "./Contact.css";
 import ContactInput from "./components/contactInput";
 import ContactHero from "./components/ContactHero/ContactHero";
+import  InstagramIcon from "../../assets/instagram.svg";
+import Facebook from  "../../assets/facebook.svg";
+import Whatsapp from "../../assets/whatsapp.svg";
+import Youtube from "../../assets/youtube.svg";
 
 const Contact = () => {
   return (
@@ -187,7 +191,7 @@ const Contact = () => {
                   <img
                     width={18}
                     height={18}
-                    src="src/assets/instagram.svg"
+                    src={InstagramIcon}
                     alt="Instagram"
                   />
                 </a>
@@ -199,7 +203,7 @@ const Contact = () => {
                   <img
                     width={18}
                     height={18}
-                    src="src/assets/facebook.svg"
+                    src={Facebook}
                     alt="Facebook"
                   />
                 </a>
@@ -210,7 +214,7 @@ const Contact = () => {
                   <img
                     width={18}
                     height={18}
-                    src="src/assets/youtube.svg"
+                    src={Youtube}
                     alt="Youtube"
                   />
                 </a>
@@ -222,7 +226,7 @@ const Contact = () => {
                  <img
                     width={18}
                     height={18}
-                    src="src/assets/whatsapp.svg"
+                    src={Whatsapp}
                     alt="Whatsapp"
                   />
                 </a>
