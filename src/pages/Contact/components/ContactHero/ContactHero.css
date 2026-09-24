@@ -33,8 +33,9 @@
   background-image:
     url("https://images.unsplash.com/photo-1612171709933-024a90133e42?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
-  background-size: contain;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   will-change: transform;
 }
 
@@ -169,7 +170,7 @@
   gap: 13px;
 
   font-family: Arial, sans-serif;
-  font-size: 9px;
+  font-size:     12px  ;
   letter-spacing: 0.28em;
 }
 
@@ -186,7 +187,7 @@
   gap: 15px;
 
   font-family: Arial, sans-serif;
-  font-size: 8px;
+  font-size:     10px  ;
   letter-spacing: 0.32em;
 }
 
@@ -265,7 +266,7 @@
   margin-top: 25px;
 
   font-family: Arial, sans-serif;
-  font-size: 8px;
+  font-size:     10px  ;
   line-height: 1.9;
   letter-spacing: 0.34em;
 
@@ -318,7 +319,7 @@
   margin-bottom: 28px;
 
   font-family: Arial, sans-serif;
-  font-size: 9px;
+  font-size:     12px  ;
   letter-spacing: .42em;
   color: var(--primary-color);
 }
@@ -428,12 +429,12 @@ color : var(--primary-2);
 }
 
 .quote-author strong {
-  font-size: 8px;
+  font-size:     10px  ;
   letter-spacing: .27em;
 }
 
 .quote-author span {
-  font-size: 7px;
+  font-size:     10px  ;
   letter-spacing: .22em;
   color: var(--muted);
 }
@@ -474,12 +475,12 @@ color : var(--primary-2);
 }
 
 .signature-info strong {
-  font-size: 7px;
+  font-size:     10px  ;
   letter-spacing: .25em;
 }
 
 .signature-info span {
-  font-size: 6px;
+  font-size:     10px  ;
   letter-spacing: .18em;
   color: var(--muted);
 }
@@ -499,7 +500,7 @@ color : var(--primary-2);
   padding-left: 30px;
 
   font-family: Arial, sans-serif;
-  font-size: 8px;
+  font-size:     10px  ;
   line-height: 1.5;
   letter-spacing: .32em;
 
@@ -733,7 +734,7 @@ color : var(--primary-2);
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
   letter-spacing: .32em;
 
   color: rgba(255,255,255,.78);
@@ -846,7 +847,7 @@ color : var(--primary-2);
   }
 
   .contact-hero-eyebrow span {
-    font-size: 8px;
+    font-size:     10px  ;
     line-height: 1.8;
     letter-spacing: .38em;
   }
@@ -874,7 +875,7 @@ color : var(--primary-2);
 
   .contact-hero-year small {
     margin-top: 13px;
-    font-size: 6px;
+    font-size:     10px  ;
     letter-spacing: .28em;
   }
 
@@ -889,7 +890,7 @@ color : var(--primary-2);
     max-width: 190px;
     flex-wrap: wrap;
     gap: 7px;
-    font-size: 7px;
+    font-size:     10px  ;
     line-height: 1.7;
     letter-spacing: .20em;
   }
@@ -900,7 +901,7 @@ color : var(--primary-2);
   }
 
   .contact-hero-scroll {
-    font-size: 6px;
+    font-size:     10px  ;
     letter-spacing: .24em;
     gap: 10px;
   }
@@ -943,7 +944,7 @@ color : var(--primary-2);
   .story-eyebrow {
     margin-bottom: 22px;
 
-    font-size: 7px;
+    font-size:     10px  ;
     letter-spacing: .38em;
   }
 
@@ -1037,12 +1038,12 @@ color : var(--primary-2);
   }
 
   .quote-author strong {
-    font-size: 7px;
+    font-size:     10px  ;
     letter-spacing: .25em;
   }
 
   .quote-author span {
-    font-size: 6px;
+    font-size:     10px  ;
     letter-spacing: .20em;
   }
 
@@ -1062,7 +1063,7 @@ color : var(--primary-2);
   }
 
   .signature-info strong {
-    font-size: 6px;
+    font-size:     10px  ;
   }
 
   .signature-info span {
@@ -1121,7 +1122,7 @@ color : var(--primary-2);
     margin-left: 6px;
     margin-top: 19px;
 
-    font-size: 7px;
+    font-size:     10px  ;
     line-height: 1.8;
     letter-spacing: .40em;
   }

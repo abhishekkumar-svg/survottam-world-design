@@ -307,7 +307,7 @@ border-radius: 8px;
 
   color: var(--primary-color);
 
-  font-size: 9px;
+  font-size:     12px  ;
   font-weight: 600;
 
   letter-spacing: 0.15em;
@@ -538,7 +538,7 @@ border-radius: 8px;
   background: var(--primary-2);
   color: #fff;
 
-  font-size: 9px;
+  font-size:     12px  ;
   font-weight: 600;
 
   letter-spacing: 0.16em;
@@ -657,7 +657,7 @@ border-radius: 8px;
 
   color: var(--primary-color);
 
-  font-size: 8px;
+  font-size:     10px  ;
   font-weight: 600;
 
   letter-spacing: 0.17em;
@@ -683,7 +683,7 @@ border-radius: 8px;
 
   color: var(--primary-2);
 
-  font-size: 9px;
+  font-size:     12px  ;
   letter-spacing: 0.08em;
 
   opacity: 0.55;
@@ -764,7 +764,7 @@ border-radius: 8px;
 }
 
 .careers-job-details-top span {
-  font-size: 8px;
+  font-size:     10px  ;
   font-weight: 600;
 
   letter-spacing: 0.17em;
@@ -882,7 +882,7 @@ border-radius: 8px;
 
   color: var(--primary-2);
 
-  font-size: 9px;
+  font-size:     12px  ;
   font-weight: 600;
 
   letter-spacing: 0.15em;
@@ -1051,7 +1051,7 @@ border-radius: 8px;
 .careers-apply-bottom span {
   color: var(--primary-color);
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   font-weight: 600;
 
@@ -1139,7 +1139,7 @@ border-radius: 8px;
 
   color: var(--primary-2);
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   font-weight: 600;
 

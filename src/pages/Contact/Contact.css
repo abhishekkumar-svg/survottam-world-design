@@ -41,7 +41,7 @@
 
   color: var(--primary-color);
 
-  font-size: 9px;
+  font-size:     12px  ;
   font-weight: 600;
 
   letter-spacing: 0.2em;
@@ -109,7 +109,7 @@
 
   color: var(--primary-2);
 
-  font-size: 9px;
+  font-size:     12px  ;
   font-weight: 600;
 
   letter-spacing: 0.15em;
@@ -201,7 +201,7 @@
 
   color: #fff;
 
-  font-size: 9px;
+  font-size:     12px  ;
   font-weight: 600;
 
   letter-spacing: 0.15em;
@@ -272,7 +272,7 @@
 
   color: var(--primary-color);
 
-  font-size: 8px;
+  font-size:     10px  ;
   font-weight: 600;
 
   line-height: 1;
@@ -598,7 +598,7 @@
   }
 
   .contact-address-content p {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.65;
   }
 

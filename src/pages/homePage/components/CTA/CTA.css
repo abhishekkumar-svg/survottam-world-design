@@ -418,7 +418,7 @@
   .cta-eyebrow {
     margin-bottom: 35px;
 
-    font-size: 8px;
+    font-size:     10px  ;
   }
 
   .cta-title {
@@ -448,11 +448,11 @@
       0
       20px;
 
-    font-size: 8px;
+    font-size:     10px  ;
   }
 
   .cta-side-text {
-    font-size: 9px;
+    font-size:     12px  ;
 
     letter-spacing: 0.3em;
   }
@@ -517,7 +517,7 @@
 
     gap: 22px;
 
-    font-size: 8px;
+    font-size:     10px  ;
 
     line-height: 1.5;
   }
@@ -564,7 +564,7 @@
 
     gap: 12px;
 
-    font-size: 7px;
+    font-size:     10px  ;
 
     letter-spacing: 0.3em;
   }
@@ -619,7 +619,7 @@
 
     padding: 0;
 
-    font-size: 8px;
+    font-size:     10px  ;
   }
 
 
@@ -654,15 +654,7 @@
   ----------------------------------------- */
 
   .cta-side-message {
-    width: 100%;
-
-    min-height: 170px;
-
-    height: 170px;
-
-    padding: 35px 20px;
-
-    gap: 18px;
+   display:none
   }
 
 
@@ -675,7 +667,7 @@
 
     gap: 4px 15px;
 
-    font-size: 8px;
+    font-size:     10px  ;
 
     line-height: 2;
 

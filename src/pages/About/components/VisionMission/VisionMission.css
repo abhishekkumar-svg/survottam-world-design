@@ -80,7 +80,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: .4em;
 
@@ -147,7 +147,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   letter-spacing: .35em;
 
@@ -182,7 +182,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   letter-spacing: .3em;
 
@@ -325,7 +325,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   line-height: 1.75;
 
@@ -431,7 +431,7 @@
   }
 
   .vision-word-side {
-    font-size: 6px;
+    font-size:     10px  ;
   }
 }
 
@@ -570,7 +570,7 @@
 
     padding-bottom: 0;
 
-    font-size: 8px;
+    font-size:     10px  ;
 
     letter-spacing: .23em;
   }

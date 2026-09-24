@@ -7,6 +7,8 @@ import "./Philosophy.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.normalizeScroll(true);
+// ScrollTrigger.config({ ignoreMobileResize: true });
 /* =========================================================
    DATA
 ========================================================= */
@@ -251,36 +253,29 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
          MASTER SCROLL TIMELINE
       ===================================================== */
 
-      /*
-       * ONE PIN.
-       *
-       * This is the same architecture as your Hero.
-       *
-       * We DO NOT pin individual cards.
-       */
+const mobileHeight = window.innerHeight;
+     const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: section,
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
+    start: isMobile ? "top 5%" : "top 10%",
 
-          start: "top top",
+    end: () =>
+      isMobile
+        ? `+=${window.innerHeight * cards.length}`
+        : `+=${window.innerHeight * cards.length}`,
 
-          /*
-           * Longer scroll distance gives each card enough
-           * physical travel.
-           */
-         end: () => `+=${window.innerHeight * cards.length * 1}`,
+    pin: true,
 
-          pin: true,
+    scrub: isMobile ? 1.2 : 2,
 
-          scrub: 2,
+    anticipatePin: 1,
 
-          anticipatePin: 1,
+    invalidateOnRefresh: true,
 
-          invalidateOnRefresh: true,
-        },
-      });
-
+    pinSpacing: true,
+  },
+});
       /* =====================================================
          CARD 01
       ===================================================== */
@@ -683,20 +678,13 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
         tl.to(
             currentWrapper,
           {
-        //      width: "52vw",
-        // height: "56vh",
 
-        // left: "50%",
-        // top: "50%",
-
-        // xPercent: -50,
-        // yPercent: -50,
             scale: 0.9,
           
            backdropFilter: "blur(4px)",
-            borderRadius: "42px",
+            borderRadius: isMobile ? "32px"   : "42px",
 
-            duration: 0.7,
+            duration: 0.5,
 
             ease: "power2.Out",
           },
@@ -717,7 +705,7 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
       tl.to(
         {},
         {
-          duration: 0.75,
+          duration: 0.5,
         }
       );
 
@@ -725,24 +713,33 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
          IMAGE LOAD REFRESH
       ===================================================== */
 
-      const images =
-        section.querySelectorAll("img");
+      const images = Array.from(
+        section.querySelectorAll<HTMLImageElement>("img")
+      );
 
-      images.forEach((image) => {
-        if (image.complete) {
-          ScrollTrigger.refresh();
-        } else {
-          image.addEventListener(
-            "load",
-            () => {
-              ScrollTrigger.refresh();
-            },
-            {
-              once: true,
-            }
-          );
-        }
-      });
+      // Refresh once after the section's images have settled.
+      // Refreshing once per image can repeatedly move a pinned
+      // section while the user is already scrolling on mobile.
+      const pendingImages = images.filter((image) => !image.complete);
+
+      if (pendingImages.length === 0) {
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+      } else {
+        let loaded = 0;
+
+        const refreshWhenReady = () => {
+          loaded += 1;
+
+          if (loaded === pendingImages.length) {
+            requestAnimationFrame(() => ScrollTrigger.refresh());
+          }
+        };
+
+        pendingImages.forEach((image) => {
+          image.addEventListener("load", refreshWhenReady, { once: true });
+          image.addEventListener("error", refreshWhenReady, { once: true });
+        });
+      }
     }, section);
 
     return () => {
@@ -850,7 +847,7 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
         </div>
 
 
-
+{/* 
         <div className="philosophy-footer">
           <span>
             Sarvottam World — Since 1989
@@ -859,7 +856,7 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
           <span>
             Philosophy
           </span>
-        </div>
+        </div> */}
 
       </div>
     </section>

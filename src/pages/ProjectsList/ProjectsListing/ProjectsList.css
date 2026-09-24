@@ -208,7 +208,7 @@
 }
 
 .filter-label {
-  font-size: 9px;
+  font-size:     12px  ;
 
   letter-spacing: 0.18em;
 
@@ -281,7 +281,7 @@
 .grid-controls span {
   margin-right: 10px;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   letter-spacing: 0.18em;
 }

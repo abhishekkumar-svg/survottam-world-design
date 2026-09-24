@@ -48,7 +48,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   letter-spacing: 0.42em;
 
@@ -218,7 +218,7 @@ color: var(--primary-color);
 
   font-family: Arial, sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   letter-spacing: 0.2em;
 }
@@ -229,7 +229,7 @@ color: var(--primary-color);
 
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.3em;
 }
@@ -340,7 +340,7 @@ color: var(--primary-color);
 
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.25em;
 }
@@ -368,7 +368,7 @@ color: var(--primary-color);
 
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.25em;
 
@@ -408,7 +408,7 @@ color: var(--primary-color);
 
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.16em;
 }
@@ -509,13 +509,13 @@ color: var(--primary-color);
 
 @media (max-width: 600px) {
   .why-heading {
-    top: 9%;
+    top: 12%;
 
     width: 88vw;
   }
 
   .why-eyebrow {
-    font-size: 8px;
+    font-size:     10px  ;
 
     letter-spacing: 0.3em;
   }
@@ -548,7 +548,7 @@ color: var(--primary-color);
   }
 
   .why-panel-title {
-    font-size: 52px;
+    font-size: 42px;
   }
 
   .why-panel-description {

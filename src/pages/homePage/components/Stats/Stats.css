@@ -112,7 +112,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   font-weight: 400;
 
@@ -193,7 +193,7 @@
   }
 
   .stat-label {
-    font-size: 6px;
+    font-size:     10px  ;
 
     letter-spacing: 0.18em;
   }

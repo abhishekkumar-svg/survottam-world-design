@@ -55,7 +55,7 @@
 .history-eyebrow {
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: .42em;
 
@@ -76,7 +76,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   letter-spacing: .28em;
 
@@ -201,7 +201,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: .42em;
 
@@ -481,7 +481,7 @@ gap: 12px;
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   letter-spacing: .32em;
 
@@ -522,7 +522,7 @@ gap: 12px;
 
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   letter-spacing: .25em;
 
@@ -572,7 +572,7 @@ gap: 12px;
 .history-end span {
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: .4em;
 
@@ -637,7 +637,7 @@ color: var(--primary-2);
 .history-progress-text {
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   letter-spacing: .3em;
 
@@ -694,7 +694,7 @@ color: var(--primary-2);
   }
 
   .history-header-right {
-    font-size: 6px;
+    font-size:     10px  ;
   }
 
   .history-header-line {

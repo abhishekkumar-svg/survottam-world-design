@@ -118,7 +118,7 @@
 
   margin-bottom: 16px;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   font-weight: 500;
 
@@ -276,17 +276,23 @@
 
 .philosophy-image-overlay {
   position: absolute;
-
   inset: 0;
-
+  z-index: 2;
   pointer-events: none;
 
+  /* Subtle vignette keeps text readable without hiding the image. */
   background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(8, 12, 20, 0.24) 0%,
+      rgba(8, 12, 20, 0.12) 38%,
+      rgba(8, 12, 20, 0) 72%
+    ),
     linear-gradient(
       180deg,
-      rgba(8, 12, 20, 0.08) 0%,
-      rgba(8, 12, 20, 0.02) 40%,
-      rgba(8, 12, 20, 0.45) 100%
+      rgba(8, 12, 20, 0.04) 0%,
+      rgba(8, 12, 20, 0.02) 45%,
+      rgba(8, 12, 20, 0.52) 100%
     );
 }
 
@@ -322,7 +328,7 @@
 ========================================================= */
 
 .philosophy-card-number {
-  font-size: 9px;
+  font-size:     12px  ;
 
   font-weight: 500;
 
@@ -342,15 +348,13 @@
 ========================================================= */
 
 .philosophy-card-copy {
-  width: min(
-    700px,
-    58vw
-  );
-position: absolute;
-left: 50%;
-top:50%;
-transform: translate(-50%, -50%);
-  margin-left: auto;
+  position: absolute;
+  left: 7%;
+  top: auto;
+  bottom: 14%;
+  width: min(680px, 54vw);
+  transform: none;
+  margin: 0;
 }
 
 
@@ -359,9 +363,7 @@ transform: translate(-50%, -50%);
 ========================================================= */
 
 .philosophy-card-title {
-  display: flex;
-
-  flex-wrap: nowrap;
+  display: block;
 
   margin: 0 0 20px;
 
@@ -373,9 +375,9 @@ transform: translate(-50%, -50%);
     serif;
 
   font-size: clamp(
-    48px,
-    12vw,
-    104px
+    54px,
+    7vw,
+    96px
   );
 
   font-weight: 400;
@@ -409,11 +411,12 @@ transform: translate(-50%, -50%);
 .philosophy-card-description {
   /* max-width: 440px; */
 
+  max-width: 620px;
   margin: 0;
 
-  font-size: 12px;
+  font-size: 14px;
 
-  line-height: 1.7;
+  line-height: 1.55;
 
   color:
     rgba(
@@ -452,7 +455,7 @@ transform: translate(-50%, -50%);
 
   color: #1b2435;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.25em;
 
@@ -533,15 +536,24 @@ transform: translate(-50%, -50%);
   }
 
   .philosophy-card-copy {
-    width: 56vw;
+    left: 6%;
+    top: auto;
+    bottom: 14%;
+    width: min(88vw, 620px);
+    transform: none;
   }
 
   .philosophy-card-title {
     font-size: clamp(
-      42px,
-      7vw,
-      72px
+      46px,
+      7.5vw,
+      76px
     );
+  }
+
+  .philosophy-card-description {
+    max-width: 580px;
+    font-size: 14px;
   }
 }
 
@@ -552,8 +564,15 @@ transform: translate(-50%, -50%);
 
 @media (max-width: 600px) {
 
+
+/* .sarvottam-philosophy{
+  position: sticky;
+  top:5%;
+} */
+
   .philosophy-stage {
     height: 100svh;
+    min-height: 100svh;
   }
 
 
@@ -568,23 +587,26 @@ transform: translate(-50%, -50%);
 
 
   .philosophy-eyebrow {
-    margin-bottom: 10px;
-
-    font-size: 8px;
+    margin-bottom: 9px;
+    font-size:     12px  ;
+    letter-spacing: 0.24em;
   }
 
 
   .philosophy-intro-title {
-    font-size: 30px;
-
-    line-height: 0.92;
+    font-size: clamp(
+      30px,
+      8vw,
+      38px
+    );
+    line-height: 0.94;
   }
 
 
   .philosophy-intro-description {
-    margin-top: 12px;
-
+    margin-top: 11px;
     font-size: 10px;
+    letter-spacing: 0.12em;
   }
 
 
@@ -616,8 +638,8 @@ transform: translate(-50%, -50%);
      * Mobile images still become the COMPLETE
      * viewport.
      */
-    width: 100vw;
-    height: 100svh;
+    width: 100%;
+    height: 100%;
   }
 
 
@@ -641,41 +663,42 @@ transform: translate(-50%, -50%);
     left: 6%;
     bottom: 7%;
 
-    font-size: 8px;
+    font-size:     10px  ;
   }
 
 
   .philosophy-card-copy {
     position: absolute;
-
-    left: 45%;
-    bottom: 14%;
-
-    width: 75%;
+    left: 6%;
+    right: 6%;
+    top: auto;
+    bottom: 15%;
+    width: auto;
+    transform: none;
   }
 
 
   .philosophy-card-title {
-    /* max-width: 94%; */
-
-    margin-bottom: 14px;
-
+    max-width: 92%;
+    margin: 0 0 12px;
     font-size: clamp(
-      42px,
-      11vw,
-      64px
+      40px,
+      11.5vw,
+      56px
     );
-
-    line-height: 0.84;
+    line-height: 0.88;
+    letter-spacing: -0.055em;
   }
 
 
   .philosophy-card-description {
-    /* max-width: 88%; */
-
-    font-size: 14px;
-
-    line-height: 1.55;
+    max-width: 94%;
+    font-size: clamp(
+      13px,
+      3.5vw,
+      15px
+    );
+    line-height: 1.5;
   }
 
 
@@ -690,7 +713,7 @@ transform: translate(-50%, -50%);
 
     bottom: 24px;
 
-    font-size: 7px;
+    font-size:     10px  ;
   }
 
 
@@ -709,6 +732,68 @@ transform: translate(-50%, -50%);
 
     bottom: 3%;
 
-    font-size: 7px;
+    font-size:     10px  ;
+  }
+}
+
+/* =========================================================
+   TEXT READABILITY OVER IMAGE
+========================================================= */
+
+.philosophy-card-copy {
+  z-index: 6;
+}
+
+/* Desktop / large screens */
+@media (min-width: 901px) {
+  .philosophy-image-overlay {
+    background:
+      radial-gradient(
+        ellipse at 50% 50%,
+        rgba(8, 12, 20, 0.30) 0%,
+        rgba(8, 12, 20, 0.14) 36%,
+        rgba(8, 12, 20, 0) 70%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(8, 12, 20, 0.30) 0%,
+        rgba(8, 12, 20, 0.10) 32%,
+        rgba(8, 12, 20, 0) 68%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(8, 12, 20, 0.02) 0%,
+        rgba(8, 12, 20, 0.04) 55%,
+        rgba(8, 12, 20, 0.50) 100%
+      );
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .philosophy-image-overlay {
+    background:
+      radial-gradient(
+        ellipse at 50% 43%,
+        rgba(8, 12, 20, 0.34) 0%,
+        rgba(8, 12, 20, 0.18) 38%,
+        rgba(8, 12, 20, 0.02) 72%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(8, 12, 20, 0.16) 0%,
+        rgba(8, 12, 20, 0.04) 38%,
+        rgba(8, 12, 20, 0.58) 100%
+      );
+  }
+
+  .philosophy-card-title {
+    text-shadow:
+      0 2px 18px rgba(0, 0, 0, 0.48),
+      0 1px 3px rgba(0, 0, 0, 0.35);
+  }
+
+  .philosophy-card-description {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   }
 }

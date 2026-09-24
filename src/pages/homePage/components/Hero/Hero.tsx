@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -17,6 +17,10 @@ const introImage = {
   mobile:
     "/hero-mobile-1.png",
 };
+
+/* =========================================
+   SLIDES
+========================================= */
 
 const slides = [
   {
@@ -49,6 +53,7 @@ const slides = [
       "Thoughtfully designed destinations built around modern lifestyles.",
   },
 ];
+
 /* =========================================
    COMPONENT
 ========================================= */
@@ -56,43 +61,114 @@ const slides = [
 export default function RealEstateHero() {
   const heroRef = useRef<HTMLElement | null>(null);
 
+
+  const [mobileSlide, setMobileSlide] = useState(0);
+
   useLayoutEffect(() => {
     const hero = heroRef.current;
 
     if (!hero) return;
 
+    /* =========================================
+       CHECK MOBILE
+    ========================================= */
+
+    const isMobile = window.matchMedia(
+      "(max-width: 768px)"
+    ).matches;
+
+if (isMobile) {
+  /* =========================================
+     MOBILE SLIDER
+     ========================================= */
+
+  const interval = window.setInterval(() => {
+    setMobileSlide((prev) => {
+      if (prev >= slides.length - 1) {
+        return 0;
+      }
+
+      return prev + 1;
+    });
+  }, 7000);
+
+  /* =========================================
+     MOBILE GSAP / SCROLLTRIGGER INITIALIZATION
+     
+     No visual animation.
+     This simply lets GSAP/ScrollTrigger
+     measure the Hero as part of the page.
+     ========================================= */
+
+  const ctx = gsap.context(() => {
+    gsap.set(hero, {
+      clearProps: "transform",
+    });
+
+    ScrollTrigger.create({
+      trigger: hero,
+
+      start: "top top",
+
+      end: "bottom top",
+
+      pin: false,
+
+      scrub: false,
+
+      invalidateOnRefresh: true,
+    });
+
+    /*
+     * Let browser finish layout first,
+     * then make ScrollTrigger calculate
+     * Hero + following sections together.
+     */
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    });
+  }, hero);
+
+  return () => {
+    window.clearInterval(interval);
+
+    ctx.revert();
+  };
+}
+    /* =========================================
+       DESKTOP GSAP
+    ========================================= */
+
     const ctx = gsap.context(() => {
       const imageReveals =
-        gsap.utils.toArray<HTMLElement>(".hero-image-reveal");
+        gsap.utils.toArray<HTMLElement>(
+          ".hero-image-reveal"
+        );
 
       const imageWrappers =
-        gsap.utils.toArray<HTMLElement>(".hero-image");
+        gsap.utils.toArray<HTMLElement>(
+          ".hero-image"
+        );
 
       const slideContents =
-        gsap.utils.toArray<HTMLElement>(".hero-slide-content");
+        gsap.utils.toArray<HTMLElement>(
+          ".hero-slide-content"
+        );
 
       const header =
-        hero.querySelector(".hero-header") as HTMLElement | null;
+        hero.querySelector(
+          ".hero-header"
+        ) as HTMLElement | null;
 
       /*
        * =========================================
        * RESPONSIVE REVEAL RADIUS
        * =========================================
-       *
-       * The circle origin stays at 50% 105%.
-       *
-       * On tall mobile screens, 105% radius is
-       * sometimes not enough to cover the top
-       * corners of the viewport.
-       *
-       * Therefore we use a larger radius on mobile.
        */
 
-      const isMobile = window.matchMedia(
-        "(max-width: 768px)"
-      ).matches;
-
-      const revealRadius = isMobile ? "160%" : "105%";
+      const revealRadius = "105%";
 
       /*
        * =========================================
@@ -107,14 +183,16 @@ export default function RealEstateHero() {
 
       // Hero 1 starts as a small circle
       gsap.set(imageReveals[0], {
-        clipPath: "circle(20% at 50% 105%)",
+        clipPath:
+          "circle(20% at 50% 105%)",
         opacity: 1,
-        y:160
+        y: 160,
       });
 
       // Hero 2 hidden
       gsap.set(imageReveals.slice(1), {
-        clipPath: "circle(0% at 50% 105%)",
+        clipPath:
+          "circle(0% at 50% 105%)",
         opacity: 1,
       });
 
@@ -212,7 +290,6 @@ export default function RealEstateHero() {
             duration: 0.7,
           }
         )
-
         .to(
           ".hero-intro-content .hero-copy-line",
           {
@@ -252,9 +329,6 @@ export default function RealEstateHero() {
        * =========================================
        * INTRO IMAGE → IMAGE 1
        * =========================================
-       *
-       * BOTH START AT 0
-       * BOTH LAST 1.5
        */
 
       tl.to(
@@ -268,16 +342,9 @@ export default function RealEstateHero() {
       );
 
       /*
+       * =========================================
        * IMAGE 1 CIRCLE REVEAL
-       *
-       * Desktop:
-       * circle(105% at 50% 105%)
-       *
-       * Mobile:
-       * circle(160% at 50% 105%)
-       *
-       * The larger mobile radius guarantees that
-       * the entire viewport gets covered.
+       * =========================================
        */
 
       tl.to(
@@ -286,10 +353,16 @@ export default function RealEstateHero() {
           clipPath: `circle(${revealRadius} at 50% 105%)`,
           duration: 1.5,
           ease: "power3.inOut",
-          y:0
+          y: 0,
         },
         0
       );
+
+      /*
+       * =========================================
+       * IMAGE 1 SCALE
+       * =========================================
+       */
 
       tl.to(
         imageWrappers[0],
@@ -343,11 +416,8 @@ export default function RealEstateHero() {
         ".hero-intro-content",
         {
           opacity: 0,
-
           yPercent: -20,
-
           duration: 0.5,
-
           ease: "power2.in",
         },
         0.25
@@ -363,9 +433,7 @@ export default function RealEstateHero() {
         slideContents[0],
         {
           opacity: 1,
-
           yPercent: 0,
-
           color: "#f3f3ec",
         },
         0.65
@@ -377,9 +445,7 @@ export default function RealEstateHero() {
         ),
         {
           opacity: 1,
-
           y: 0,
-
           duration: 0.5,
         },
         0.65
@@ -391,11 +457,8 @@ export default function RealEstateHero() {
         ),
         {
           yPercent: 0,
-
           duration: 0.8,
-
           stagger: 0.08,
-
           ease: "power4.out",
         },
         0.7
@@ -407,9 +470,7 @@ export default function RealEstateHero() {
         ),
         {
           opacity: 1,
-
           y: 0,
-
           duration: 0.55,
         },
         0.95
@@ -419,56 +480,46 @@ export default function RealEstateHero() {
        * =========================================
        * IMAGE 1 → IMAGE 2
        * =========================================
-       *
-       * IMPORTANT:
-       *
-       * Image 1 fade
-       * Image 2 circle reveal
-       *
-       * SAME START: 1.55
-       * SAME DURATION: 1.5
        */
 
       tl.to(
         imageReveals[0],
         {
           opacity: 0,
-
           duration: 1.5,
-
           ease: "power3.inOut",
         },
         1.55
       );
 
       /*
+       * =========================================
        * IMAGE 2 CIRCLE REVEAL
-       *
-       * Uses the exact same responsive radius
-       * as Image 1 so both transitions behave
-       * consistently across devices.
+       * =========================================
        */
 
       tl.to(
         imageReveals[1],
         {
           clipPath: `circle(${revealRadius} at 50% 105%)`,
-
           duration: 1.5,
-          y:0,
-
+          y: 0,
           ease: "power3.inOut",
         },
         1.55
       );
 
+      /*
+       * =========================================
+       * IMAGE 2 SCALE
+       * =========================================
+       */
+
       tl.to(
         imageWrappers[1],
         {
           scale: 1,
-
           duration: 1.5,
-
           ease: "none",
         },
         1.55
@@ -484,11 +535,8 @@ export default function RealEstateHero() {
         slideContents[0],
         {
           opacity: 0,
-
           yPercent: -35,
-
           duration: 0.6,
-
           ease: "power2.in",
         },
         1.55
@@ -504,9 +552,7 @@ export default function RealEstateHero() {
         slideContents[1],
         {
           opacity: 1,
-
           yPercent: 0,
-
           color: "#f3f3ec",
         },
         2.25
@@ -518,9 +564,7 @@ export default function RealEstateHero() {
         ),
         {
           opacity: 1,
-
           y: 0,
-
           duration: 0.5,
         },
         2.25
@@ -532,11 +576,8 @@ export default function RealEstateHero() {
         ),
         {
           yPercent: 0,
-
           duration: 0.7,
-
           stagger: 0.08,
-
           ease: "power4.out",
         },
         2.25
@@ -548,9 +589,7 @@ export default function RealEstateHero() {
         ),
         {
           opacity: 1,
-
           y: 0,
-
           duration: 0.55,
         },
         2.25
@@ -558,23 +597,9 @@ export default function RealEstateHero() {
 
       /*
        * =========================================
-       * IMAGE 2 PARALLAX EXIT
+       * FINAL IMAGE TRANSFORMATION
        * =========================================
-       *
-       * No opacity/fade anywhere — everything
-       * leaves via clip-path, scale, translate
-       * and a top slide-off.
-       *
-       * The image (background layer) moves slow
-       * + wide, the text (foreground layer) moves
-       * fast + tight.
-       *
-       * That speed mismatch reads as parallax.
        */
-
-      // Image keeps drifting + scaling — never
-      // fully hidden, so nothing goes blank
-      // while still pinned.
 
       tl.fromTo(
         imageWrappers[1],
@@ -583,7 +608,8 @@ export default function RealEstateHero() {
             "inset(0% 0% 0% 0%)",
         },
         {
-           borderRadius: "100px",
+          borderRadius: "100px",
+
           clipPath:
             "inset(20% 20% 20% 20%)",
 
@@ -598,59 +624,27 @@ export default function RealEstateHero() {
         3
       );
 
-      tl.to(
-        slideContents[1].querySelector(".hero-title"),
-        {
-          yPercent: -100,
-          duration: 0.6,
-            ease: "power2.in",
-        },
-        3.2
-      );
-
       /*
        * =========================================
-       * DESCRIPTION EXIT
+       * FINAL CONTENT CENTER
        * =========================================
        */
 
       tl.to(
-        slideContents[1].querySelector(
-          ".hero-description"
-        ),
+        slideContents[1],
         {
-          y: -40,
+          left: "45%",
+          top: "46%",
+          bottom: "auto",
 
-          scale: 0.85,
+          xPercent: -50,
+          yPercent: -50,
 
-          transformOrigin: "left top",
-
-          duration: 0.55,
-
-          ease: "power2.in",
+          duration: 0.8,
+          ease: "power3.inOut",
         },
-        3.2
+        3
       );
-
-      /*
-       * =========================================
-       * HEADER EXIT
-       * =========================================
-       *
-       * Uncomment if required.
-       */
-
-      // if (header) {
-      //   tl.to(
-      //     header,
-      //     {
-      //       yPercent: -150,
-      //       duration: 0.6,
-      //       ease: "power2.in",
-      //     },
-      //     4.3
-      //   );
-      // }
 
       /*
        * =========================================
@@ -675,179 +669,197 @@ export default function RealEstateHero() {
       });
     }, hero);
 
+    /*
+     * =========================================
+     * DESKTOP CLEANUP
+     * =========================================
+     */
+
     return () => {
       ctx.revert();
     };
   }, []);
 
   return (
-    <>
-      <section
-        ref={heroRef}
-        className="sarvottam-hero"
-      >
-        {/* ====================================
-            HEADER
-        ==================================== */}
+    <section
+      ref={heroRef}
+      className={`sarvottam-hero mobile-slide-${mobileSlide}`}
+    >
 
- 
+      {/* ====================================
+          INTRO IMAGE
+      ==================================== */}
 
-        {/* ====================================
-            INTRO IMAGE
-        ==================================== */}
+      <div className="hero-intro-image">
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet={introImage.mobile}
+          />
 
-        <div className="hero-intro-image">
-  <picture>
-    <source
-      media="(max-width: 768px)"
-      srcSet={introImage.mobile}
-    />
+          <img
+            src={introImage.desktop}
+            alt="Sarvottam World"
+          />
+        </picture>
 
-    <img
-      src={introImage.desktop}
-      alt="Sarvottam World"
-    />
-  </picture>
+        <div className="hero-intro-overlay" />
+      </div>
 
-  <div className="hero-intro-overlay" />
-</div>
-        {/* ====================================
-            INTRO CONTENT
-        ==================================== */}
+      {/* ====================================
+          INTRO CONTENT
+      ==================================== */}
 
-        <div className="hero-content hero-intro-content">
-          <div className="hero-eyebrow">
-            {/* Sarvottam World — Since 1989 */}
-          </div>
+      <div className="hero-content hero-intro-content">
 
-          <h1 className="hero-title">
-            <span className="hero-title-mask">
-              <span className="hero-copy-line">
-                Invest in a Future
-              </span>
-            </span>
-
-            <span className="hero-title-mask">
-              <span className="hero-copy-line">
-                Beyond Expectations
-              </span>
-            </span>
-          </h1>
-
-          <div className="hero-divider" />
-
-          {/* 
-          <p className="hero-description">
-            Ultra-Luxury Residences & Premium
-            Commercial Developments
-          </p>
-          */}
+        <div className="hero-eyebrow">
+          {/* Sarvottam World — Since 1989 */}
         </div>
 
-        {/* ====================================
-            SLIDE 1 CONTENT
-        ==================================== */}
+        <h1 className="hero-title">
 
-        <div className="hero-content hero-slide-content hero-slide-content-1">
-          <div className="hero-eyebrow">
-            {/* {slides[0].eyebrow} */}
-          </div>
-
-          <h2 className="hero-title">
-            <span className="hero-title-mask">
-              <span className="hero-copy-line">
-                {slides[0].title[0]}
-              </span>
+          <span className="hero-title-mask">
+            <span className="hero-copy-line">
+              Invest in a Future
             </span>
+          </span>
 
-            <span className="hero-title-mask">
-              <span className="hero-copy-line">
-                {slides[0].title[1]}
-              </span>
+          <span className="hero-title-mask">
+            <span className="hero-copy-line">
+              Beyond Expectations
             </span>
-          </h2>
+          </span>
 
-          <div className="hero-divider" />
+        </h1>
 
-          <p className="hero-description">
-            {slides[0].description}
-          </p>
+        <div className="hero-divider" />
+
+      </div>
+
+      {/* ====================================
+          SLIDE 1 CONTENT
+      ==================================== */}
+
+      <div className="hero-content hero-slide-content hero-slide-content-1">
+
+        <div className="hero-eyebrow">
+          {/* {slides[0].eyebrow} */}
         </div>
 
-        {/* ====================================
-            SLIDE 2 CONTENT
-        ==================================== */}
+        <h2 className="hero-title">
 
-        <div className="hero-content hero-slide-content hero-slide-content-2">
-          <div className="hero-eyebrow">
-            {/* {slides[1].eyebrow} */}
-          </div>
-
-          <h2 className="hero-title">
-            <span className="hero-title-mask">
-              <span className="hero-copy-line">
-                {slides[1].title[0]}
-              </span>
+          <span className="hero-title-mask">
+            <span className="hero-copy-line">
+              {slides[0].title[0]}
             </span>
+          </span>
 
-            <span className="hero-title-mask">
-              <span className="hero-copy-line">
-                {slides[1].title[1]}
-              </span>
+          <span className="hero-title-mask">
+            <span className="hero-copy-line">
+              {slides[0].title[1]}
             </span>
-          </h2>
+          </span>
 
-          <div className="hero-divider" />
+        </h2>
 
-          <p className="hero-description">
-            {slides[1].description}
-          </p>
+        <div className="hero-divider" />
+
+        <p className="hero-description">
+          {slides[0].description}
+        </p>
+
+      </div>
+
+      {/* ====================================
+          SLIDE 2 CONTENT
+      ==================================== */}
+
+      <div className="hero-content hero-slide-content hero-slide-content-2">
+
+        <div className="hero-eyebrow">
+          {/* {slides[1].eyebrow} */}
         </div>
 
-        {/* ====================================
-            IMAGE 1
-        ==================================== */}
+        <h2 className="hero-title">
 
-     <div className="hero-image-reveal hero-image-one">
-  <div className="hero-image">
-    <picture>
-      <source
-        media="(max-width: 768px)"
-        srcSet={slides[0].mobileImage}
-      />
+          <span className="hero-title-mask">
+            <span className="hero-copy-line">
+              {slides[1].title[0]}
+            </span>
+          </span>
 
-      <img
-        src={slides[0].desktopImage}
-        alt="Sarvottam World luxury development"
-      />
-    </picture>
-  </div>
+          <span className="hero-title-mask">
+            <span className="hero-copy-line">
+              {slides[1].title[1]}
+            </span>
+          </span>
 
-  <div className="hero-image-overlay" />
-</div>
+        </h2>
 
-        {/* ====================================
-            IMAGE 2
-        ==================================== */}
+        <div className="hero-divider" />
+
+        <p className="hero-description">
+          {slides[1].description}
+        </p>
+
+      </div>
+
+      {/* ====================================
+          IMAGE 1
+      ==================================== */}
+
+      <div className="hero-image-reveal hero-image-one">
+
+        <div className="hero-image">
+
+          <picture>
+
+            <source
+              media="(max-width: 768px)"
+              srcSet={slides[0].mobileImage}
+            />
+
+            <img
+              src={slides[0].desktopImage}
+              alt="Sarvottam World luxury development"
+            />
+
+          </picture>
+
+          <div className="hero-image-overlay" />
+
+        </div>
+
+      </div>
+
+      {/* ====================================
+          IMAGE 2
+      ==================================== */}
 
       <div className="hero-image-reveal hero-image-two">
-  <div className="hero-image">
-    <picture>
-      <source
-        media="(max-width: 768px)"
-        srcSet={slides[1].mobileImage}
-      />
 
-      <img
-        src={slides[1].desktopImage}
-        alt="Sarvottam World premium development"
-      />
-    </picture>
+        <div className="hero-image">
 
-    <div className="hero-image-overlay" />
-  </div>
-</div>
-      </section>
-    </>
+          <picture>
+
+            <source
+              media="(max-width: 768px)"
+              srcSet={slides[1].mobileImage}
+            />
+
+            <img
+              src={slides[1].desktopImage}
+              alt="Sarvottam World premium development"
+            />
+
+          </picture>
+
+          <div className="hero-image-overlay" />
+
+        </div>
+
+      </div>
+
+    </section>
   );
 }

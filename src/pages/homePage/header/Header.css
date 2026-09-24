@@ -333,7 +333,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.2em;
 
@@ -433,7 +433,7 @@
 .global-mobile-nav-number {
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.1em;
 
@@ -551,7 +551,7 @@ text-wrap: nowrap;
 .global-mobile-menu-bottom span {
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size:     10px  ;
 
   letter-spacing: 0.2em;
 
@@ -569,7 +569,7 @@ text-wrap: nowrap;
 
   font-family: Arial, sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   letter-spacing: 0.1em;
 
@@ -599,7 +599,7 @@ text-wrap: nowrap;
   }
 
   .global-header-contact {
-    font-size: 9px;
+    font-size:     12px  ;
   }
 }
 

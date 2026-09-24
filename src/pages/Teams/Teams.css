@@ -286,7 +286,7 @@
 
   font-family: "Krona One", sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
   line-height: 1.5;
 
   letter-spacing: 0.13em;
@@ -300,7 +300,7 @@
 
   font-family: "Krona One", sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.1em;
 
@@ -427,7 +427,7 @@
   }
 
   .team-info p {
-    font-size: 7px;
+    font-size:     10px  ;
   }
 }
 
@@ -613,7 +613,7 @@
 
   font-family: "Krona One", sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   letter-spacing: 0.15em;
 
@@ -626,7 +626,7 @@
 
   font-family: "Krona One", sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   line-height: 1.5;
 
@@ -842,7 +842,7 @@ color : var(--primary-2);
 
   font-family: "Krona One", sans-serif;
 
-  font-size: 8px;
+  font-size:     10px  ;
 
   letter-spacing: 0.13em;
 
@@ -959,7 +959,7 @@ color : var(--primary-2);
   .team-popup-designation {
     margin-bottom: 12px;
 
-    font-size: 8px;
+    font-size:     10px  ;
   }
 
   .team-popup-details h2 {

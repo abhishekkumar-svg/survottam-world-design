@@ -1,11 +1,10 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import "./Portfolio.css";
 
 gsap.registerPlugin(ScrollTrigger);
-
+ScrollTrigger.normalizeScroll();
 type Project = {
   id: number;
   status: string;
@@ -28,7 +27,6 @@ const projects: Project[] = [
     type: "Premium Development",
     image: "https://sarvottamworld.in/Projects/Galactic-City.jpg",
   },
-
   {
     id: 2,
     status: "ONGOING",
@@ -37,9 +35,8 @@ const projects: Project[] = [
     location: "Plot No. 19, Knowledge Park V",
     price: "On Request",
     type: "Luxury Residences",
-    image: "	https://sarvottamworld.in/Projects/JainX-Automoile.jpg",
+    image: "https://sarvottamworld.in/Projects/JainX-Automoile.jpg",
   },
-
   {
     id: 3,
     status: "ONGOING",
@@ -48,497 +45,167 @@ const projects: Project[] = [
     location: "Shivpuri Range, Rishikesh",
     price: "On Request",
     type: "Luxury Villas & Hospitality",
-    image:"https://sarvottamworld.in/Projects/Galactic-City.jpg",
+    image: "https://sarvottamworld.in/Projects/Galactic-City.jpg",
   },
-
-
-
 ];
 
 export default function Portfolio() {
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
-const isMobile = window.matchMedia("(max-width: 768px)").matches;
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray<HTMLElement>(
-        ".portfolio-item"
-      );
+      const cards = gsap.utils.toArray<HTMLElement>(".portfolio-item");
 
-      items.forEach((item) => {
-        const image = item.querySelector<HTMLElement>(
-          ".portfolio-image"
-        );
+      if (!cards.length) return;
 
-        const imageWrap = item.querySelector<HTMLElement>(
-          ".portfolio-image-wrap"
-        );
+      // Every card gets its own vertical scroll distance.
+      // Cards stay pinned and visually stack one over another.
+      cards.forEach((card, index) => {
+        gsap.set(card, {
+          zIndex: index + 1,
+        });
 
-        const title = item.querySelector<HTMLElement>(
-          ".portfolio-title"
-        );
-
-        const meta = item.querySelector<HTMLElement>(
-          ".portfolio-meta"
-        );
-
-        const number = item.querySelector<HTMLElement>(
-          ".portfolio-number"
-        );
-
-        if (
-          !image ||
-          !imageWrap ||
-          !title ||
-          !meta ||
-          !number
-        ) {
-          return;
-        }
-
-        /*
-         * ==========================================
-         * INCOMING IMAGE
-         *
-         * This is the exact idea from the
-         * YouTube code you attached.
-         * ==========================================
-         */
+        if (index === 0) return;
 
         gsap.fromTo(
-          imageWrap,
+          card,
           {
-            clipPath:
-              "polygon(25% 25%, 75% 40%, 100% 100%, 0% 100%)",
+            yPercent: 100 * index,
           },
           {
-            clipPath:
-              "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-
+            yPercent: 0,
             ease: "none",
-
             scrollTrigger: {
-              trigger: item,
-
+              trigger: card,
               start: "top bottom",
-
               end: "top top",
-
-              scrub: 0.5,
-
+              scrub: 1,
               invalidateOnRefresh: true,
             },
           }
         );
-
-        /*
-         * ==========================================
-         * IMAGE SCALE
-         * ==========================================
-         */
-
-        gsap.fromTo(
-          image,
-          {
-            scale: 1.18,
-          },
-          {
-            scale: 1,
-
-            ease: "none",
-
-            scrollTrigger: {
-              trigger: item,
-
-              start: "top bottom",
-
-              end: "top top",
-
-              scrub: 0.7,
-            },
-          }
-        );
-
-        /*
-         * ==========================================
-         * OUTGOING IMAGE
-         *
-         * This follows the second screenshot
-         * from your YouTube reference.
-         * ==========================================
-         */
-
-        gsap.fromTo(imageWrap,
-            {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", 
-            },
-            {
-          clipPath:
-            "polygon(0% 0%, 100% 0%, 75% 60%, 25% 75%)",
-
-          ease: "none",
-
-          scrollTrigger: {
-            trigger: item,
-
-            start: "bottom bottom",
-
-            end: "bottom top",
-
-            scrub: 0.5,
-
-            invalidateOnRefresh: true,
-          },
-        });
-
-        /*
-         * ==========================================
-         * TITLE REVEAL
-         *
-         * Same concept as the SplitText code
-         * from your screenshots.
-         * ==========================================
-         */
-
-    { const titleText = title.textContent || "";
-
-         title.innerHTML = "";
-
-     isMobile &&   [...titleText].forEach((character) => {
-          const mask = document.createElement("span");
-
-          mask.className =
-            "portfolio-char-mask";
-
-          const char = document.createElement("span");
-
-          char.className =
-            "portfolio-char";
-
-          char.textContent =
-            character === " "
-              ? "\u00A0"
-              : character;
-
-          mask.appendChild(char);
-
-          title.appendChild(mask);
-        });
-}
-        const chars =
-          title.querySelectorAll<HTMLElement>(
-            ".portfolio-char"
-          );
-{!isMobile &&
-        gsap.set(chars, {
-          y: "125%",
-        }); }
-
-       {! isMobile && chars.forEach((char, index) => {
-          gsap.fromTo(
-            char,
-            {
-              y: "125%",
-            },
-            {
-              y: "0%",
-
-              ease: "none",
-
-              scrollTrigger: {
-                trigger: item,
-
-                start: `top+=${index - 100} top`,
-
-                end: `top+=${index * 12 - 40} top`,
-
-                scrub: 1,
-
-                invalidateOnRefresh: true,
-              },
-            }
-          );
-        });}
-
-        /*
-         * ==========================================
-         * PROJECT META REVEAL
-         * ==========================================
-         */
-
-        gsap.fromTo(
-          meta,
-          {
-            y: 30,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-
-            ease: "power3.out",
-
-            scrollTrigger: {
-              trigger: item,
-
-              start: "top 70%",
-
-              end: "top 45%",
-
-              scrub: 0.8,
-            },
-          }
-        );
-
-        /*
-         * ==========================================
-         * PROJECT NUMBER
-         * ==========================================
-         */
-
-        gsap.fromTo(
-          number,
-          {
-            y: 20,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-
-            ease: "power3.out",
-
-            scrollTrigger: {
-              trigger: item,
-
-              start: "top 75%",
-
-              end: "top 55%",
-
-              scrub: 0.8,
-            },
-          }
-        );
       });
 
-      /*
-       * ==========================================
-       * SECTION HEADER
-       * ==========================================
-       */
-
-      const header = section.querySelector(
-        ".portfolio-header"
-      );
-
-      if (header) {
-        gsap.fromTo(
-          header,
-          {
-            y: 60,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-
-            duration: 1,
-
-            ease: "power3.out",
-
-            scrollTrigger: {
-              trigger: section,
-
-              start: "top 80%",
-
-              toggleActions:
-                "play none none reverse",
-            },
-          }
-        );
-      }
-
-      /*
-       * Refresh once everything is ready.
-       */
-
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh();
+      // Keep the whole project stack pinned while the cards arrive.
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 14%",
+        end: () => `+=${window.innerHeight * cards.length}`,
+        pin: true,
+        pinSpacing: true,
+        scrub: false,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
       });
+
+      requestAnimationFrame(() => ScrollTrigger.refresh());
     }, section);
 
-    return () => {
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="portfolio-section"
-    >
-      {/* ==========================================
-          SECTION HEADER
-      =========================================== */}
+    <section  className="portfolio-section">
+      <div className="portfolio-shell">
+        <header className="portfolio-header">
+          <div>
+            <span className="portfolio-eyebrow">Portfolio</span>
+            <h2>
+              Our Signature
+              <br />
+              <em>Developments</em>
+            </h2>
+          </div>
 
-      <div className="portfolio-header">
-        <div className="portfolio-header-left">
-          <span className="portfolio-eyebrow">
-            Portfolio
-          </span>
+          <div className="portfolio-header-right">
+            <p>
+              Each project is a statement of intent — a bold declaration of
+              what luxury real estate can and should be.
+            </p>
 
-          <h2>
-            Our Signature
-            <br />
-            <em>Developments</em>
-          </h2>
+            <a href="/projects" className="portfolio-all-link">
+              View All Projects <span>↗</span>
+            </a>
+          </div>
+        </header>
+
+        <div ref={sectionRef} className="portfolio-list">
+          {projects.map((project, index) => (
+            <article
+              className={`portfolio-item ${
+                index % 2 ? "portfolio-item-reverse" : ""
+              }`}
+              key={project.id}
+            >
+              <a
+                className="portfolio-image-link"
+                href={`/projects/${project.title.toLowerCase().replaceAll(" ", "-")}`}
+              >
+                <div className="portfolio-image-wrap">
+                  <img
+                    className="portfolio-image"
+                    src={project.image}
+                    alt={project.title}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+
+                  <div className="portfolio-image-overlay" />
+
+                  <div className="portfolio-image-top">
+                    <span className="portfolio-status">{project.status}</span>
+                    <span className="portfolio-number">0{project.id}</span>
+                  </div>
+
+                  <span className="portfolio-image-arrow">↗</span>
+                </div>
+              </a>
+
+              <div className="portfolio-content">
+                <div className="portfolio-meta">
+                  <span>{project.brand}</span>
+                  <span>{project.type}</span>
+                </div>
+
+                <h3 className="portfolio-title">{project.title}</h3>
+
+                <div className="portfolio-details">
+                  <div>
+                    <span className="portfolio-detail-label">Location</span>
+                    <span>{project.location}</span>
+                  </div>
+
+                  <div>
+                    <span className="portfolio-detail-label">Price</span>
+                    <span>{project.price}</span>
+                  </div>
+                </div>
+
+                <a
+                  href={`/projects/${project.title.toLowerCase().replaceAll(" ", "-")}`}
+                  className="portfolio-link"
+                >
+                  View Project <span>↗</span>
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
 
-        <div className="portfolio-header-right">
+        <footer className="portfolio-footer">
           <p>
-            Each project is a statement of intent —
-            a bold declaration of what luxury real
-            estate can and should be.
+            Crafted with vision.
+            <br />
+            Built for generations.
           </p>
 
           <a href="/projects">
-            View All Projects
-            <span>↗</span>
+            Explore All <span>→</span>
           </a>
-        </div>
+        </footer>
       </div>
-
-
-      {/* ==========================================
-          PROJECT LIST
-      =========================================== */}
-
-      <div className="portfolio-list">
-
-        {projects.map((project) => (
-          <article
-            className="portfolio-item"
-            key={project.id}
-          >
-
-            {/* ====================================
-                IMAGE
-            ===================================== */}
-
-            <div className="portfolio-image-wrap bg-gradient-to-r from-[#1C1712]/55 via-transparent to-transparent">
-
-              <img
-                className="portfolio-image"
-                src={project.image}
-                alt={project.title}
-              />
-
-              <div className="portfolio-image-overlay" />
-
-            </div>
-
-
-            {/* ====================================
-                TOP INFO
-            ===================================== */}
-
-            <div className="portfolio-top">
-
-              <span className="portfolio-status">
-                {project.status}
-              </span>
-
-              <span className="portfolio-number">
-                0{project.id}
-              </span>
-
-            </div>
-
-
-            {/* ====================================
-                PROJECT CONTENT
-            ===================================== */}
-
-            <div className="portfolio-content">
-
-              <div className="portfolio-meta">
-
-                <span>
-                  {project.brand}
-                </span>
-
-                <span>
-                  {project.type}
-                </span>
-
-              </div>
-
-
-              <h3 className="portfolio-title">
-                {project.title}
-              </h3>
-
-
-              <div className="portfolio-details">
-
-                <span>
-                  {project.location}
-                </span>
-
-                <span>
-                  {project.price}
-                </span>
-
-              </div>
-
-
-              <a
-                href={`/projects/${project.title
-                  .toLowerCase()
-                  .replaceAll(" ", "-")}`}
-                className="portfolio-link"
-              >
-                View Project
-
-                <span>
-                  ↗
-                </span>
-              </a>
-
-            </div>
-
-          </article>
-        ))}
-
-      </div>
-
-
-      {/* ==========================================
-          FOOTER
-      =========================================== */}
-
-      <div className="portfolio-footer">
-{/* 
-        <span>
-          01 — 06
-        </span> */}
-
-        <p>
-          Crafted with vision.
-          <br />
-          Built for generations.
-        </p>
-
-        <a href="/projects">
-          Explore All
-          <span>→</span>
-        </a>
-
-      </div>
-
     </section>
   );
 }

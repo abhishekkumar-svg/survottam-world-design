@@ -54,7 +54,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   letter-spacing: 0.42em;
 }
@@ -162,7 +162,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   font-weight: 600;
 
@@ -300,7 +300,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: 9px;
+  font-size:     12px  ;
 
   font-weight: 500;
 
@@ -707,7 +707,7 @@
   .footer-intro-label {
     margin-bottom: 38px;
 
-    font-size: 7px;
+    font-size: 10px;
 
     letter-spacing: 0.3em;
 
@@ -723,13 +723,13 @@
   }
 
   .footer-intro h2 {
-    font-size: 58px;
+    font-size: 48px;
 
     line-height: 0.88;
   }
 
   .footer-intro-right p {
-    font-size: 10px;
+    font-size: 12px;
 
     line-height: 1.8;
 
@@ -737,7 +737,7 @@
   }
 
   .footer-cta {
-    font-size: 8px;
+    font-size: 14px;
 
     gap: 20px;
   }
@@ -768,7 +768,7 @@
   }
 
   .footer-brand-description {
-    font-size: 12px;
+    font-size: 14px;
   }
 
 
@@ -780,7 +780,7 @@
   .footer-newsletter h3 {
     margin-bottom: 20px;
 
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .footer-column nav {
@@ -788,7 +788,7 @@
   }
 
   .footer-column nav a {
-    font-size: 10px;
+    font-size: 12px;
   }
 
 
@@ -797,11 +797,11 @@
   ----------------------------------------- */
 
   .footer-contact > a {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .footer-contact address {
-    font-size: 9px;
+    font-size: 14px;
   }
 
 
@@ -814,7 +814,7 @@
   }
 
   .footer-newsletter p {
-    font-size: 9px;
+    font-size: 12px;
   }
 
 
@@ -834,7 +834,7 @@
       0
       25px;
 
-    font-size: 6px;
+    font-size: 12px;
   }
 
   .footer-legal {
@@ -853,7 +853,7 @@
   ----------------------------------------- */
 
   .footer-watermark {
-    bottom: -5px;
+    bottom: 5px;
 
     font-size: 17vw;
   }
