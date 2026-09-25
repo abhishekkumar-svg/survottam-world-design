@@ -136,7 +136,7 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <article
               className={`portfolio-item ${
-                index % 2 ? "portfolio-item-reverse" : ""
+                index % 2 ? "portfolio-item-revers" : ""
               }`}
               key={project.id}
             >

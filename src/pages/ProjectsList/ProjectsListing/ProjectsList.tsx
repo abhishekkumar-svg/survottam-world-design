@@ -168,8 +168,8 @@ export default function ProjectsListing() {
 
           <h1>
             Spaces
-            <br />
-            <em>that matter.</em>
+            {/* <br /> */}
+            <em> that matter.</em>
           </h1>
 
           <p>
