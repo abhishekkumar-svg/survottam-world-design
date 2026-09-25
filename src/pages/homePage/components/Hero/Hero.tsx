@@ -82,15 +82,12 @@ if (isMobile) {
      MOBILE SLIDER
      ========================================= */
 
-  const interval = window.setInterval(() => {
-    setMobileSlide((prev) => {
-      if (prev >= slides.length - 1) {
-        return 0;
-      }
+ const interval = window.setInterval(() => {
+  setMobileSlide((prev) => {
 
-      return prev + 1;
-    });
-  }, 7000);
+    return (prev + 1) % 3;
+  });
+}, 7000);
 
   /* =========================================
      MOBILE GSAP / SCROLLTRIGGER INITIALIZATION
@@ -859,7 +856,19 @@ if (isMobile) {
         </div>
 
       </div>
-
+<div className="mobile-slide-dots">
+  {[0, 1, 2].map((index) => (
+    <button
+      key={index}
+      type="button"
+      className={`mobile-slide-dot ${
+        mobileSlide === index ? "active" : ""
+      }`}
+      onClick={() => setMobileSlide(index)}
+      aria-label={`Go to slide ${index + 1}`}
+    />
+  ))}
+</div>
     </section>
   );
 }

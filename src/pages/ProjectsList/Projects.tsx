@@ -7,6 +7,7 @@ const Projects = () => {
   <main>
     <ProjectsListHero/>
     <ProjectsListing/>
+    
   </main>
   )
 }
