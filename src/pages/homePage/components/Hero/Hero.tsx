@@ -15,7 +15,7 @@ const introImage = {
     "https://sarvottamworld.in/_next/image?url=%2FProjects%2FDurga-Industrial.jpg&w=1920&q=75",
 
   mobile:
-    "/test/hero-mobile-1.png",
+    "/hero-mobile-1.png",
 };
 
 /* =========================================
@@ -28,7 +28,7 @@ const slides = [
       "https://sarvottamworld.in/_next/image?url=%2FProjects%2FGolden-I.jpg&w=1920&q=75",
 
     mobileImage:
-      "/test/hero-mobile-2.png",
+      "/hero-mobile-2.png",
 
     eyebrow: "Sarvottam World — Since 1989",
 
