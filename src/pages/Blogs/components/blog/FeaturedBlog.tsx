@@ -29,7 +29,7 @@ const FeaturedBlog = ({ blog }: FeaturedBlogProps) => {
 
         <p>{blog.content}</p>
 
-        <button className="featured-read-more">
+        <button className="featured-read-more" onClick={() => window.location.href = `/blogs/${blog.slug}`}>
           <span>Read Article</span>
           <span>↗</span>
         </button>

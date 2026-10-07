@@ -11,7 +11,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
   const cardRef = useRef<HTMLElement | null>(null);
 
   return (
-    <article className="blog-card" ref={cardRef}>
+    <article className="blog-card" ref={cardRef} onClick={() => window.location.href = `/blogs/${blog.slug}`}>
       <div className="blog-card-image-wrap">
         <img
           src={blog.image}

@@ -1,0 +1,438 @@
+
+.project-gallery {
+  --gallery-bg: var(--main-bg);
+  --gallery-text: var(--primary-2);
+  --gallery-muted: #77746d;
+  --gallery-gold: var(--primary-color, #b7862d);
+
+  background: var(--gallery-bg);
+  color: var(--gallery-text);
+
+  padding: 0px 0 82px;
+}
+
+.project-gallery-container {
+  width: min(1380px, calc(100% - 110px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.project-gallery-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+
+  margin-bottom: 28px;
+}
+
+.project-gallery-eyebrow {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--gallery-gold);
+
+  font-family: var(--font-sans, Arial, sans-serif);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.project-gallery-title h2 {
+  margin: 0;
+
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(43px, 4vw, 62px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.project-gallery-header-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+
+  padding-left: 45px;
+}
+
+.project-gallery-header-right p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: var(--gallery-muted);
+
+  font-family: var(--font-sans, Arial, sans-serif);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* =========================================
+   VIEW GALLERY BUTTON
+========================================= */
+
+.project-gallery-button {
+  flex: 0 0 auto;
+
+  min-width: 174px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  padding: 0 18px;
+
+  border: 1px solid #c9a86e;
+  background: transparent;
+
+  color: #6f5223;
+
+  cursor: pointer;
+
+  font-family: var(--font-sans, Arial, sans-serif);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.project-gallery-button svg {
+  width: 14px;
+  height: 14px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition: transform 0.25s ease;
+}
+
+.project-gallery-button:hover {
+  background: var(--gallery-gold);
+  color: #fff;
+}
+
+.project-gallery-button:hover svg {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   GALLERY GRID
+========================================= */
+
+.project-gallery-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 0.82fr;
+  grid-template-rows: 137px 137px;
+
+  gap: 10px;
+}
+
+/* All image containers */
+
+.project-gallery-item {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  background: #dedbd3;
+}
+
+.project-gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.project-gallery-item:hover img {
+  transform: scale(1.045);
+}
+
+/* =========================================
+   LARGE LEFT IMAGE
+========================================= */
+
+.project-gallery-item-large {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+/* =========================================
+   FEATURED RIGHT IMAGE
+========================================= */
+
+.project-gallery-item-featured {
+  grid-column: 2;
+  grid-row: 1;
+
+  position: relative;
+}
+
+/* =========================================
+   SMALL IMAGES
+========================================= */
+
+.project-gallery-item-small:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+
+  width: calc(50% - 5px);
+}
+
+.project-gallery-item-small:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+
+  width: calc(50% - 5px);
+
+  margin-left: calc(50% + 5px);
+}
+
+/*
+  The two small images sit beside each other
+  inside the second row.
+*/
+
+.project-gallery-item-small {
+  height: 137px;
+}
+
+/* =========================================
+   PLAY BUTTON
+========================================= */
+
+.project-gallery-play {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(-50%, -50%);
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.94);
+  color: #24231f;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.14);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-gallery-play svg {
+  width: 16px;
+  height: 16px;
+
+  margin-left: 2px;
+}
+
+.project-gallery-play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: #fff;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .project-gallery {
+    padding: 65px 0 70px;
+  }
+
+  .project-gallery-container {
+    width: min(100% - 70px, 900px);
+  }
+
+  .project-gallery-header {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .project-gallery-header-right {
+    padding-left: 0;
+  }
+
+  .project-gallery-grid {
+    grid-template-columns: 1.65fr 1fr;
+    grid-template-rows: 160px 160px;
+  }
+
+  .project-gallery-item-small {
+    height: 160px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+  .project-gallery {
+    padding: 55px 0 65px;
+  }
+
+  .project-gallery-container {
+    width: calc(100% - 36px);
+  }
+
+  /* Header */
+
+  .project-gallery-header {
+    display: block;
+
+    margin-bottom: 25px;
+  }
+
+  .project-gallery-eyebrow {
+    margin-bottom: 15px;
+
+    font-size: 9px;
+  }
+
+  .project-gallery-title h2 {
+    font-size: clamp(40px, 11vw, 54px);
+    line-height: 0.95;
+  }
+
+  .project-gallery-header-right {
+    display: block;
+
+    padding: 0;
+    margin-top: 24px;
+  }
+
+  .project-gallery-header-right p {
+    max-width: 100%;
+
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .project-gallery-button {
+    margin-top: 20px;
+
+    width: 100%;
+    height: 42px;
+  }
+
+  /* Gallery */
+
+  .project-gallery-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:
+      230px
+      145px
+      145px;
+
+    gap: 8px;
+  }
+
+  .project-gallery-item {
+    border-radius: 5px;
+  }
+
+  /* Main */
+
+  .project-gallery-item-large {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  /* Featured */
+
+  .project-gallery-item-featured {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  /* Small images */
+
+  .project-gallery-item-small:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+
+    width: 100%;
+    height: 145px;
+
+    margin: 0;
+  }
+
+  .project-gallery-item-small:nth-child(4) {
+    grid-column: 2;
+    grid-row: 3;
+
+    width: 100%;
+    height: 145px;
+
+    margin: 0;
+  }
+
+  .project-gallery-play {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .project-gallery-container {
+    width: calc(100% - 28px);
+  }
+
+  .project-gallery-title h2 {
+    font-size: 40px;
+  }
+
+  .project-gallery-grid {
+    grid-template-rows:
+      205px
+      130px
+      125px;
+  }
+
+  .project-gallery-item-small:nth-child(3),
+  .project-gallery-item-small:nth-child(4) {
+    height: 125px;
+  }
+}

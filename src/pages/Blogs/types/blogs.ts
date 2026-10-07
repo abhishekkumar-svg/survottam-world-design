@@ -6,4 +6,5 @@ export interface Blog {
   image: string;
   category: string;
   featured: boolean;
+  slug: string;
 }

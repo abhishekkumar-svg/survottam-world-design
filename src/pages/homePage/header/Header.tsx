@@ -1,20 +1,96 @@
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import "./Header.css";
+import { ChevronDown } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
+// const menuItems = [
+//   { label: "Home", href: "https://propacity-landingpages.in/test/" },
+//   { label: "Projects", href: "https://propacity-landingpages.in/test/projects" },
+//   { label: "About Us", href: "https://propacity-landingpages.in/test/about" },
+//   { label: "Leadership", href: "https://propacity-landingpages.in/test/leadership" },
+//   { label: "Blogs", href: "https://propacity-landingpages.in/test/blogs" },
+//     { label: "Media", href: "https://propacity-landingpages.in/test/media" },
+//      { label: "Careers", href: "https://propacity-landingpages.in/test/career" },
+//   { label: "Contact", href: "https://propacity-landingpages.in/test/contact" },
+// ];
 const menuItems = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
+
+  {
+    label: "Projects",
+    href: "/projects",
+    dropdown: true,
+  },
+
   { label: "About Us", href: "/about" },
   { label: "Leadership", href: "/leadership" },
   { label: "Blogs", href: "/blogs" },
-    { label: "Media", href: "/media" },
-     { label: "Careers", href: "/career" },
+  { label: "Media", href: "/media" },
+  { label: "Careers", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
+
+const projectDropdown = [
+  {
+    label: "All Projects",
+    href: "/projects",
+  },
+  {
+    label: "Delivered",
+    items: [
+      {
+        label: "Residency",
+        href: "/projects?status=Delivered&type=Residential",
+      },
+      {
+        label: "Commercial",
+        href: "/projects?status=Delivered&type=Commercial",
+      },
+    ],
+  },
+  {
+    label: "Upcoming",
+    items: [
+      {
+        label: "Residency",
+        href: "/projects?status=Upcoming&type=Residential",
+      },
+      {
+        label: "Commercial",
+        href: "/projects?status=Upcoming&type=Commercial",
+      },
+      {
+        label: "Plotted",
+        href: "/projects?status=Upcoming&type=Plotted",
+      },
+    ],
+  },
+  {
+    label: "Ongoing",
+    items: [
+      {
+        label: "Residency",
+        href: "/projects?status=Ongoing&type=Residential",
+      },
+      {
+        label: "Commercial",
+        href: "/projects?status=Ongoing&type=Commercial",
+      },
+      {
+        label: "Plotted",
+        href: "/projects?status=Ongoing&type=Plotted",
+      },
+    ],
+  },
+];
+
+
 // //updated folder name
 const MOBILE_BREAKPOINT = 768;
 export default function Header() {
+   const location = useLocation();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -26,9 +102,20 @@ export default function Header() {
   const menuTimeline = useRef<gsap.core.Timeline | null>(null);
   const isFirstRender = useRef(true);
 
-  // Keep the clip-path origin locked to the hamburger button's actual
-  // position, so the reveal always starts from the button regardless of
-  // screen size / padding changes at different breakpoints.
+   const isMenuActive = (href: string) => {
+    const pathname = location.pathname;
+
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+ const isBlogDetailPage =
+  location.pathname.startsWith("/blogs/") &&
+  location.pathname.split("/").filter(Boolean).length >= 2;
+
+
   const setOriginFromButton = () => {
     const btn = menuButtonRef.current;
     const menu = menuRef.current;
@@ -71,10 +158,6 @@ export default function Header() {
     };
   }, []);
 
-  // Keep the origin in sync on resize/orientation change, and auto-close
-  // the menu if the viewport grows past the mobile breakpoint (otherwise
-  // the fixed, full-screen menu can stay mounted with pointer-events:auto
-  // and block the desktop layout with no visible way to close it).
   useEffect(() => {
     const handleResize = () => {
       setOriginFromButton();
@@ -89,9 +172,6 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, [menuOpen]);
 
-  // Give the header a visible background once the page is scrolled, so
-  // the (previously always-white) text stays readable once it's no
-  // longer sitting over a hero image.
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 500);
@@ -126,8 +206,6 @@ export default function Header() {
 
     if (!menu) return;
 
-    // Skip animating on the very first render — there's nothing to
-    // animate from/to yet, it just wastes a GSAP timeline on load.
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
@@ -234,14 +312,14 @@ export default function Header() {
 console.log("isScrolled", isScrolled)
   return (
     <>
-      {/* =========================================
-          GLOBAL HEADER
-      ========================================= */}
+    
 
       <header
         className={`global-header ${
           menuOpen ? "global-header-menu-open" : ""
-        } ${isScrolled ? "global-header-scrolled" : ""}`}
+        } ${isScrolled ? "global-header-scrolled" : ""} ${
+    isBlogDetailPage ? "global-header-scrolled" : ""
+  }`}
       >
         {/* LOGO */}
 
@@ -255,33 +333,97 @@ console.log("isScrolled", isScrolled)
             alt="Sarvottam World"
           />
         </a>
+            {/* DESKTOP NAV */}
+    
+       <nav className="global-header-nav">
 
-        {/* =========================================
-            DESKTOP NAV
-        ========================================= */}
+  {menuItems.map((item) => {
 
-        <nav className="global-header-nav">
-          {menuItems.map((item) => (
-            <a key={item.label} href={item.href}>
-              <span>{item.label}</span>
-            </a>
-          ))}
-        </nav>
-
-        {/* =========================================
-            DESKTOP CTA
-        ========================================= */}
-{/* 
-        <a
-          href="/contact"
-          className="global-header-contact"
+    if (item.dropdown) {
+      return (
+        <div
+          className="global-header-dropdown-wrapper"
+          key={item.label}
         >
-          Schedule a Visit
-        </a> */}
 
-        {/* =========================================
-            MOBILE HAMBURGER
-        ========================================= */}
+          <a
+            href={item.href}
+           className={`global-header-dropdown-trigger ${
+    isMenuActive(item.href) ? "active" : ""
+  }`}
+          >
+            <span>{item.label}</span>
+
+            <span className="dropdown-chevron">
+           <ChevronDown size={16} />
+            </span>
+          </a>
+
+          <div className="global-project-dropdown">
+
+            {projectDropdown.map((group) => {
+
+              if (group.items) {
+                return (
+                  <div
+                    className="project-dropdown-group"
+                    key={group.label}
+                  >
+
+                    <span className="project-dropdown-heading">
+                      {group.label}
+                    </span>
+
+                    <div className="project-dropdown-items">
+
+                      {group.items.map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+
+                    </div>
+
+                  </div>
+                );
+              }
+
+              return (
+                <a
+                  key={group.label}
+                  href={group.href}
+                  className="project-dropdown-all"
+                >
+                  {group.label}
+                </a>
+              );
+            })}
+
+          </div>
+
+        </div>
+      );
+    }
+
+    return (
+      <a
+        key={item.label}
+        href={item.href}
+        className={isMenuActive(item.href) ? "active" : ""}
+      >
+        <span>{item.label}</span>
+      </a>
+    );
+
+  })}
+
+</nav>
+
+            {/* MOBILE HAMBURGER */}
+
 
         <button
           ref={menuButtonRef}
@@ -310,12 +452,11 @@ console.log("isScrolled", isScrolled)
       >
         <div className="global-mobile-menu-inner">
 
-          {/* TOP */}
+  
 
-
-          {/* =========================================
-              LINKS
-          ========================================= */}
+      
+              {/* LINKS */}
+      
 
           <nav className="global-mobile-nav">
             {menuItems.map((item, index) => (
@@ -328,6 +469,7 @@ console.log("isScrolled", isScrolled)
                   }
                 }}
                 onClick={closeMenu}
+                 className={isMenuActive(item.href) ? "active" : ""}
               >
                 {/* <span className="global-mobile-nav-number">
                   {String(index + 1).padStart(2, "0")}
@@ -344,10 +486,7 @@ console.log("isScrolled", isScrolled)
             ))}
           </nav>
 
-          {/* =========================================
-              BOTTOM
-          ========================================= */}
-
+        
           <div
             ref={menuBottomRef}
             className="global-mobile-menu-bottom"

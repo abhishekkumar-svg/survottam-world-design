@@ -29,26 +29,20 @@ gsap.registerPlugin(
 export default function ProjectsListing() {
   const sectionRef =
     useRef<HTMLElement>(null);
+const params = new URLSearchParams(window.location.search);
 
-  const [category, setCategory] =
-    useState<ProjectCategory | "All">(
-      "All"
-    );
+const [category, setCategory] =
+  useState<ProjectCategory | "All">(
+    (params.get("status") as ProjectCategory) || "All"
+  );
 
-  const [subCategory, setSubCategory] =
-    useState<ProjectType | "All">(
-      "All"
-    );
+const [subCategory, setSubCategory] =
+  useState<ProjectType | "All">(
+    (params.get("type") as ProjectType) || "All"
+  );
 
-  const [search, setSearch] =
-    useState("");
+const [search, setSearch] = useState(params.get("search") || "");
 
-
-  /*
-  |--------------------------------------------------------------------------
-  | FILTER PROJECTS
-  |--------------------------------------------------------------------------
-  */
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
@@ -86,11 +80,7 @@ export default function ProjectsListing() {
   ]);
 
 
-  /*
-  |--------------------------------------------------------------------------
-  | CARD SCROLL REVEAL
-  |--------------------------------------------------------------------------
-  */
+  
 
   useLayoutEffect(() => {
     if (!sectionRef.current) return;
@@ -143,7 +133,31 @@ export default function ProjectsListing() {
   }, [filteredProjects]);
 
 
+const updateUrl = (
+  category: string,
+  subCategory: string,
+  search: string
+) => {
+  const params = new URLSearchParams();
 
+  if (category !== "All") {
+    params.set("status", category);
+  }
+
+  if (subCategory !== "All") {
+    params.set("type", subCategory);
+  }
+
+  if (search) {
+    params.set("search", search);
+  }
+
+  window.history.replaceState(
+    {},
+    "",
+    `${window.location.pathname}?${params.toString()}`
+  );
+};
 
 
 
@@ -154,9 +168,6 @@ export default function ProjectsListing() {
       ref={sectionRef}
     >
 
-      {/* =====================================================
-          HEADER
-      ===================================================== */}
 
       <div className="projects-listing-header">
 
@@ -195,88 +206,26 @@ export default function ProjectsListing() {
 
       </div>
 
-
-      {/* =====================================================
-          FILTERS
-      ===================================================== */}
-
       <ProjectFilters
         category={category}
         subCategory={subCategory}
         search={search}
-        onCategoryChange={setCategory}
-        onSubCategoryChange={
-          setSubCategory
-        }
-        onSearchChange={setSearch}
+         onCategoryChange={(value) => {
+    setCategory(value);
+    updateUrl(value, subCategory, search);
+  }}
+
+  onSubCategoryChange={(value) => {
+    setSubCategory(value);
+    updateUrl(category, value, search);
+  }}
+
+  onSearchChange={(value) => {
+    setSearch(value);
+    updateUrl(category, subCategory, value);
+  }}
       />
 
-
-      {/* =====================================================
-          TOOLBAR
-      ===================================================== */}
-
-      {/* <div className="projects-toolbar">
-
-        <span>
-          {filteredProjects.length}{" "}
-          Projects Found
-        </span>
-
-
-        <div className="grid-controls">
-
-          <span>
-            VIEW
-          </span>
-
-          <button
-            className={
-              columns === 2
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              changeGrid(2)
-            }
-          >
-            02
-          </button>
-
-          <button
-            className={
-              columns === 3
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              changeGrid(3)
-            }
-          >
-            03
-          </button>
-
-          <button
-            className={
-              columns === 4
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              changeGrid(4)
-            }
-          >
-            04
-          </button>
-
-        </div>
-
-      </div> */}
-
-
-      {/* =====================================================
-          PROJECT GRID
-      ===================================================== */}
 
       {filteredProjects.length > 0 ? (
 
@@ -302,6 +251,7 @@ export default function ProjectsListing() {
               setCategory("All");
               setSubCategory("All");
               setSearch("");
+              updateUrl("All", "All", "");
             }}
           >
             Clear Filters
