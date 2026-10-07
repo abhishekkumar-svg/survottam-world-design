@@ -343,7 +343,7 @@ gsap.set(".about-hero-content",{
           <span className="arch-tree tree-1" />
           <span className="arch-tree tree-2" />
         </div> */}
-        <img src="/test/architecture.svg" alt="Decorative architectural drawing" className="story-architecture-lines" aria-hidden="true" />
+        <img src="/architecture.svg" alt="Decorative architectural drawing" className="story-architecture-lines" aria-hidden="true" />
 
         <div className="story-content-wrap">
           <div className="story-copy-column">
