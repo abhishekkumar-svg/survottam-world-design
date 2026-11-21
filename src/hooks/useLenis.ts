@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+ScrollTrigger.config({ ignoreMobileResize: true });
 export function useLenis() {
   useEffect(() => {
     const lenis = new Lenis({
