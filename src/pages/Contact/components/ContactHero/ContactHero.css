@@ -10,7 +10,6 @@
   color: var(--primary-2);
 }
 
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -30,8 +29,7 @@
   inset: -8%;
   z-index: -3;
 
-  background-image:
-    url("https://images.unsplash.com/photo-1612171709933-024a90133e42?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("https://images.unsplash.com/photo-1612171709933-024a90133e42?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
   background-size: cover;
   background-position: center;
@@ -44,13 +42,12 @@
   inset: 0;
   z-index: -2;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.70) 0%,
-      rgba(0, 0, 0, 0.35) 45%,
-      rgba(0, 0, 0, 0.15) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
 
   opacity: 0.58;
 }
@@ -62,12 +59,7 @@
   z-index: -1;
   pointer-events: none;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.70),
-      transparent 40%
-    );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 40%);
 }
 
 .contact-hero-grain {
@@ -78,8 +70,7 @@
 
   opacity: 0.045;
 
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
 
   mix-blend-mode: soft-light;
 }
@@ -93,10 +84,7 @@
 
   margin-inline: auto;
 
-  padding:
-    clamp(140px, 22vh, 240px)
-    clamp(28px, 7vw, 110px)
-    60px;
+  padding: clamp(140px, 22vh, 240px) clamp(28px, 7vw, 110px) 60px;
 
   display: flex;
   flex-direction: column;
@@ -127,10 +115,7 @@
   margin: 0;
   max-width: 1050px;
 
-  font-family:
-    "Cormorant Garamond",
-    "Times New Roman",
-    serif;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
 
   font-size: clamp(64px, 8.2vw, 132px);
   font-weight: 400;
@@ -170,7 +155,7 @@
   gap: 13px;
 
   font-family: Arial, sans-serif;
-  font-size:     12px  ;
+  font-size: 12px;
   letter-spacing: 0.28em;
 }
 
@@ -187,7 +172,7 @@
   gap: 15px;
 
   font-family: Arial, sans-serif;
-  font-size:     10px  ;
+  font-size: 10px;
   letter-spacing: 0.32em;
 }
 
@@ -195,7 +180,7 @@
   position: relative;
   width: 30px;
   height: 48px;
-  border-left: 1px solid rgba(255,255,255,.55);
+  border-left: 1px solid rgba(255, 255, 255, 0.55);
 }
 
 .scroll-line span {
@@ -250,15 +235,13 @@
 }
 
 .contact-hero-year span {
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: clamp(80px, 10vw, 160px);
   line-height: 0.8;
   font-weight: 300;
 
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, 0.9);
   letter-spacing: -0.05em;
 }
 
@@ -266,13 +249,12 @@
   margin-top: 25px;
 
   font-family: Arial, sans-serif;
-  font-size:     10px  ;
+  font-size: 10px;
   line-height: 1.9;
   letter-spacing: 0.34em;
 
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, 0.75);
 }
-
 
 /* =========================================================
    OUR STORY
@@ -295,10 +277,7 @@
 
   margin-inline: auto;
 
-  padding:
-    clamp(90px, 10vw, 150px)
-    clamp(30px, 7vw, 100px)
-    100px;
+  padding: clamp(90px, 10vw, 150px) clamp(30px, 7vw, 100px) 100px;
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) 180px;
@@ -319,8 +298,8 @@
   margin-bottom: 28px;
 
   font-family: Arial, sans-serif;
-  font-size:     12px  ;
-  letter-spacing: .42em;
+  font-size: 12px;
+  letter-spacing: 0.42em;
   color: var(--primary-color);
 }
 
@@ -334,16 +313,13 @@
 
 .story-heading {
   margin: 0 0 40px;
-color : var(--primary-2);
-  font-family:
-    "Cormorant Garamond",
-    "Times New Roman",
-    serif;
+  color: var(--primary-2);
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
 
   font-size: clamp(64px, 7vw, 105px);
-  line-height: .82;
+  line-height: 0.82;
   font-weight: 400;
-  letter-spacing: -.055em;
+  letter-spacing: -0.055em;
 }
 
 .story-heading em {
@@ -367,11 +343,9 @@ color : var(--primary-2);
 .story-copy p {
   margin: 0 0 19px;
 
-  font-family:
-    Arial,
-    sans-serif;
+  font-family: Arial, sans-serif;
 
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.75;
   color: #777267;
 }
@@ -393,9 +367,7 @@ color : var(--primary-2);
   left: 28px;
   top: -21px;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 65px;
   line-height: 1;
@@ -410,13 +382,10 @@ color : var(--primary-2);
 .story-quote p {
   margin: 0 0 17px;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(24px, 2.6vw, 35px);
-  line-height: .98;
+  line-height: 0.98;
   color: var(--primary-2);
 }
 
@@ -429,13 +398,13 @@ color : var(--primary-2);
 }
 
 .quote-author strong {
-  font-size:     10px  ;
-  letter-spacing: .27em;
+  font-size: 10px;
+  letter-spacing: 0.27em;
 }
 
 .quote-author span {
-  font-size:     10px  ;
-  letter-spacing: .22em;
+  font-size: 10px;
+  letter-spacing: 0.22em;
   color: var(--muted);
 }
 
@@ -457,10 +426,7 @@ color : var(--primary-2);
 }
 
 .signature span {
-  font-family:
-    "Brush Script MT",
-    "Segoe Script",
-    cursive;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
 
   font-size: 31px;
   color: #3c372e;
@@ -475,16 +441,15 @@ color : var(--primary-2);
 }
 
 .signature-info strong {
-  font-size:     10px  ;
-  letter-spacing: .25em;
+  font-size: 10px;
+  letter-spacing: 0.25em;
 }
 
 .signature-info span {
-  font-size:     10px  ;
-  letter-spacing: .18em;
+  font-size: 10px;
+  letter-spacing: 0.18em;
   color: var(--muted);
 }
-
 
 /* =========================================================
    SIDE MESSAGE
@@ -500,9 +465,9 @@ color : var(--primary-2);
   padding-left: 30px;
 
   font-family: Arial, sans-serif;
-  font-size:     10px  ;
+  font-size: 10px;
   line-height: 1.5;
-  letter-spacing: .32em;
+  letter-spacing: 0.32em;
 
   color: #676157;
 }
@@ -518,7 +483,6 @@ color : var(--primary-2);
   background: var(--primary-color);
 }
 
-
 /* =========================================================
    ARCHITECTURAL LINE ART
 ========================================================= */
@@ -533,7 +497,6 @@ color : var(--primary-2);
 
   width: 44%;
   height: 82%;
-
 
   pointer-events: none;
 }
@@ -619,7 +582,6 @@ color : var(--primary-2);
   top: 23%;
 }
 
-
 /* =========================================================
    40+ BUILDING SECTION
 ========================================================= */
@@ -629,10 +591,7 @@ color : var(--primary-2);
 
   width: 100%;
 
-  padding:
-    0
-    clamp(18px, 5vw, 75px)
-    clamp(35px, 5vw, 70px);
+  padding: 0 clamp(18px, 5vw, 75px) clamp(35px, 5vw, 70px);
 }
 
 .story-building-frame {
@@ -654,8 +613,7 @@ color : var(--primary-2);
 
   inset: -10%;
 
-  background-image:
-    url("https://sarvottamworld.in/_next/image?url=%2FProjects%2FRaddison-Red.jpg&w=1920&q=75");
+  background-image: url("https://sarvottamworld.in/_next/image?url=%2FProjects%2FRaddison-Red.jpg&w=1920&q=75");
 
   background-size: cover;
   background-position: center;
@@ -667,13 +625,12 @@ color : var(--primary-2);
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.60) 0%,
-      rgba(0,0,0,.18) 48%,
-      rgba(0,0,0,.10) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.18) 48%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 
   pointer-events: none;
 }
@@ -687,26 +644,22 @@ color : var(--primary-2);
   display: flex;
   flex-direction: column;
 
-  color: rgba(255,255,255,.94);
+  color: rgba(255, 255, 255, 0.94);
 
   pointer-events: none;
 }
 
 .story-years strong {
-  font-family:
-    "Cormorant Garamond",
-    "Times New Roman",
-    serif;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
 
   font-size: clamp(145px, 18vw, 280px);
 
-  line-height: .63;
+  line-height: 0.63;
   font-weight: 300;
 
-  letter-spacing: -.075em;
+  letter-spacing: -0.075em;
 
-  text-shadow:
-    0 5px 30px rgba(0,0,0,.12);
+  text-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
 }
 
 .story-years span {
@@ -715,10 +668,10 @@ color : var(--primary-2);
 
   font-family: Arial, sans-serif;
 
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
 
-  letter-spacing: .48em;
+  letter-spacing: 0.48em;
 }
 
 .story-building-caption {
@@ -734,19 +687,17 @@ color : var(--primary-2);
 
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
-  letter-spacing: .32em;
+  font-size: 10px;
+  letter-spacing: 0.32em;
 
-  color: rgba(255,255,255,.78);
+  color: rgba(255, 255, 255, 0.78);
 }
-
 
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .contact-hero {
     min-height: 650px;
   }
@@ -773,10 +724,7 @@ color : var(--primary-2);
 
     min-height: auto;
 
-    padding:
-      100px
-      40px
-      80px;
+    padding: 100px 40px 80px;
   }
 
   .story-copy-column {
@@ -799,13 +747,11 @@ color : var(--primary-2);
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
-
   /* -----------------------------------------
      HERO
   ----------------------------------------- */
@@ -821,24 +767,20 @@ color : var(--primary-2);
   }
 
   .contact-hero-overlay {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,.25) 0%,
-        rgba(0,0,0,.15) 35%,
-        rgba(0,0,0,.80) 100%
-      );
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.15) 35%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
 
-    opacity: .72;
+    opacity: 0.72;
   }
 
   .contact-hero-content {
     justify-content: flex-end;
 
-    padding:
-      140px
-      25px
-      115px;
+    padding: 140px 25px 115px;
   }
 
   .contact-hero-eyebrow {
@@ -847,15 +789,15 @@ color : var(--primary-2);
   }
 
   .contact-hero-eyebrow span {
-    font-size:     10px  ;
+    font-size: 10px;
     line-height: 1.8;
-    letter-spacing: .38em;
+    letter-spacing: 0.38em;
   }
 
   .contact-hero-title {
     font-size: clamp(56px, 15vw, 82px);
-    line-height: .84;
-    letter-spacing: -.055em;
+    line-height: 0.84;
+    letter-spacing: -0.055em;
   }
 
   .contact-hero-title .gold {
@@ -875,8 +817,8 @@ color : var(--primary-2);
 
   .contact-hero-year small {
     margin-top: 13px;
-    font-size:     10px  ;
-    letter-spacing: .28em;
+    font-size: 10px;
+    letter-spacing: 0.28em;
   }
 
   .contact-hero-bottom {
@@ -890,9 +832,9 @@ color : var(--primary-2);
     max-width: 190px;
     flex-wrap: wrap;
     gap: 7px;
-    font-size:     10px  ;
+    font-size: 10px;
     line-height: 1.7;
-    letter-spacing: .20em;
+    letter-spacing: 0.2em;
   }
 
   .contact-hero-meta i {
@@ -901,8 +843,8 @@ color : var(--primary-2);
   }
 
   .contact-hero-scroll {
-    font-size:     10px  ;
-    letter-spacing: .24em;
+    font-size: 10px;
+    letter-spacing: 0.24em;
     gap: 10px;
   }
 
@@ -911,18 +853,12 @@ color : var(--primary-2);
     width: 20px;
   }
 
-
   /* -----------------------------------------
      STORY — MOBILE EDITORIAL
   ----------------------------------------- */
 
   .contact-story {
-    background:
-      linear-gradient(
-        180deg,
-        #f4efe4 0%,
-        #f7f2e8 100%
-      );
+    background: linear-gradient(180deg, #f4efe4 0%, #f7f2e8 100%);
   }
 
   .story-content-wrap {
@@ -930,10 +866,7 @@ color : var(--primary-2);
 
     min-height: auto;
 
-    padding:
-      72px
-      25px
-      58px;
+    padding: 72px 25px 58px;
   }
 
   .story-copy-column {
@@ -944,8 +877,8 @@ color : var(--primary-2);
   .story-eyebrow {
     margin-bottom: 22px;
 
-    font-size:     10px  ;
-    letter-spacing: .38em;
+    font-size: 10px;
+    letter-spacing: 0.38em;
   }
 
   .story-accent-line {
@@ -956,8 +889,8 @@ color : var(--primary-2);
     margin-bottom: 29px;
 
     font-size: clamp(50px, 14vw, 70px);
-    line-height: .86;
-    letter-spacing: -.05em;
+    line-height: 0.86;
+    letter-spacing: -0.05em;
   }
 
   .story-copy {
@@ -967,7 +900,7 @@ color : var(--primary-2);
   .story-copy p {
     margin-bottom: 18px;
 
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.78;
     color: #777267;
   }
@@ -980,7 +913,6 @@ color : var(--primary-2);
 
     width: 78%;
     height: 48%;
-
   }
 
   .arch-line-1 {
@@ -1034,17 +966,17 @@ color : var(--primary-2);
     margin-bottom: 15px;
 
     font-size: 25px;
-    line-height: .98;
+    line-height: 0.98;
   }
 
   .quote-author strong {
-    font-size:     10px  ;
-    letter-spacing: .25em;
+    font-size: 10px;
+    letter-spacing: 0.25em;
   }
 
   .quote-author span {
-    font-size:     10px  ;
-    letter-spacing: .20em;
+    font-size: 10px;
+    letter-spacing: 0.2em;
   }
 
   /* Signature */
@@ -1063,7 +995,7 @@ color : var(--primary-2);
   }
 
   .signature-info strong {
-    font-size:     10px  ;
+    font-size: 10px;
   }
 
   .signature-info span {
@@ -1074,16 +1006,12 @@ color : var(--primary-2);
     display: none;
   }
 
-
   /* -----------------------------------------
      40+ BUILDING IMAGE
   ----------------------------------------- */
 
   .story-building-section {
-    padding:
-      0
-      8px
-      28px;
+    padding: 0 8px 28px;
   }
 
   .story-building-frame {
@@ -1099,13 +1027,12 @@ color : var(--primary-2);
   }
 
   .story-building-overlay {
-    background:
-      linear-gradient(
-        to top,
-        rgba(0,0,0,.72) 0%,
-        rgba(0,0,0,.20) 65%,
-        rgba(0,0,0,.10) 100%
-      );
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.2) 65%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
   }
 
   .story-years {
@@ -1115,16 +1042,16 @@ color : var(--primary-2);
 
   .story-years strong {
     font-size: 112px;
-    line-height: .66;
+    line-height: 0.66;
   }
 
   .story-years span {
     margin-left: 6px;
     margin-top: 19px;
 
-    font-size:     10px  ;
+    font-size: 10px;
     line-height: 1.8;
-    letter-spacing: .40em;
+    letter-spacing: 0.4em;
   }
 
   .story-building-caption {
@@ -1132,17 +1059,15 @@ color : var(--primary-2);
     bottom: 20px;
 
     font-size: 5.5px;
-    letter-spacing: .28em;
+    letter-spacing: 0.28em;
   }
 }
-
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 380px) {
-
   .contact-hero-title {
     font-size: 51px;
   }

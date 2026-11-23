@@ -15,7 +15,6 @@
   overflow: hidden;
 }
 
-
 /* =========================================
    MAIN SPLIT
 
@@ -32,10 +31,8 @@
 
   display: grid;
 
-  grid-template-columns:
-    47% 37% 16%;
+  grid-template-columns: 47% 37% 16%;
 }
-
 
 /* =========================================
    LEFT CONTENT
@@ -54,11 +51,8 @@
 
   justify-content: center;
 
-  padding:
-    70px
-    7vw;
+  padding: 70px 7vw;
 }
-
 
 /* =========================================
    EYEBROW
@@ -96,7 +90,6 @@
   background: var(--primary-color);
 }
 
-
 /* =========================================
    TITLE
 ========================================= */
@@ -106,16 +99,9 @@
 
   color: var(--primary-color);
 
-  font-family:
-    "Times New Roman",
-    Georgia,
-    serif;
+  font-family: "Times New Roman", Georgia, serif;
 
-  font-size: clamp(
-    44px,
-    3.55vw,
-    68px
-  );
+  font-size: clamp(44px, 3.55vw, 68px);
 
   font-weight: 400;
 
@@ -132,7 +118,6 @@
   font-weight: 400;
 }
 
-
 /* =========================================
    DESCRIPTION
 ========================================= */
@@ -140,10 +125,7 @@
 .cta-description {
   max-width: 650px;
 
-  margin:
-    42px
-    0
-    0;
+  margin: 42px 0 0;
 
   color: #77736d;
 
@@ -155,7 +137,6 @@
 
   line-height: 1.75;
 }
-
 
 /* =========================================
    BUTTONS
@@ -171,13 +152,10 @@
   margin-top: 48px;
 }
 
-
 .cta-button {
   height: 70px;
 
-  padding:
-    0
-    36px;
+  padding: 0 36px;
 
   display: inline-flex;
 
@@ -203,7 +181,6 @@
     color 0.35s ease;
 }
 
-
 /* PRIMARY */
 
 .cta-button-primary {
@@ -222,7 +199,6 @@
   transform: translateY(-3px);
 }
 
-
 /* SECONDARY */
 
 .cta-button-secondary {
@@ -230,9 +206,8 @@
 
   background: transparent;
 
-  border:
-    1px solid
-    rgba(80, 70, 67, 0.55);
+  border: 1px solid rgba(80, 70, 67, 0.55);
+  position: relative;
 }
 
 .cta-button-secondary:hover {
@@ -243,6 +218,23 @@
   transform: translateY(-3px);
 }
 
+/* .cta-button-secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary-color);
+  z-index: -1;
+  opacity: 0;
+  clip-path: circle(0% at 0% 0%);
+  transition:
+    clip-path 1s ease,
+    opacity 1s ease;
+}
+
+.cta-button-secondary:hover::before {
+  opacity: 1;
+  clip-path: circle(150% at 0% 00%);
+} */
 
 /* =========================================
    IMAGE
@@ -258,11 +250,8 @@
 
   z-index: 1;
 
-  will-change:
-    clip-path,
-    transform;
+  will-change: clip-path, transform;
 }
-
 
 .cta-image img {
   position: absolute;
@@ -281,7 +270,6 @@
 
   will-change: transform;
 }
-
 
 /* =========================================
    RIGHT PANEL
@@ -305,7 +293,6 @@
   background: #f5f3ed;
 }
 
-
 /* =========================================
    RIGHT TEXT
 ========================================= */
@@ -323,11 +310,7 @@
 
   font-family: Arial, sans-serif;
 
-  font-size: clamp(
-    10px,
-    0.85vw,
-    15px
-  );
+  font-size: clamp(10px, 0.85vw, 15px);
 
   font-weight: 400;
 
@@ -336,7 +319,6 @@
   line-height: 3.7;
 }
 
-
 /* =========================================
    RIGHT WORD
 ========================================= */
@@ -344,11 +326,8 @@
 .cta-side-word {
   display: block;
 
-  will-change:
-    transform,
-    opacity;
+  will-change: transform, opacity;
 }
-
 
 /* =========================================
    SIDE LINE
@@ -364,24 +343,19 @@
   background: #b77e2e;
 }
 
-
 /* =========================================
    GSAP
 ========================================= */
 
 .cta-reveal {
-  will-change:
-    transform,
-    opacity;
+  will-change: transform, opacity;
 }
-
 
 /* =========================================
    LARGE DESKTOP
 ========================================= */
 
 @media (min-width: 1600px) {
-
   .cta-content {
     padding-left: 6vw;
     padding-right: 5vw;
@@ -394,45 +368,35 @@
   .cta-description {
     font-size: 15px;
   }
-
 }
-
 
 /* =========================================
    LAPTOP
 ========================================= */
 
 @media (max-width: 1200px) {
-
   .cta-inner {
-    grid-template-columns:
-      48% 37% 15%;
+    grid-template-columns: 48% 37% 15%;
   }
 
   .cta-content {
-    padding:
-      50px
-      5vw;
+    padding: 50px 5vw;
   }
 
   .cta-eyebrow {
     margin-bottom: 35px;
 
-    font-size:     10px  ;
+    font-size: 10px;
   }
 
   .cta-title {
-    font-size: clamp(
-      38px,
-      4vw,
-      54px
-    );
+    font-size: clamp(38px, 4vw, 54px);
   }
 
   .cta-description {
     margin-top: 30px;
 
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .cta-actions {
@@ -444,58 +408,46 @@
   .cta-button {
     height: 56px;
 
-    padding:
-      0
-      20px;
+    padding: 0 20px;
 
-    font-size:     10px  ;
+    font-size: 10px;
   }
 
   .cta-side-text {
-    font-size:     12px  ;
+    font-size: 12px;
 
     letter-spacing: 0.3em;
   }
-
 }
-
 
 /* =========================================
    TABLET
 ========================================= */
 
 @media (max-width: 900px) {
-
   .cta-section {
     height: auto;
 
     min-height: 0;
   }
 
-
   .cta-inner {
     height: auto;
 
     display: grid;
 
-    grid-template-columns:
-      50% 50%;
+    grid-template-columns: 50% 50%;
   }
-
 
   .cta-content {
     min-height: 620px;
 
-    padding:
-      70px
-      6vw;
+    padding: 70px 6vw;
   }
-
 
   .cta-image {
     min-height: 620px;
   }
-
 
   .cta-side-message {
     grid-column: 1 / -1;
@@ -509,7 +461,6 @@
     gap: 40px;
   }
 
-
   .cta-side-text {
     flex-direction: row;
 
@@ -517,33 +468,28 @@
 
     gap: 22px;
 
-    font-size:     10px  ;
+    font-size: 10px;
 
     line-height: 1.5;
   }
-
 
   .cta-side-line {
     width: 45px;
 
     margin-top: 0;
   }
-
 }
-
 
 /* =========================================
    MOBILE
 ========================================= */
 
 @media (max-width: 600px) {
-
   .cta-inner {
     display: flex;
 
     flex-direction: column;
   }
-
 
   /* -----------------------------------------
      CONTENT
@@ -552,48 +498,36 @@
   .cta-content {
     min-height: auto;
 
-    padding:
-      75px
-      7vw
-      60px;
+    padding: 75px 7vw 60px;
   }
-
 
   .cta-eyebrow {
     margin-bottom: 34px;
 
     gap: 12px;
 
-    font-size:     10px  ;
+    font-size: 10px;
 
     letter-spacing: 0.3em;
   }
-
 
   .cta-eyebrow i {
     width: 35px;
   }
 
-
   .cta-title {
-    font-size: clamp(
-      39px,
-      11vw,
-      54px
-    );
+    font-size: clamp(39px, 11vw, 54px);
 
     line-height: 0.98;
   }
 
-
   .cta-description {
     margin-top: 30px;
 
-    font-size: 11px;
+    font-size: 12px;
 
     line-height: 1.75;
   }
-
 
   /* -----------------------------------------
      BUTTONS
@@ -611,7 +545,6 @@
     margin-top: 32px;
   }
 
-
   .cta-button {
     width: 100%;
 
@@ -619,9 +552,8 @@
 
     padding: 0;
 
-    font-size:     10px  ;
+    font-size: 10px;
   }
-
 
   /* -----------------------------------------
      IMAGE
@@ -637,7 +569,6 @@
     max-height: 550px;
   }
 
-
   .cta-image img {
     inset: -3% 0;
 
@@ -648,15 +579,13 @@
     object-position: center;
   }
 
-
   /* -----------------------------------------
      SIDE MESSAGE
   ----------------------------------------- */
 
   .cta-side-message {
-   display:none
+    display: none;
   }
-
 
   .cta-side-text {
     flex-direction: row;
@@ -667,7 +596,7 @@
 
     gap: 4px 15px;
 
-    font-size:     10px  ;
+    font-size: 10px;
 
     line-height: 2;
 
@@ -676,16 +605,13 @@
     text-align: center;
   }
 
-
   .cta-side-word {
     white-space: nowrap;
   }
-
 
   .cta-side-line {
     width: 40px;
 
     margin: 0;
   }
-
 }

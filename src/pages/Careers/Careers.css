@@ -25,7 +25,6 @@
   text-transform: uppercase;
 }
 
-
 /* =========================================
    WHO WE ARE
 ========================================= */
@@ -44,7 +43,6 @@
 
   gap: 100px;
 }
-
 
 /* IMAGE GRID */
 
@@ -68,13 +66,12 @@
 .careers-photo img {
   width: 100%;
   height: 100%;
-border-radius: 8px;
+  border-radius: 8px;
   display: block;
 
   object-fit: cover;
 
-  transition:
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .careers-photo:hover img {
@@ -98,7 +95,6 @@ border-radius: 8px;
   height: 230px;
   margin-top: -55px;
 }
-
 
 /* CONTENT */
 
@@ -142,7 +138,7 @@ border-radius: 8px;
 
 .careers-life {
   padding: 0 0 120px;
-  background: var(--main-bg);;
+  background: var(--main-bg);
 }
 
 .careers-life-heading {
@@ -163,7 +159,6 @@ border-radius: 8px;
   color: var(--primary-color);
 }
 
-
 /* =========================================
    IMAGE + STACKED CARDS
 ========================================= */
@@ -178,7 +173,6 @@ border-radius: 8px;
 
   min-height: 500px;
 }
-
 
 /* =========================================
    IMAGE
@@ -212,7 +206,6 @@ border-radius: 8px;
   transform: scale(1.04);
 }
 
-
 /* subtle fade over image */
 
 .careers-life-image::after {
@@ -229,7 +222,6 @@ border-radius: 8px;
 
   pointer-events: none;
 }
-
 
 /* =========================================
    VALUES
@@ -249,7 +241,6 @@ border-radius: 8px;
 
   padding: 20px 0;
 }
-
 
 /* =========================================
    VALUE CARD
@@ -293,7 +284,6 @@ border-radius: 8px;
     0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-
 /* =========================================
    NUMBER
 ========================================= */
@@ -307,12 +297,11 @@ border-radius: 8px;
 
   color: var(--primary-color);
 
-  font-size:     12px  ;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.15em;
 }
-
 
 /* =========================================
    CONTENT
@@ -349,7 +338,6 @@ border-radius: 8px;
   opacity: 0.58;
 }
 
-
 /* =========================================
    TABLET
 ========================================= */
@@ -377,7 +365,6 @@ border-radius: 8px;
     margin-left: 25px;
   }
 }
-
 
 /* =========================================
    MOBILE
@@ -509,7 +496,7 @@ border-radius: 8px;
 }
 
 .careers-cta h2 span {
-  color:var(--primary-2);
+  color: var(--primary-2);
 }
 
 .careers-cta p {
@@ -519,7 +506,7 @@ border-radius: 8px;
 
   color: var(--primary-color);
 
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
 
   /* opacity: 0.7; */
@@ -538,7 +525,7 @@ border-radius: 8px;
   background: var(--primary-2);
   color: #fff;
 
-  font-size:     12px  ;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.16em;
@@ -562,7 +549,6 @@ border-radius: 8px;
   font-size: 16px;
 }
 
-
 /* =========================================
    JOBS
 ========================================= */
@@ -570,11 +556,10 @@ border-radius: 8px;
 .careers-jobs {
   padding: 115px 0 130px;
 
-  background: var(--main-bg);;
+  background: var(--main-bg);
 }
 
 .careers-jobs-heading {
-
   margin: 0 auto 65px;
 
   text-align: start;
@@ -605,7 +590,6 @@ border-radius: 8px;
 
   opacity: 0.58;
 }
-
 
 /* JOB LIST */
 
@@ -657,7 +641,7 @@ border-radius: 8px;
 
   color: var(--primary-color);
 
-  font-size:     10px  ;
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 0.17em;
@@ -683,7 +667,7 @@ border-radius: 8px;
 
   color: var(--primary-2);
 
-  font-size:     12px  ;
+  font-size: 12px;
   letter-spacing: 0.08em;
 
   opacity: 0.55;
@@ -720,7 +704,6 @@ border-radius: 8px;
 .careers-job.is-open .careers-job-icon svg {
   transform: rotate(180deg);
 }
-
 
 /* JOB DETAILS */
 
@@ -764,7 +747,7 @@ border-radius: 8px;
 }
 
 .careers-job-details-top span {
-  font-size:     10px  ;
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 0.17em;
@@ -773,7 +756,7 @@ border-radius: 8px;
 }
 
 .careers-job-details-top strong {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -786,7 +769,7 @@ border-radius: 8px;
 .careers-job-description p {
   margin: 0;
 
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
 
   opacity: 0.65;
@@ -863,7 +846,7 @@ border-radius: 8px;
 }
 
 .careers-job-apply-row > span {
-  font-size: 11px;
+  font-size: 12px;
 
   opacity: 0.55;
 }
@@ -882,7 +865,7 @@ border-radius: 8px;
 
   color: var(--primary-2);
 
-  font-size:     12px  ;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.15em;
@@ -900,7 +883,6 @@ border-radius: 8px;
   color: #fff;
 }
 
-
 /* =========================================
    APPLY NOW
 ========================================= */
@@ -910,7 +892,6 @@ border-radius: 8px;
 
   background: #fff;
 }
-
 
 /* =========================================
    INNER
@@ -932,7 +913,6 @@ border-radius: 8px;
   overflow: hidden;
 }
 
-
 /* subtle decorative circle */
 
 .careers-apply-inner::after {
@@ -952,7 +932,6 @@ border-radius: 8px;
 
   pointer-events: none;
 }
-
 
 /* =========================================
    HEADING
@@ -1002,7 +981,6 @@ border-radius: 8px;
   opacity: 0.55;
 }
 
-
 /* =========================================
    APPLICATION BOX
 ========================================= */
@@ -1017,7 +995,6 @@ border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
 /* =========================================
    TOP
 ========================================= */
@@ -1031,7 +1008,6 @@ border-radius: 8px;
 
   gap: 35px;
 }
-
 
 /* =========================================
    EMAIL / POSITION
@@ -1051,7 +1027,7 @@ border-radius: 8px;
 .careers-apply-bottom span {
   color: var(--primary-color);
 
-  font-size:     10px  ;
+  font-size: 10px;
 
   font-weight: 600;
 
@@ -1083,7 +1059,6 @@ border-radius: 8px;
 
   font-weight: 400;
 }
-
 
 /* =========================================
    BOTTOM
@@ -1119,7 +1094,6 @@ border-radius: 8px;
   font-weight: 500;
 }
 
-
 /* =========================================
    BUTTON
 ========================================= */
@@ -1139,7 +1113,7 @@ border-radius: 8px;
 
   color: var(--primary-2);
 
-  font-size:     10px  ;
+  font-size: 10px;
 
   font-weight: 600;
 
@@ -1168,8 +1142,6 @@ border-radius: 8px;
 
   color: #fff;
 }
-
-
 
 /* =========================================
    TABLET
@@ -1248,7 +1220,6 @@ border-radius: 8px;
   }
 }
 
-
 /* =========================================
    MOBILE
 ========================================= */
@@ -1284,7 +1255,7 @@ border-radius: 8px;
 
   .careers-photo-4 {
     height: 180px;
-    margin-top:-45px
+    margin-top: -45px;
   }
 
   .careers-who-content h2 {
@@ -1292,7 +1263,7 @@ border-radius: 8px;
   }
 
   .careers-who-content p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .careers-life {
@@ -1392,7 +1363,7 @@ border-radius: 8px;
 
     gap: 18px;
   }
-.careers-apply-inner {
+  .careers-apply-inner {
     padding: 40px 16px;
   }
 
@@ -1422,7 +1393,7 @@ border-radius: 8px;
   }
 
   .careers-apply-bottom strong {
-    font-size: 11px;
+    font-size: 12px;
     word-break: break-word;
   }
 }

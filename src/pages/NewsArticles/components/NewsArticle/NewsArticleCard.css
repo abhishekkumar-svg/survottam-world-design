@@ -17,7 +17,6 @@
     opacity 0.7s ease;
 }
 
-
 /* =========================================
    IMAGE
 ========================================= */
@@ -32,18 +31,10 @@
 
   background: #ddd;
 
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 91%,
-    94% 100%,
-    0 100%
-  );
+  clip-path: polygon(0 0, 100% 0, 100% 91%, 94% 100%, 0 100%);
 
-  transition:
-    clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 
 .newsArticle-card-image {
   width: 100%;
@@ -60,7 +51,6 @@
     filter 0.8s ease;
 }
 
-
 /* =========================================
    IMAGE OVERLAY
 ========================================= */
@@ -69,12 +59,11 @@
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.05) 30%,
-      rgba(0, 0, 0, 0.55) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 30%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
 
   opacity: 0.65;
 
@@ -82,7 +71,6 @@
 
   transition: opacity 0.6s ease;
 }
-
 
 /* =========================================
    SOURCE
@@ -103,9 +91,8 @@
   color: #fff;
 }
 
-
 .newsArticle-card-source span {
-  font-size:     10px  ;
+  font-size: 10px;
   font-weight: 500;
 
   letter-spacing: 0.2em;
@@ -113,7 +100,6 @@
 
   opacity: 0.7;
 }
-
 
 .newsArticle-card-source strong {
   font-family: var(--heading-font, serif);
@@ -123,7 +109,6 @@
 
   letter-spacing: -0.02em;
 }
-
 
 /* =========================================
    NUMBER
@@ -149,12 +134,11 @@
 
   color: #fff;
 
-  font-size:     12px  ;
+  font-size: 12px;
   letter-spacing: 0.1em;
 
   backdrop-filter: blur(5px);
 }
-
 
 /* =========================================
    HOVER IMAGE
@@ -166,22 +150,13 @@
   filter: saturate(0.85);
 }
 
-
 .newsArticle-card:hover .newsArticle-card-image-overlay {
   opacity: 0.9;
 }
 
-
 .newsArticle-card:hover .newsArticle-card-image-wrap {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 94%,
-    94% 100%,
-    0 100%
-  );
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 94% 100%, 0 100%);
 }
-
 
 /* =========================================
    CONTENT
@@ -190,7 +165,6 @@
 .newsArticle-card-content {
   padding: 22px 8px 30px 4px;
 }
-
 
 /* =========================================
    META
@@ -205,7 +179,7 @@
 
   color: var(--primary-2);
 
-  font-size:     10px  ;
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 0.18em;
@@ -213,7 +187,6 @@
 
   opacity: 0.55;
 }
-
 
 .newsArticle-card-meta i {
   width: 4px;
@@ -225,7 +198,6 @@
 
   background: var(--primary-color);
 }
-
 
 /* =========================================
    TITLE
@@ -248,7 +220,6 @@
   letter-spacing: -0.035em;
 }
 
-
 /* =========================================
    DESCRIPTION
 ========================================= */
@@ -260,13 +231,12 @@
 
   color: var(--primary-2);
 
-  font-size: 13px;
+  font-size: 14px;
 
   line-height: 1.65;
 
   opacity: 0.58;
 }
-
 
 /* =========================================
    FOOTER
@@ -284,18 +254,16 @@
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-
 .newsArticle-read-more {
   color: var(--primary-2);
 
-  font-size:     12px  ;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.18em;
 
   opacity: 0.65;
 }
-
 
 /* =========================================
    ARROW
@@ -327,12 +295,9 @@
     transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-
 .newsArticle-card-arrow .arrowIcon {
-  transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 
 .newsArticle-card:hover .newsArticle-card-arrow {
   background: var(--primary-color);
@@ -342,11 +307,9 @@
   transform: translateY(-3px);
 }
 
-
 .newsArticle-card:hover .newsArticle-card-arrow .arrowIcon {
   transform: translateX(3px);
 }
-
 
 /* =========================================
    TABLET
@@ -362,7 +325,6 @@
   }
 }
 
-
 /* =========================================
    MOBILE
 ========================================= */
@@ -375,13 +337,7 @@
   .newsArticle-card-image-wrap {
     height: 270px;
 
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 94%,
-      92% 100%,
-      0 100%
-    );
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 92% 100%, 0 100%);
   }
 
   .newsArticle-card-content {
@@ -415,7 +371,7 @@
   .newsArticle-card p {
     max-width: 100%;
 
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .newsArticle-card-footer {
@@ -432,12 +388,6 @@
   }
 
   .newsArticle-card:hover .newsArticle-card-image-wrap {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 94%,
-      92% 100%,
-      0 100%
-    );
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 92% 100%, 0 100%);
   }
 }

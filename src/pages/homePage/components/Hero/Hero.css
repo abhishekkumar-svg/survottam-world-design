@@ -17,10 +17,6 @@
   color: #1b2435;
 }
 
-
-
-
-
 /* =========================================
    CONTENT
 ========================================= */
@@ -61,9 +57,7 @@
 
 .hero-intro-content {
   z-index: 21;
-  
 }
-
 
 /* =========================================
    SLIDE CONTENT
@@ -73,7 +67,6 @@
   z-index: 20;
 }
 
-
 /* =========================================
    EYEBROW
 ========================================= */
@@ -81,7 +74,7 @@
 .hero-eyebrow {
   margin-bottom: 25px;
 
-  font-size:     12px  ;
+  font-size: 12px;
 
   letter-spacing: 0.3em;
 
@@ -89,7 +82,6 @@
 
   color: var(--primary-color);
 }
-
 
 /* =========================================
    TITLE
@@ -102,10 +94,7 @@
   margin: 0;
 
   font-family:
-    "Cormorant Garamond",
-    "Times New Roman",
-    Georgia,
-    serif;
+    "Raleway", "Cormorant Garamond", "Times New Roman", Georgia, serif;
 
   font-size: clamp(64px, 7vw, 118px);
 
@@ -137,7 +126,6 @@
   will-change: transform;
 }
 
-
 /* =========================================
    DIVIDER
 ========================================= */
@@ -153,7 +141,6 @@
   opacity: 0.45;
 }
 
-
 /* =========================================
    DESCRIPTION
 ========================================= */
@@ -163,7 +150,7 @@
 
   margin: 0;
 
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
 
   color: rgba(243, 243, 236, 0.82);
@@ -194,7 +181,7 @@
 
   color: inherit;
 
-  font-size:     12px  ;
+  font-size: 12px;
 
   letter-spacing: 0.18em;
 
@@ -228,7 +215,6 @@
 .hero-actions a:hover span {
   transform: translateX(4px);
 }
-
 
 /* =========================================
    INTRO IMAGE
@@ -266,16 +252,19 @@
 
   background:
     linear-gradient(
-      180deg,
-      rgba(8, 12, 20, 0.18) 0%,
-      rgba(8, 12, 20, 0.04) 40%,
-      rgba(8, 12, 20, 0.75) 100%
-    );
+      to top right,
+      rgba(8, 12, 20, 0.65) 0%,
+      rgba(8, 12, 20, 0.35) 40%,
+      transparent 75%
+    ),
+    linear-gradient(to bottom, rgba(8, 12, 20, 0.2) 0%, transparent 30%);
 
   pointer-events: none;
 }
-
-
+.hero-title {
+  color: #fff;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+}
 /* =========================================
    IMAGE REVEALS
 ========================================= */
@@ -289,15 +278,10 @@
 
   overflow: hidden;
 
-  clip-path:
-    circle(
-      0% at 50% 105%
-    );
+  clip-path: circle(0% at 50% 105%);
 
   will-change: clip-path;
 }
-
-
 
 .hero-image {
   position: absolute;
@@ -335,17 +319,15 @@
 
   inset: 0;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(8, 12, 20, 0.15) 0%,
-      rgba(8, 12, 20, 0.04) 40%,
-      rgba(8, 12, 20, 0.45) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 20, 0.15) 0%,
+    rgba(8, 12, 20, 0.04) 40%,
+    rgba(8, 12, 20, 0.45) 100%
+  );
 
   pointer-events: none;
 }
-
 
 /* =========================================
    IMAGE STACKING
@@ -362,7 +344,6 @@
 .hero-image-three {
   z-index: 12;
 }
-
 
 /* =========================================
    SCROLL
@@ -384,7 +365,7 @@
 
   color: #1b2435;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
   letter-spacing: 0.25em;
 
@@ -392,8 +373,7 @@
 
   writing-mode: vertical-rl;
 
-  transition:
-    color 0.4s ease;
+  transition: color 0.4s ease;
 }
 
 .hero-scroll i {
@@ -407,7 +387,6 @@
 
   opacity: 0.35;
 }
-
 
 /* =========================================
    COUNTER
@@ -427,47 +406,31 @@
 
   color: #1b2435;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
   letter-spacing: 0.15em;
 
-  transition:
-    color 0.4s ease;
+  transition: color 0.4s ease;
 }
-
-
 
 @media (max-width: 768px) {
- .hero-title-mask{
-  text-align: start;
-  margin-bottom: 10px;
- }
+  .hero-title-mask {
+    text-align: start;
+    margin-bottom: 10px;
+  }
 }
-
 
 /* =========================================
    MOBILE
 ========================================= */
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================================
    MOBILE SIMPLE HERO SLIDER
 ========================================= */
 
 @media (max-width: 768px) {
-
   .sarvottam-hero {
-    height: 100dvh ;
+    height: 100dvh;
     min-height: 600px;
     /* overflow: hidden; */
   }
@@ -523,8 +486,7 @@
     transition: opacity 0.8s ease;
   }
 
-  .sarvottam-hero.mobile-slide-0
-    .hero-intro-image {
+  .sarvottam-hero.mobile-slide-0 .hero-intro-image {
     opacity: 1;
   }
 
@@ -532,8 +494,7 @@
      IMAGE 1
   ========================================= */
 
-  .sarvottam-hero.mobile-slide-1
-    .hero-image-one {
+  .sarvottam-hero.mobile-slide-1 .hero-image-one {
     opacity: 1;
   }
 
@@ -541,8 +502,7 @@
      IMAGE 2
   ========================================= */
 
-  .sarvottam-hero.mobile-slide-2
-    .hero-image-two {
+  .sarvottam-hero.mobile-slide-2 .hero-image-two {
     opacity: 1;
   }
 
@@ -580,8 +540,7 @@
      INTRO CONTENT
   ========================================= */
 
-  .sarvottam-hero.mobile-slide-0
-    .hero-intro-content {
+  .sarvottam-hero.mobile-slide-0 .hero-intro-content {
     opacity: 1;
 
     transform: translateY(0);
@@ -591,8 +550,7 @@
      SLIDE 1 CONTENT
   ========================================= */
 
-  .sarvottam-hero.mobile-slide-1
-    .hero-slide-content-1 {
+  .sarvottam-hero.mobile-slide-1 .hero-slide-content-1 {
     opacity: 1;
 
     transform: translateY(0);
@@ -602,8 +560,7 @@
      SLIDE 2 CONTENT
   ========================================= */
 
-  .sarvottam-hero.mobile-slide-2
-    .hero-slide-content-2 {
+  .sarvottam-hero.mobile-slide-2 .hero-slide-content-2 {
     opacity: 1;
 
     transform: translateY(0);
@@ -636,11 +593,7 @@
   .sarvottam-hero .hero-title {
     width: 100%;
 
-    font-size: clamp(
-      46px,
-      13.5vw,
-      68px
-    );
+    font-size: clamp(46px, 13.5vw, 68px);
 
     line-height: 0.88;
 
@@ -678,7 +631,7 @@
   .sarvottam-hero .hero-eyebrow {
     margin-bottom: 14px;
 
-    font-size:     10px  ;
+    font-size: 10px;
 
     line-height: 1.4;
 
@@ -720,12 +673,7 @@
 
     text-align: left;
 
-    color: rgba(
-      243,
-      243,
-      236,
-      0.82
-    );
+    color: rgba(243, 243, 236, 0.82);
   }
 
   /* =========================================
@@ -745,13 +693,11 @@
   }
 }
 
-
 /* =========================================
    SMALL MOBILE
 ========================================= */
 
 @media (max-width: 480px) {
-
   .sarvottam-hero .hero-content {
     left: 18px;
 
@@ -761,11 +707,7 @@
   }
 
   .sarvottam-hero .hero-title {
-    font-size: clamp(
-      43px,
-      13vw,
-      58px
-    );
+    font-size: clamp(43px, 13vw, 58px);
 
     line-height: 0.9;
 
@@ -777,7 +719,7 @@
   }
 
   .sarvottam-hero .hero-eyebrow {
-    font-size:     10px  ;
+    font-size: 10px;
 
     letter-spacing: 0.18em;
 
@@ -795,7 +737,7 @@
   .sarvottam-hero .hero-description {
     max-width: 290px;
 
-    font-size:     12px  ;
+    font-size: 12px;
 
     line-height: 1.55;
   }

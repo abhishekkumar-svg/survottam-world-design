@@ -27,7 +27,6 @@
   /* gap: 70px; */
 }
 
-
 /* =========================================
    LEFT / FORM
 ========================================= */
@@ -41,7 +40,7 @@
 
   color: var(--primary-color);
 
-  font-size:     12px  ;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.2em;
@@ -83,7 +82,6 @@
   opacity: 0.6;
 }
 
-
 /* =========================================
    FORM
 ========================================= */
@@ -109,7 +107,7 @@
 
   color: var(--primary-2);
 
-  font-size:     12px  ;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.15em;
@@ -154,7 +152,6 @@
   opacity: 0.4;
 }
 
-
 /* =========================================
    TEXTAREA
 ========================================= */
@@ -176,7 +173,6 @@
 
   border-color: var(--primary-color);
 }
-
 
 /* =========================================
    SUBMIT
@@ -201,7 +197,7 @@
 
   color: #fff;
 
-  font-size:     12px  ;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.15em;
@@ -227,11 +223,9 @@
   transform: translateX(4px);
 }
 
-
 /* =========================================
    RIGHT / INFORMATION
 ========================================= */
-
 
 .contact-addresses {
   display: flex;
@@ -239,7 +233,6 @@
   gap: 26px;
   margin-bottom: 30px;
 }
-
 
 /* =========================================
    INDIVIDUAL ADDRESS
@@ -254,7 +247,6 @@
   padding-bottom: 0;
   border-bottom: none;
 }
-
 
 /* =========================================
    ADDRESS HEADING
@@ -272,7 +264,7 @@
 
   color: var(--primary-color);
 
-  font-size:     10px  ;
+  font-size: 10px;
   font-weight: 600;
 
   line-height: 1;
@@ -289,7 +281,6 @@
 
   opacity: 0.5;
 }
-
 
 /* =========================================
    ADDRESS CONTENT
@@ -331,7 +322,6 @@
   opacity: 0.68;
 }
 
-
 .contact-information {
   min-height: 700px;
 
@@ -367,7 +357,6 @@
   color: var(--primary-color);
 }
 
-
 /* =========================================
    CONTACT DETAILS
 ========================================= */
@@ -383,7 +372,7 @@
   display: flex;
   align-items: center;
 
-  gap:8px;
+  gap: 8px;
 
   color: var(--primary-2);
 
@@ -410,7 +399,6 @@
 
   color: var(--primary-color);
 }
-
 
 /* =========================================
    SOCIALS
@@ -457,7 +445,6 @@
   transform: translateY(-3px);
 }
 
-
 /* =========================================
    GOOGLE MAP
 ========================================= */
@@ -495,7 +482,6 @@
   height: 280px;
 
   border: 0;
-
 }
 
 /* =========================================
@@ -544,7 +530,6 @@
   }
 }
 
-
 /* =========================================
    MOBILE
 ========================================= */
@@ -573,7 +558,7 @@
   .contact-description {
     margin-bottom: 38px;
 
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .contact-form {
@@ -601,7 +586,6 @@
     font-size: 12px;
     line-height: 1.65;
   }
-
 
   .contact-information {
     display: flex;

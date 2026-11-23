@@ -8,10 +8,7 @@
   width: 100%;
   min-height: 100vh;
 
-  padding:
-    100px
-    clamp(24px, 5vw, 90px)
-    140px;
+  padding: 100px clamp(24px, 5vw, 90px) 140px;
 
   background: var(--cream);
 
@@ -19,7 +16,6 @@
 
   overflow: hidden;
 }
-
 
 /* =========================================================
    HEADER
@@ -45,7 +41,7 @@
 
   color: var(--primary-color);
 
-  font-size: 11px;
+  font-size: 12px;
 
   letter-spacing: 0.28em;
 
@@ -57,7 +53,7 @@
 
   font-family: Georgia, serif;
 
-  font-size:  clamp(48px, 5vw, 78px);
+  font-size: clamp(48px, 5vw, 78px);
 
   font-weight: 400;
 
@@ -110,7 +106,6 @@
   line-height: 0.8;
 }
 
-
 /* =========================================================
    FILTERS
 ========================================================= */
@@ -134,14 +129,12 @@
 
   background: rgba(255, 255, 255, 0.55);
 
-  border: 1px solid
-    rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 
   border-radius: 100px;
 
   backdrop-filter: blur(20px);
 }
-
 
 /* Search */
 
@@ -183,7 +176,7 @@
 
   color: var(--primary-2);
 
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .project-search input::placeholder {
@@ -191,7 +184,6 @@
 
   opacity: 0.45;
 }
-
 
 /* Filter group */
 
@@ -204,7 +196,7 @@
 }
 
 .filter-label {
-  font-size:     12px  ;
+  font-size: 12px;
 
   letter-spacing: 0.18em;
 
@@ -232,7 +224,7 @@
 
   border-radius: 50px;
 
-  font-size: 11px;
+  font-size: 12px;
 
   cursor: pointer;
 
@@ -247,7 +239,6 @@
   color: var(--cream);
 }
 
-
 /* =========================================================
    TOOLBAR
 ========================================================= */
@@ -261,7 +252,7 @@
 
   margin-bottom: 25px;
 
-  font-size: 11px;
+  font-size: 12px;
 
   opacity: 0.65;
 }
@@ -277,7 +268,7 @@
 .grid-controls span {
   margin-right: 10px;
 
-  font-size:     12px  ;
+  font-size: 12px;
 
   letter-spacing: 0.18em;
 }
@@ -286,8 +277,7 @@
   width: 38px;
   height: 32px;
 
-  border: 1px solid
-    rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 
   background: transparent;
 
@@ -307,7 +297,6 @@
 
   color: var(--cream);
 }
-
 
 /* =========================================================
    GRID
@@ -332,7 +321,6 @@
 .projects-grid-4 {
   grid-template-columns: repeat(4, 1fr);
 }
-
 
 /* =========================================================
    EMPTY
@@ -384,16 +372,13 @@
   cursor: pointer;
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .projects-listing {
-    padding:
-      70px 20px 90px;
+    padding: 70px 20px 90px;
   }
 
   .projects-listing-header {
@@ -401,11 +386,7 @@
   }
 
   .projects-intro h1 {
-    font-size: clamp(
-      58px,
-      15vw,
-      90px
-    );
+    font-size: clamp(58px, 15vw, 90px);
   }
 
   .projects-count {
@@ -424,8 +405,7 @@
 
   .projects-grid-4,
   .projects-grid-3 {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .property-card-content {
@@ -435,12 +415,9 @@
   .property-card-content h3 {
     font-size: 25px;
   }
-
 }
 
-
 @media (max-width: 600px) {
-
   .projects-listing-header {
     display: block;
   }
@@ -481,5 +458,4 @@
   .grid-controls button {
     width: 34px;
   }
-
 }

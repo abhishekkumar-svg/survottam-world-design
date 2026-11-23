@@ -128,7 +128,7 @@
 .portfolio-image-wrap {
   position: relative;
   width: 100%;
-   height: 85dvh;
+  height: 85dvh;
   /* min-height: 620px; */
   overflow: hidden;
   isolation: isolate;
@@ -139,7 +139,7 @@
   position: absolute;
   inset: 0;
   width: 100%;
-   height: 88dvh;
+  height: 88dvh;
   object-fit: cover;
   object-position: center;
   transform: scale(1.001);
@@ -204,17 +204,17 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(255,255,255,.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   color: #fff;
   font-size: 20px;
-  transition: .35s ease;
+  transition: 0.35s ease;
 }
 
 .portfolio-image-link:hover .portfolio-image-arrow {
   background: #fff;
   color: #1b2435;
-  transform: translate(4px,-4px);
+  transform: translate(4px, -4px);
 }
 
 /* CONTENT */
@@ -234,7 +234,7 @@
   margin-bottom: 22px;
   font-family: Arial, sans-serif;
   font-size: 12px;
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--primary-color);
 }
@@ -245,8 +245,8 @@
   font-family: "Times New Roman", Georgia, serif;
   font-size: clamp(58px, 6.5vw, 100px);
   font-weight: 400;
-  line-height: .88;
-  letter-spacing: -.065em;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
   color: var(--primary-2);
 }
 
@@ -255,9 +255,9 @@
   gap: 18px;
   margin-top: 42px;
   padding-top: 28px;
-  border-top: 1px solid rgba(27,36,53,.18);
+  border-top: 1px solid rgba(27, 36, 53, 0.18);
   font-family: Arial, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.6;
   color: #73756f;
 }
@@ -271,7 +271,7 @@
 .portfolio-detail-label {
   color: #1b2435;
   font-size: 10px;
-  letter-spacing: .18em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -284,7 +284,7 @@
   color: #1b2435;
   font-family: Arial, sans-serif;
   font-size: 12px;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -295,13 +295,13 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(27,36,53,.35);
+  border: 1px solid rgba(27, 36, 53, 0.35);
   border-radius: 50%;
-  transition: transform .35s ease;
+  transition: transform 0.35s ease;
 }
 
 .portfolio-link:hover span {
-  transform: translate(4px,-4px);
+  transform: translate(4px, -4px);
 }
 
 /* FOOTER */
@@ -310,12 +310,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: end;
-  margin-top: clamp(80px,10vw,150px);
+  margin-top: clamp(80px, 10vw, 150px);
   padding-top: 30px;
-  border-top: 1px solid rgba(27,36,53,.2);
+  border-top: 1px solid rgba(27, 36, 53, 0.2);
   font-family: Arial, sans-serif;
   font-size: 12px;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -334,9 +334,9 @@
 
 /* TABLET */
 
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
   .portfolio-section {
-    padding-inline: clamp(24px,4vw,50px);
+    padding-inline: clamp(24px, 4vw, 50px);
   }
 
   .portfolio-header {
@@ -345,7 +345,7 @@
 
   .portfolio-item,
   .portfolio-item-reverse {
-    grid-template-columns: 1fr .85fr;
+    grid-template-columns: 1fr 0.85fr;
   }
 
   .portfolio-content {
@@ -353,7 +353,7 @@
   }
 
   .portfolio-title {
-    font-size: clamp(52px,7vw,76px);
+    font-size: clamp(52px, 7vw, 76px);
   }
 
   .portfolio-image-wrap {
@@ -363,9 +363,9 @@
 
 /* MOBILE */
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .portfolio-section {
-    padding:0px 20px 70px;
+    padding: 0px 20px 70px;
   }
 
   .portfolio-header {
@@ -379,8 +379,8 @@
   }
 
   .portfolio-header h2 {
-    font-size: clamp(48px,12vw,58px);
-    line-height: .88;
+    font-size: clamp(48px, 12vw, 58px);
+    line-height: 0.88;
   }
 
   .portfolio-header-right {
@@ -411,7 +411,7 @@
   }
 
   .portfolio-image-wrap {
-    height: min(118vw,560px);
+    height: min(118vw, 560px);
     min-height: 0;
   }
 
@@ -425,7 +425,7 @@
     min-height: 29px;
     padding: 0 15px;
     font-size: 9px;
-    letter-spacing: .22em;
+    letter-spacing: 0.22em;
   }
 
   .portfolio-number {
@@ -448,13 +448,13 @@
     gap: 10px 18px;
     margin-bottom: 17px;
     font-size: 10px;
-    letter-spacing: .2em;
+    letter-spacing: 0.2em;
     line-height: 1.5;
   }
 
   .portfolio-title {
-    font-size: clamp(48px,14vw,68px);
-    line-height: .88;
+    font-size: clamp(48px, 14vw, 68px);
+    line-height: 0.88;
   }
 
   .portfolio-details {
@@ -485,7 +485,7 @@
 
 /* SMALL PHONES */
 
-@media (max-width:380px) {
+@media (max-width: 380px) {
   .portfolio-section {
     padding-inline: 16px;
   }
@@ -503,7 +503,6 @@
   }
 }
 
-
 /* =====================================================
    GSAP STACKING MODE
 ===================================================== */
@@ -515,9 +514,7 @@
 .portfolio-list {
   position: relative;
   display: block;
-  height: calc(
-    100vh - clamp(90px, 10vw, 160px) - 120px
-  );
+  height: calc(100vh - clamp(90px, 10vw, 160px) - 120px);
   min-height: 620px;
 }
 
@@ -547,9 +544,15 @@
 }
 
 /* Each incoming card sits above the previous one. */
-.portfolio-item:nth-child(1) { z-index: 1; }
-.portfolio-item:nth-child(2) { z-index: 2; }
-.portfolio-item:nth-child(3) { z-index: 3; }
+.portfolio-item:nth-child(1) {
+  z-index: 1;
+}
+.portfolio-item:nth-child(2) {
+  z-index: 2;
+}
+.portfolio-item:nth-child(3) {
+  z-index: 3;
+}
 
 /* Remove the alternating DOM order from the old non-stacking layout. */
 .portfolio-item-reverse .portfolio-image-link {

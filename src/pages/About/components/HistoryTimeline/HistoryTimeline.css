@@ -20,7 +20,6 @@
   color: var(--ink);
 }
 
-
 /* =========================================================
    HEADER
 ========================================================= */
@@ -35,9 +34,7 @@
 
   width: 100%;
 
-  padding:
-    34px
-    clamp(25px, 5vw, 75px);
+  padding: 34px clamp(25px, 5vw, 75px);
 
   display: flex;
   align-items: flex-start;
@@ -55,9 +52,9 @@
 .history-eyebrow {
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
-  letter-spacing: .42em;
+  letter-spacing: 0.42em;
 
   color: var(--primary-color);
 }
@@ -76,9 +73,9 @@
 
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
-  letter-spacing: .28em;
+  letter-spacing: 0.28em;
 
   color: var(--muted);
 }
@@ -91,7 +88,7 @@
 
   overflow: hidden;
 
-  background: rgba(120,110,90,.25);
+  background: rgba(120, 110, 90, 0.25);
 }
 
 .history-scroll-indicator span {
@@ -118,7 +115,6 @@
   }
 }
 
-
 /* =========================================================
    VIEWPORT
 ========================================================= */
@@ -130,7 +126,6 @@
 
   overflow: hidden;
 }
-
 
 /* =========================================================
    TRACK
@@ -151,14 +146,10 @@
 
   width: max-content;
 
-  padding:
-    0px
-    8vw
-    70px;
+  padding: 0px 8vw 70px;
 
   will-change: transform;
 }
-
 
 /* =========================================================
    INTRO
@@ -187,13 +178,12 @@
   width: 1px;
   height: 100%;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      rgba(184,139,70,.5),
-      transparent
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(184, 139, 70, 0.5),
+    transparent
+  );
 }
 
 .history-intro-space span {
@@ -201,9 +191,9 @@
 
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
-  letter-spacing: .42em;
+  letter-spacing: 0.42em;
 
   color: var(--primary-color);
 }
@@ -211,32 +201,22 @@
 .history-intro-space strong {
   margin-top: 8px;
   margin-left: 20px;
-color: var(--primary-2);
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  color: var(--primary-2);
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(80px, 9vw, 140px);
 
-  line-height: .7;
+  line-height: 0.7;
 
   font-weight: 300;
 
-  letter-spacing: -.07em;
+  letter-spacing: -0.07em;
 }
 
 .history-intro-space p {
-  margin:
-    30px
-    0
-    0
-    25px;
+  margin: 30px 0 0 25px;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: 19px;
 
@@ -244,7 +224,6 @@ color: var(--primary-2);
 
   color: var(--muted);
 }
-
 
 /* =========================================================
    TIMELINE LINE
@@ -260,14 +239,13 @@ color: var(--primary-2);
 
   height: 1px;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(180,150,100,.4) 8%,
-      rgba(180,150,100,.4) 92%,
-      transparent
-    );
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(180, 150, 100, 0.4) 8%,
+    rgba(180, 150, 100, 0.4) 92%,
+    transparent
+  );
 
   pointer-events: none;
 }
@@ -290,7 +268,6 @@ color: var(--primary-2);
   background: var(--primary-color);
 }
 
-
 /* =========================================================
    CARD
 ========================================================= */
@@ -312,7 +289,6 @@ color: var(--primary-2);
   will-change: transform, opacity;
 }
 
-
 /* =========================================================
    YEAR
 ========================================================= */
@@ -325,7 +301,7 @@ color: var(--primary-2);
   transform: translateX(-50%);
 
   z-index: 8;
-gap: 12px;
+  gap: 12px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -353,36 +329,28 @@ gap: 12px;
 
   background: var(--primary-color);
 
-  box-shadow:
-    0 0 0 1px rgba(184,139,70,.6);
+  box-shadow: 0 0 0 1px rgba(184, 139, 70, 0.6);
 }
 
 .history-card-bottom .history-dot {
   order: 2;
 
-  margin:
-    15px
-    0
-    0;
+  margin: 15px 0 0;
 }
 
 .history-year {
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(34px, 3vw, 52px);
 
-  line-height: .8;
+  line-height: 0.8;
 
   color: var(--primary-color);
 
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
 
   white-space: nowrap;
 }
-
 
 /* =========================================================
    IMAGE
@@ -399,8 +367,7 @@ gap: 12px;
 
   border-radius: 3px;
 
-  box-shadow:
-    0 18px 45px rgba(47,40,28,.14);
+  box-shadow: 0 18px 45px rgba(47, 40, 28, 0.14);
 
   isolation: isolate;
 }
@@ -421,13 +388,12 @@ gap: 12px;
 
   inset: 0;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(16,14,10,.75) 0%,
-      rgba(16,14,10,.10) 60%,
-      transparent 100%
-    );
+  background: linear-gradient(
+    to top,
+    rgba(16, 14, 10, 0.75) 0%,
+    rgba(16, 14, 10, 0.1) 60%,
+    transparent 100%
+  );
 }
 
 .history-card-number {
@@ -436,15 +402,13 @@ gap: 12px;
   right: 20px;
   top: 20px;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-family: "Cormorant Garamond", serif;
 
   font-size: 14px;
 
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, 0.75);
 
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .history-card-overlay-content {
@@ -460,18 +424,15 @@ gap: 12px;
 .history-card-overlay-content h3 {
   margin: 0;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(32px, 3vw, 48px);
 
-  line-height: .9;
+  line-height: 0.9;
 
   font-weight: 500;
 
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 
 .history-card-overlay-content span {
@@ -481,13 +442,12 @@ gap: 12px;
 
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
-  letter-spacing: .32em;
+  letter-spacing: 0.32em;
 
-  opacity: .7;
+  opacity: 0.7;
 }
-
 
 /* =========================================================
    CARD DESCRIPTION
@@ -502,11 +462,9 @@ gap: 12px;
 .history-card-description p {
   margin: 0;
 
-  font-family:
-    Arial,
-    sans-serif;
+  font-family: Arial, sans-serif;
 
-  font-size: 11px;
+  font-size: 12px;
 
   line-height: 1.65;
 
@@ -522,9 +480,9 @@ gap: 12px;
 
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
-  letter-spacing: .25em;
+  letter-spacing: 0.25em;
 
   color: var(--primary-color);
 }
@@ -538,7 +496,6 @@ gap: 12px;
   background: var(--primary-color);
 }
 
-
 /* =========================================================
    TOP / BOTTOM CARD POSITIONS
 ========================================================= */
@@ -550,7 +507,6 @@ gap: 12px;
 .history-card-bottom {
   transform: translateY(35px);
 }
-
 
 /* =========================================================
    END
@@ -572,28 +528,25 @@ gap: 12px;
 .history-end span {
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
-  letter-spacing: .4em;
+  letter-spacing: 0.4em;
 
   color: var(--primary-color);
 }
 
 .history-end strong {
   margin-top: 15px;
-color: var(--primary-2);
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  color: var(--primary-2);
+  font-family: "Cormorant Garamond", Georgia, serif;
 
   font-size: clamp(55px, 6vw, 90px);
 
   font-weight: 300;
 
-  line-height: .8;
+  line-height: 0.8;
 
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
 }
 
 .history-end-line {
@@ -604,7 +557,6 @@ color: var(--primary-2);
 
   background: var(--primary-color);
 }
-
 
 /* =========================================================
    BOTTOM PROGRESS
@@ -637,20 +589,18 @@ color: var(--primary-2);
 .history-progress-text {
   font-family: Arial, sans-serif;
 
-  font-size:     10px  ;
+  font-size: 10px;
 
-  letter-spacing: .3em;
+  letter-spacing: 0.3em;
 
   color: var(--muted);
 }
-
 
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .history-section {
     min-height: 680px;
   }
@@ -675,26 +625,22 @@ color: var(--primary-2);
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .history-section {
     height: 100svh;
     min-height: 650px;
   }
 
   .history-header {
-    padding:
-      25px
-      20px;
+    padding: 25px 20px;
   }
 
   .history-header-right {
-    font-size:     10px  ;
+    font-size: 10px;
   }
 
   .history-header-line {
@@ -704,10 +650,7 @@ color: var(--primary-2);
   .history-track {
     gap: 55px;
 
-    padding:
-      85px
-      22px
-      65px;
+    padding: 85px 22px 65px;
   }
 
   .history-intro-space {
@@ -793,13 +736,11 @@ color: var(--primary-2);
   }
 }
 
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 380px) {
-
   .history-card {
     flex-basis: 290px;
     width: 290px;
@@ -823,13 +764,11 @@ color: var(--primary-2);
   }
 }
 
-
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .history-scroll-indicator span {
     animation: none;
   }
