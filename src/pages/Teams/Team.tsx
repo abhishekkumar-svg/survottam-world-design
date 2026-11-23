@@ -1,5 +1,5 @@
-
 import { useLayoutEffect, useRef, useState } from "react";
+import directorsImage from "../../assets/Directors.avif";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Teams.css";
@@ -13,6 +13,16 @@ interface TeamMember {
   image: string;
   introduction: string;
 }
+
+const directorsMessage = [
+  "Every great institution is built on a vision that extends beyond commercial success. At Sarvottam World, our purpose has always been to create enduring assets that enrich lives, strengthen communities, and contribute meaningfully to India's transformation into a global economic powerhouse.",
+  "From our strong foundation in real estate, Sarvottam World has evolved into a diversified enterprise with a clear vision for the future. Over the next decade, we are committed to building an integrated ecosystem spanning world-class infrastructure, premium residential communities, plotted developments, IT & ITES parks, healthcare institutions, automobile hubs, and financial services. Together, these businesses will shape vibrant urban destinations that enable people to live, work, invest, and prosper.",
+  "India stands at the threshold of an unprecedented era of growth, driven by rapid urbanization, digital innovation, infrastructure expansion, and rising aspirations. We believe this moment calls for visionary leadership and responsible development. Every project we undertake is designed with a long-term perspective—creating sustainable value, strengthening economic ecosystems, generating employment, and supporting the nation's progress.",
+  "Our success is not defined solely by the scale of our developments, but by the trust we earn, the opportunities we create, and the lasting impact we leave for future generations. Integrity, innovation, excellence, and disciplined execution remain the cornerstones of every decision we make.",
+  "As we move towards 2035, our aspiration is to establish Sarvottam World among India's most respected and diversified business Worlds—setting new benchmarks in quality, sustainability, governance, and customer trust across every sector we serve.",
+  "We are not merely developing projects. We are creating destinations, building institutions, empowering industries, and partnering in India's next chapter of growth.",
+  "Together, we remain committed to Shaping Progress. Building India's Future.",
+];
 
 const teamMembers: TeamMember[] = [
   {
@@ -171,9 +181,7 @@ export default function Teams() {
 
   const popupTimelineRef = useRef<gsap.core.Timeline | null>(null);
 
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(
-    null
-  );
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   /* =====================================================
      EXISTING TEAM SCROLL ANIMATIONS
@@ -183,9 +191,45 @@ export default function Teams() {
     const ctx = gsap.context(() => {
       const items = gsap.utils.toArray<HTMLElement>(".team-item");
 
+      gsap.fromTo(
+        ".directors-image",
+        { scale: 1.15 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".directors-image-wrapper",
+            start: "top bottom",
+            end: "bottom 40%",
+            scrub: true,
+          },
+        },
+      );
+
+      gsap.utils
+        .toArray<HTMLElement>(".directors-message-paragraph")
+        .forEach((paragraph) => {
+          const words = paragraph.querySelectorAll(".message-word");
+
+          gsap.fromTo(
+            words,
+            { opacity: 0.15 },
+            {
+              opacity: 1,
+              ease: "none",
+              stagger: 0.1,
+              scrollTrigger: {
+                trigger: paragraph,
+                start: "top 85%",
+                end: "bottom 55%",
+                scrub: true,
+              },
+            },
+          );
+        });
+
       items.forEach((item) => {
-        const image =
-          item.querySelector<HTMLImageElement>(".team-image");
+        const image = item.querySelector<HTMLImageElement>(".team-image");
 
         if (!image) return;
 
@@ -219,7 +263,7 @@ export default function Teams() {
             opacity: 1,
             duration: 2,
             ease: "power3.inOut",
-          }
+          },
         )
           .to(
             image,
@@ -228,7 +272,7 @@ export default function Teams() {
               duration: 2,
               ease: "none",
             },
-            0.2
+            0.2,
           )
           .to(
             image,
@@ -237,7 +281,7 @@ export default function Teams() {
               duration: 2,
               ease: "power2.out",
             },
-            0
+            0,
           );
       });
     }, sectionRef);
@@ -309,7 +353,7 @@ export default function Teams() {
           opacity: 1,
           duration: 0.6,
         },
-        "-=0.4"
+        "-=0.4",
       )
       .to(
         content,
@@ -318,7 +362,7 @@ export default function Teams() {
           opacity: 1,
           duration: 0.4,
         },
-        "-=0.2"
+        "-=0.2",
       );
 
     return () => {
@@ -373,7 +417,7 @@ export default function Teams() {
           opacity: 0,
           duration: 0.4,
         },
-        "-=0.1"
+        "-=0.1",
       )
       .to(
         overlay,
@@ -383,7 +427,7 @@ export default function Teams() {
           opacity: 0,
           duration: 0.6,
         },
-        "-=0.2"
+        "-=0.2",
       );
   };
 
@@ -414,6 +458,49 @@ export default function Teams() {
   return (
     <>
       <section ref={sectionRef} className="teams-section">
+        <div className="teams-header">
+          <span>Sarvottam World</span>
+          <h2>Board of Directors</h2>
+          <p>
+            Meet the leaders driving innovation, strategic growth, and
+            excellence across our organization.
+          </p>
+        </div>
+
+        <div className="directors-image-wrapper">
+          <img
+            className="directors-image"
+            src={directorsImage}
+            alt="Managing Directors"
+          />
+        </div>
+
+        <div className="directors-message">
+          <h2>Joint Message from the Managing Directors</h2>
+
+          {directorsMessage.map((paragraph, index) => (
+            <p
+              key={index}
+              className={
+                index === directorsMessage.length - 1
+                  ? "directors-message-paragraph directors-message-closing"
+                  : "directors-message-paragraph"
+              }
+            >
+              {paragraph.split(" ").map((word, wordIndex) => (
+                <span key={wordIndex} className="message-word">
+                  {word}{" "}
+                </span>
+              ))}
+            </p>
+          ))}
+        </div>
+
+        <div className="teams-subheader">
+          <span>Sarvottam World</span>
+          <h2>Key Personnel</h2>
+        </div>
+
         <div className="teams-grid">
           {teamMembers.map((member) => (
             <article key={member.id} className="team-item">
@@ -432,25 +519,21 @@ export default function Teams() {
                   />
                 </div>
 
-               
-<div className="team-info">
-  <div>
-    <h3 className="team-name">
-      {member.name}
+                <div className="team-info">
+                  <div>
+                    <h3 className="team-name">
+                      {member.name}
 
-      <span className="team-name-arrow" aria-hidden="true">
-        ↗
-      </span>
-    </h3>
+                      <span className="team-name-arrow" aria-hidden="true">
+                        ↗
+                      </span>
+                    </h3>
 
-    <p>{member.designation}</p>
-  </div>
+                    <p>{member.designation}</p>
+                  </div>
 
-  <span>
-    {String(member.id).padStart(2, "0")}
-  </span>
-</div>
-
+                  <span>{String(member.id).padStart(2, "0")}</span>
+                </div>
               </button>
             </article>
           ))}
@@ -490,10 +573,7 @@ export default function Teams() {
 
             <div ref={popupContentRef} className="team-popup-content">
               <div className="team-popup-image">
-                <img
-                  src={selectedMember.image}
-                  alt={selectedMember.name}
-                />
+                <img src={selectedMember.image} alt={selectedMember.name} />
               </div>
 
               <div className="team-popup-details">
@@ -505,16 +585,7 @@ export default function Teams() {
                   {selectedMember.designation}
                 </p>
 
-               
-<h2 id="team-popup-name">
-  {selectedMember.name}
-
-
-
-
-</h2>
-
-
+                <h2 id="team-popup-name">{selectedMember.name}</h2>
 
                 <div className="team-popup-line" />
 

@@ -763,7 +763,7 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
         <div className="philosophy-marquee">
           <div className="philosophy-marquee-track">
-            <span>SURVOTTAM</span>
+            <span>SARVOTTAM</span>
           
           </div>
         </div>

@@ -6,6 +6,18 @@ interface TeamMember {
   designation: string;
   image: string;
 }
+
+export const directorsImage = "https://i.pravatar.cc/1600?img=32";
+
+export const directorsMessage = [
+  "Every great institution is built on a vision that extends beyond commercial success. At Sarvottam World, our purpose has always been to create enduring assets that enrich lives, strengthen communities, and contribute meaningfully to India's transformation into a global economic powerhouse.",
+  "From our strong foundation in real estate, Sarvottam World has evolved into a diversified enterprise with a clear vision for the future. Over the next decade, we are committed to building an integrated ecosystem spanning world-class infrastructure, premium residential communities, plotted developments, IT & ITES parks, healthcare institutions, automobile hubs, and financial services. Together, these businesses will shape vibrant urban destinations that enable people to live, work, invest, and prosper.",
+  "India stands at the threshold of an unprecedented era of growth, driven by rapid urbanization, digital innovation, infrastructure expansion, and rising aspirations. We believe this moment calls for visionary leadership and responsible development. Every project we undertake is designed with a long-term perspective—creating sustainable value, strengthening economic ecosystems, generating employment, and supporting the nation's progress.",
+  "Our success is not defined solely by the scale of our developments, but by the trust we earn, the opportunities we create, and the lasting impact we leave for future generations. Integrity, innovation, excellence, and disciplined execution remain the cornerstones of every decision we make.",
+  "As we move towards 2035, our aspiration is to establish Sarvottam World among India's most respected and diversified business Worlds—setting new benchmarks in quality, sustainability, governance, and customer trust across every sector we serve.",
+  "We are not merely developing projects. We are creating destinations, building institutions, empowering industries, and partnering in India's next chapter of growth.",
+  "Together, we remain committed to Shaping Progress. Building India's Future.",
+];
 export const teamMembers: TeamMember[] = [
   {
     id: 1,
